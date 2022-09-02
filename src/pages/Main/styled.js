@@ -115,10 +115,10 @@ export const BannerWrapper = styled.div`
     height : 30vh;
     margin : 6rem auto;
 `
-export const PromotionWrapper = styled.div`
+export const PromotionContainer = styled.div`
 
 `
-export const PromotionContainer = styled.div`
+export const PromotionWrapper = styled.div`
     text-align: center;
 
 `
@@ -197,9 +197,7 @@ export const ViewMoreBtnText = styled.p`
 
 export const MakerSection = styled.div`
     background : #757575;
-    padding : 0.1rem;  
-    padding-bottom : 4rem;
-
+    padding : 0.1rem;
 `
 
 export const MakerImg = styled.div`
@@ -231,7 +229,7 @@ export const CategoryBtnContainer = styled.div`
 export const CategoryBtn = styled.button`
     width : 5rem;
     cursor : pointer;
-    border-radius : 1rem;
+    border-radius : 2rem;
     border : solid 3px #b9babd;
     color : #131313;
     font-weight : 600;

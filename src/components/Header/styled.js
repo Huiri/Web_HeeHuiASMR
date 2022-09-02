@@ -14,7 +14,8 @@ export const HeaderWrapper = styled.header`
     flex-direction: column;
 `
 export const TopSection = styled.div`
-    display : flex;
+    width : 100%;
+    height : 9vh;
 `
 export const BottomSection = styled.div`
     margin-left : 10px;
@@ -24,7 +25,6 @@ export const WebTitleWrapper = styled.div`
 
 `
 export const WebTitle = styled(Link)`
-    display : inline;
     font-size: 2.4rem;
     font-weight: 600;
     color : black;
@@ -67,8 +67,9 @@ export  const StyledNavLink = styled(NavLink)`
 
 export const SearchWrapper = styled.div`
     position : relative;
-    margin : 0.8rem 0 0 0;
-
+    bottom : 2.4rem;
+    left : 10rem;
+    width : 70%;
 `
 
 //styled.SearchInput.attrs({ placeholder: "오늘 가장 끌리는 소리는?", placeholerTextColor : "#737373"})`
@@ -94,41 +95,31 @@ export const PersonalWrapper = styled.div`
 `
 
 export const StylePersonalLink = styled(NavLink)`
-    display : relative;
     float : right;
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
-    color : black;
+    color : #5e5e5e;
     cursor: pointer;
-    margin-left : 1.8rem;
+  margin-right : -0.6rem;
     &:hover, &:focus {
         color : #4a4a4a;
         transition: all ease 0.4s 0s;
     }
-    &.active {
-        color : #8f8f8f;
-        text-decoration-line: line-through;
-        text-decoration-style: solid;
-        text-decoration-color: #616161;
-    }
-
-
 `
 export const IconSection = styled.div`
-    display : flex;
-    width : 64vw;
-    justify-content: flex-end;
-    margin-top : 1.2rem;
+  float : right;
+  margin : -4rem 2rem 0 0;
+;
+
 `
 //Icon Style
 export const SearchBtn = styled(SearchIcon)`
     cursor: pointer;
     position : absolute;
     margin : 0;
-    right : 12px;
+    left : 18rem;
     top : 6px;
-    width : 6%;
 `
 
 export const HeartBtn = styled(HeartIcon)`

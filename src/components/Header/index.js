@@ -1,4 +1,7 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
+import {LoginState} from "../../States/LoginStates";
+import {auth} from "../../firebase";
 import {InputWrapper,
     StyledNavLink,
     HeaderWrapper,
@@ -19,8 +22,21 @@ import {InputWrapper,
     UserBtn
 
 } from './styled';
-    
+import Login from "../../pages/Login";
+import {signInWithEmailAndPassword} from "firebase/auth";
+
 const Header = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+
+    const handleAuthentication= () => {
+        console.log("signout successfully");
+        console.log(isLoggedIn);
+       if(isLoggedIn) {
+           setIsLoggedIn(false);
+           auth.signOut();
+       }
+    }
     return (
         <HeaderWrapper>
             <TopSection>
@@ -52,9 +68,7 @@ const Header = () => {
                     <StyledNavLink to="/event">EVENT</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>
-                    <StylePersonalLink to="/login">SIGN IN</StylePersonalLink>
-                    <StylePersonalLink to="/signup">SIGN UP</StylePersonalLink>
-                    <StylePersonalLink to="/login">SERVICE</StylePersonalLink>
+                    <StylePersonalLink to={!isLoggedIn && "/login"} onClick={handleAuthentication}>{ isLoggedIn ? "SIGN OUT" : 'SIGN IN | UP'}</StylePersonalLink>
                 </PersonalWrapper>
             </BottomSection>
 

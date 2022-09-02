@@ -7,10 +7,19 @@ import Login from '../pages/Login';
 import Main from '../pages/Main';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue
+} from 'recoil';
+
+// import {firebase} from '.../firebase';
 
 const App = ({auth}) => {
     return (
-        <div>
+        <RecoilRoot>
             <BrowserRouter>
             <Header/>
                 <Routes>
@@ -26,7 +35,7 @@ const App = ({auth}) => {
                 </Routes>
                 <Footer/>
             </BrowserRouter>
-        </div>
+        </RecoilRoot>
     );
 };
 

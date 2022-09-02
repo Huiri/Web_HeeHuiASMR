@@ -1,8 +1,7 @@
-import React, {useState, useRef, useMemo} from 'react';
+import React, {useState, useRef} from 'react';
 import {
     PromotionTitle,
     PromotionSection,
-    PromotionContainer,
     PromotionWrapper,
     VideoThumbnail,
     PromotionText,
@@ -44,56 +43,56 @@ const Category = () => {
                 <CategoryBtn>#전체</CategoryBtn>
                 <CategoryBtn>#음식</CategoryBtn>
                 <CategoryBtn>#자연</CategoryBtn>
-                <CategoryBtn>#코믹</CategoryBtn>
+                <CategoryBtn>#웃음</CategoryBtn>
                 <CategoryBtn>#수면</CategoryBtn>
                 <CategoryBtn>#팅글</CategoryBtn>
 
             </CategoryContainer>
             <hr/>
             <PromotionSection>
-                <PromotionContainer>
+                <PromotionWrapper>
                     <VideoThumbnail className='1'/>
                     <PromotionText>강유미의 미용실</PromotionText>
                     <PromotionSub>from Yumi Gang</PromotionSub>
-                </PromotionContainer>
-                <PromotionContainer>
+                </PromotionWrapper>
+                <PromotionWrapper>
                     <VideoThumbnail className='2'/>
                     <PromotionText>해리포터 기숙사 소음</PromotionText>
                     <PromotionSub>닥쳐 말포이</PromotionSub>
-                </PromotionContainer>
-                <PromotionContainer>
+                </PromotionWrapper>
+                <PromotionWrapper>
                     <VideoThumbnail className='3'/>
                     <PromotionText>산고구마 먹방</PromotionText>
                     <PromotionSub>끼토산</PromotionSub>
-                </PromotionContainer>
-                <PromotionContainer>
+                </PromotionWrapper>
+                <PromotionWrapper>
                     <VideoThumbnail className='4'/>
                     <PromotionText>전파 백색소음</PromotionText>
                     <PromotionSub>전파 먹는 고양이</PromotionSub>
-                </PromotionContainer>
+                </PromotionWrapper>
                 
             </PromotionSection>
             <PromotionSection>
-                <PromotionContainer>
+                <PromotionWrapper>
                     <VideoThumbnail className='1'/>
                     <PromotionText>강유미의 미용실</PromotionText>
                     <PromotionSub>from Yumi Gang</PromotionSub>
-                </PromotionContainer>
-                <PromotionContainer>
+                </PromotionWrapper>
+                <PromotionWrapper>
                     <VideoThumbnail className='2'/>
                     <PromotionText>해리포터 기숙사 소음</PromotionText>
                     <PromotionSub>닥쳐 말포이</PromotionSub>
-                </PromotionContainer>
-                <PromotionContainer>
+                </PromotionWrapper>
+                <PromotionWrapper>
                     <VideoThumbnail className='3'/>
                     <PromotionText>산고구마 먹방</PromotionText>
                     <PromotionSub>끼토산</PromotionSub>
-                </PromotionContainer>
-                <PromotionContainer>
+                </PromotionWrapper>
+                <PromotionWrapper>
                     <VideoThumbnail className='4'/>
                     <PromotionText>전파 백색소음</PromotionText>
                     <PromotionSub>전파 먹는 고양이</PromotionSub>
-                </PromotionContainer>
+                </PromotionWrapper>
                 
             </PromotionSection>
             <ViewMoreBtn>
