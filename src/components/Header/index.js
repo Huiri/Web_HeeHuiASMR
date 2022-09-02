@@ -1,6 +1,8 @@
 import React from 'react';
-import {InputWrapper,
-    StyledNavLink,
+import { useRecoilState } from 'recoil';
+import {LoginState} from "../../States/LoginStates";
+import {auth} from "../../firebase";
+import {    StyledNavLink,
     HeaderWrapper,
     SearchInput,
     SearchWrapper,
@@ -15,12 +17,23 @@ import {InputWrapper,
     IconSection,
     HeartBtn,
     PageBtn,
-    PersonBtn,
     UserBtn
 
 } from './styled';
-    
+import {Link} from "react-router-dom";
+
 const Header = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+
+    const handleAuthentication= () => {
+        console.log("signout successfully");
+        console.log(isLoggedIn);
+       if(isLoggedIn) {
+           setIsLoggedIn(false);
+           auth.signOut();
+       }
+    }
     return (
         <HeaderWrapper>
             <TopSection>
@@ -29,19 +42,15 @@ const Header = () => {
                 </WebTitleWrapper>
                 <SearchWrapper>
                     <SearchInput/>
-                    <SearchBtn/>
+                    <Link to ="/search"><SearchBtn /></Link>
                 </SearchWrapper>
                 <IconSection>
                     <HeartBtn/>
                     <PageBtn/>
                     <UserBtn/>
                 </IconSection>
-                {/* <LoginWrapper>
-                    <StyledNavLink to="/login">LOGIN</StyledNavLink>
-                </LoginWrapper> */}
 
             </TopSection>
-            {/* <hr/> */}
 
             <BottomSection>
                 <MenuWrapper>
@@ -52,9 +61,7 @@ const Header = () => {
                     <StyledNavLink to="/event">EVENT</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>
-                    <StylePersonalLink to="/login">SIGN IN</StylePersonalLink>
-                    <StylePersonalLink to="/signup">SIGN UP</StylePersonalLink>
-                    <StylePersonalLink to="/login">SERVICE</StylePersonalLink>
+                    <StylePersonalLink to={!isLoggedIn && "/login"} onClick={handleAuthentication}>{ isLoggedIn ? "SIGN OUT" : 'SIGN IN | UP'}</StylePersonalLink>
                 </PersonalWrapper>
             </BottomSection>
 

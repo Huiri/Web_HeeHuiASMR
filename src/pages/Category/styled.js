@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import {ReactComponent as SearchIcon} from '../../assets/icons/SearchIcon.svg';
 
-export const PromotionWrapper = styled.div`
 
-`
-export const PromotionContainer = styled.div`
+export const PromotionWrapper= styled.div`
     text-align: center;
     margin-top : 1rem;
 
@@ -116,7 +114,7 @@ export const CategoryContainer = styled.div`
 export const CategoryBtn = styled.button`
     width : 5rem;
     cursor : pointer;
-    border-radius : 1rem;
+    border-radius : 2rem;
     border : solid 3px #828282;
     color : #131313;
     font-weight : 600;

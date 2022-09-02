@@ -12,7 +12,7 @@ import {HomeWrapper,
     SliderWrapper,
     PagingArrow,
     PagingText,
-    PagingWarrper,
+    PagingWrapper,
     PagingPause,
     BannerWrapper,
     PromotionWrapper,
@@ -48,14 +48,14 @@ const Main = () => {
                     <SliderTitle>나만을 위한 ASMR</SliderTitle>
                     <SliderSubtitle>주제별로 나뉘어져 원하는 ASMR을 들을 수 있어요!</SliderSubtitle>
                     <SliderExplain>View more</SliderExplain>
-                    <PagingWarrper>
+                    <PagingWrapper>
                         <PagingArrow>&lt;</PagingArrow>
                         <PagingText>1/10</PagingText>
                         <PagingArrow>&gt;</PagingArrow>
                         <PagingPause>
                             <PasueIcon/>
                         </PagingPause>
-                    </PagingWarrper>
+                    </PagingWrapper>
 
                 </SliderWrapper>
                 <CategoryTitle>Category</CategoryTitle>
@@ -64,57 +64,57 @@ const Main = () => {
                     <CategoryText>음식</CategoryText>
                     <CategoryText>자연</CategoryText>
                     <CategoryText>수면</CategoryText>
-                    <CategoryText>코믹</CategoryText>
+                    <CategoryText>웃음</CategoryText>
                     <CategoryText>팅글</CategoryText>
 
                 </CategoryList>
             </CategoryContainer>
             <BannerWrapper/>
 
-            <PromotionWrapper>
+            <PromotionContainer>
                 <PromotionTitle>Promotion</PromotionTitle>
                 <PromotionSection>
-                    <PromotionContainer>
+                    <PromotionWrapper>
                         <PromotionImg className='1'/>
                         <PromotionText>We've Got Your Style</PromotionText>
                         <PromotionSub>강유미의 미용실</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <PromotionImg className='2'/>
                         <PromotionText>22 F/W Essential</PromotionText>
                         <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <PromotionImg className='3'/>
                         <PromotionText>Rising ASMR</PromotionText>
                         <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionContainer>
+                    </PromotionWrapper>
                 </PromotionSection>
           
-            </PromotionWrapper>
+            </PromotionContainer>
             <VideoWrapper>
                 <PromotionTitle>New Arrival</PromotionTitle>
                 <PromotionSection>
-                    <PromotionContainer>
+                    <PromotionWrapper>
                         <VideoThumbnail className='1'/>
                         <PromotionText>We've Got Your Style</PromotionText>
                         <PromotionSub>강유미의 미용실</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <VideoThumbnail className='2'/>
                         <PromotionText>22 F/W Essential</PromotionText>
                         <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <VideoThumbnail className='3'/>
                         <PromotionText>Rising ASMR</PromotionText>
                         <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <VideoThumbnail className='4'/>
                         <PromotionText>Rising ASMR</PromotionText>
                         <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionContainer>
+                    </PromotionWrapper>
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
@@ -145,26 +145,26 @@ const Main = () => {
 
                 </CategoryBtnContainer>
                 <PromotionSection>
-                    <PromotionContainer>
+                    <PromotionWrapper>
                         <VideoThumbnail className='1'/>
                         <PromotionText>We've Got Your Style</PromotionText>
                         <PromotionSub>강유미의 미용실</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <VideoThumbnail className='2'/>
                         <PromotionText>22 F/W Essential</PromotionText>
                         <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <VideoThumbnail className='3'/>
                         <PromotionText>Rising ASMR</PromotionText>
                         <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionContainer>
-                    <PromotionContainer>
+                    </PromotionWrapper>
+                    <PromotionWrapper>
                         <VideoThumbnail className='4'/>
                         <PromotionText>Rising ASMR</PromotionText>
                         <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionContainer>
+                    </PromotionWrapper>
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>

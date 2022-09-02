@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Layout/App';
 import reportWebVitals from './reportWebVitals';
-import Auth from './service/auth';
-
-const auth = new Auth();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App auth={auth}/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

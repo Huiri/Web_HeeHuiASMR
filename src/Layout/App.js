@@ -7,26 +7,32 @@ import Login from '../pages/Login';
 import Main from '../pages/Main';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
+import {
+    RecoilRoot,
+} from 'recoil';
+import SearchResult from "../pages/SearchResult";
+
 
 const App = ({auth}) => {
     return (
-        <div>
+        <RecoilRoot>
             <BrowserRouter>
             <Header/>
                 <Routes>
                     {/*<Route element={<Layout/>}>*/}
-                        <Route path="/" element={<Main/>}></Route>
-                        <Route path="/signup" element={<SignUp/>}></Route>
-                        <Route path="/category" element={<Category/>}></Route>
-                        <Route path="/find" element={<Category/>}></Route>
+                        <Route path="/" element={<Main/>}/>
+                        <Route path="/signup" element={<SignUp/>}/>
+                        <Route path="/category" element={<Category/>}/>
+                        <Route path="/find" element={<Category/>}/>
+                        <Route path="/search" element={<SearchResult/>}/>
 
-                        <Route path="/login" element={<Login auth={auth}/>} ></Route>
-                        <Route path="*" element={<NotFound/>}></Route>
+                        <Route path="/login" element={<Login auth={auth}/>} />
+                        <Route path="*" element={<NotFound/>}/>
                     {/*</Route>*/}
                 </Routes>
                 <Footer/>
             </BrowserRouter>
-        </div>
+        </RecoilRoot>
     );
 };
 

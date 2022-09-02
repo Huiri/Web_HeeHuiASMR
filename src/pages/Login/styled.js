@@ -92,16 +92,23 @@ export const ImgBtnContainer = styled.div`
 
 export const ImgBtn = styled.button`
     border : none;
+    border-radius : 5px;
+    width : 2.5rem;
+    height : 2.5rem;
     cursor : pointer;
+    background : ${props => props.color || 'none'};
+  &:active {
+    border : none;
+  }
 `
-export const LoginState = styled.div`
+export const LoginCheckTitle = styled.div`
     display : inline;
     color : #454545;
     font-size : 0.9rem;
     margin : 1rem 0 0 0.3rem;
 `
 
-export const LoginStateCheck = styled.input`
+export const LoginCheck = styled.input`
     margin : 1rem 0 0 0;
     cursor : pointer;
 
