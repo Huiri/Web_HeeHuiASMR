@@ -28,7 +28,17 @@ const App = ({auth}) => {
 
                         <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
-                    {/*</Route>*/}
+                {/*    <Route path='/privacy-policy' component={() => {*/}
+                {/*    window.location.href = 'http://it.daejin.ac.kr/49.html';*/}
+                {/*    return null;*/}
+                {/*}}/>*/}
+                    <Route
+                        path="/graduate"
+                        component={() => {
+                            global.window && (global.window.location.href = 'http://it.daejin.ac.kr/49.html');
+                            return null;
+                        }}
+                    />
                 </Routes>
                 <Footer/>
             </BrowserRouter>

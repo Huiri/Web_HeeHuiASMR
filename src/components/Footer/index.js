@@ -14,7 +14,7 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <FooterStyle>
-                <StyledLink to ={{pathname : "http://it.daejin.ac.kr/49.html"}} target="_blank">
+                <StyledLink to="/graduate">
                         <p>졸업작품</p>
                 </StyledLink>
                 <StyledLink to ="/student">

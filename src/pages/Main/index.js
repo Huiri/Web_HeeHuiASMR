@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {ReactComponent as PasueIcon} from '../../assets/icons/PauseIcon.svg';
+import {ReactComponent as PauseIcon} from '../../assets/icons/PauseIcon.svg';
 import {HomeWrapper, 
-    ImgContainer, 
     CategoryContainer,
     SliderExplain,
     SliderTitle,
@@ -35,14 +34,16 @@ import {HomeWrapper,
     CollectionSection,
     CollectionImg
 } from './styled';
+import Index from "../../Utils/Slider";
 
 const Main = () => {
 
     const [isShowMore, setIsShowMore] = useState(false);
     
     return (
-        <HomeWrapper> 
-            <ImgContainer>이미지 들어갈 예정</ImgContainer> 
+        <HomeWrapper>
+            <Index/>
+            {/*<ImgContainer>이미지 들어갈 예정</ImgContainer> */}
             <CategoryContainer>
                 <SliderWrapper>
                     <SliderTitle>나만을 위한 ASMR</SliderTitle>
@@ -53,7 +54,7 @@ const Main = () => {
                         <PagingText>1/10</PagingText>
                         <PagingArrow>&gt;</PagingArrow>
                         <PagingPause>
-                            <PasueIcon/>
+                            <PauseIcon/>
                         </PagingPause>
                     </PagingWrapper>
 
