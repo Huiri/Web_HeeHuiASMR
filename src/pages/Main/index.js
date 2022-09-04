@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {ReactComponent as PauseIcon} from '../../assets/icons/PauseIcon.svg';
 import {HomeWrapper, 
     CategoryContainer,
@@ -34,15 +34,19 @@ import {HomeWrapper,
     CollectionSection,
     CollectionImg
 } from './styled';
-import Index from "../../Utils/Slider";
+import Slider from "../../Utils/Slider";
 
 const Main = () => {
 
     const [isShowMore, setIsShowMore] = useState(false);
-    
+
+    //slider 파트
+    const [slideIndex, setSlideIndex] = useState(1);
+
     return (
         <HomeWrapper>
-            <Index/>
+            <Slider
+            slideIndex = {slideIndex}/>
             {/*<ImgContainer>이미지 들어갈 예정</ImgContainer> */}
             <CategoryContainer>
                 <SliderWrapper>

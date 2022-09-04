@@ -11,7 +11,8 @@ import {
     RecoilRoot,
 } from 'recoil';
 import SearchResult from "../pages/SearchResult";
-
+import Detail from "../pages/Detail";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const App = ({auth}) => {
     return (
@@ -21,11 +22,11 @@ const App = ({auth}) => {
                 <Routes>
                     {/*<Route element={<Layout/>}>*/}
                         <Route path="/" element={<Main/>}/>
-                        <Route path="/signup" element={<SignUp/>}/>
+                        <Route path=" /signup" element={<SignUp/>}/>
                         <Route path="/category" element={<Category/>}/>
                         <Route path="/find" element={<Category/>}/>
                         <Route path="/search" element={<SearchResult/>}/>
-
+                        <Route path="/detail" element={<Detail/>}/>
                         <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
                 {/*    <Route path='/privacy-policy' component={() => {*/}
