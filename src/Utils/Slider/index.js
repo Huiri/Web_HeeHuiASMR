@@ -85,6 +85,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import img1 from '../../assets/img/harry.jpg';
 import img2 from '../../assets/img/tape.jpg';
 import img3 from '../../assets/img/music.jpg';
+import img4 from '../../assets/img/ocean.jpg';
+
 import {Container,
     SliderContainer,
     Slide
@@ -114,7 +116,6 @@ const Slider = () => {
             setCurrentIndex(currentIndex - 1);
         }
     };
-
 
     useEffect(() => {
         const interval = setTimeout(() => {
@@ -148,7 +149,7 @@ const Slider = () => {
                 <Slide src={img1} alt="첫번째 사진"/>
                 <Slide src={img2} alt="두번째 사진"/>
                 <Slide src={img3} alt="세번째 사진"/>
-                <Slide src={img1} alt="네번째 사진"/>
+                <Slide src={img4} alt="네번째 사진"/>
 
             </SliderContainer>
         </Container>

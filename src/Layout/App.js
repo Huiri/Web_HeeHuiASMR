@@ -25,7 +25,7 @@ const App = ({auth}) => {
                         <Route path=" /signup" element={<SignUp/>}/>
                         <Route path="/category" element={<Category/>}/>
                         <Route path="/find" element={<Category/>}/>
-                        <Route path="/search" element={<SearchResult/>}/>
+                        <Route path="/search/:word" element={<SearchResult/>}/>
                         <Route path="/detail" element={<Detail/>}/>
                         <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>

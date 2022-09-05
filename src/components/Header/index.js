@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useRecoilState } from 'recoil';
 import {LoginState} from "../../States/LoginStates";
 import {auth} from "../../firebase";
+// import axios from 'axios';
+
+import {useNavigate} from 'react-router-dom';
 import {    StyledNavLink,
     HeaderWrapper,
     SearchInput,
@@ -26,14 +29,43 @@ const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
 
+    const [search, setSearch] =  useState("");
+
     const handleAuthentication= () => {
         console.log("signout successfully");
         console.log(isLoggedIn);
-       if(isLoggedIn) {
+       if(isLoggedIn)                                                {
            setIsLoggedIn(false);
-           auth.signOut();
+           auth.signOut().then(() => console.log("successfully logout"));
        }
     }
+
+    const navigate = useNavigate();
+    const onSearch = e => {
+        e.preventDefault();
+        if(search === '') { //검색어가 없을 경우 전체 리스트 반환
+            // axios.get(common.baseURL + "search")
+            //     .then((res) => {
+            //         setLists(res.data.userList)
+            //         setCurrentPosts(res.data.userList.slice(indexOfFirstPost, indexOfLastPost))
+            //     });
+
+            alert("검색어를 입력해주세요");
+        } else { //검색 구현
+            // const filterData = lists.filter((res) => row.userId.includes(search))
+            // setLists(filterData)
+            // setCurrentPosts(filterData.slice(indeOfFirstPost, indexOfLastPost))
+            // setCurrentPage(1)
+            navigate(`/search/${search}`);
+        }
+        setSearch('');
+    }
+
+    const handleChange = e => {
+        // e.preventDefault();
+        setSearch(e.target.value);
+    }
+
     return (
         <HeaderWrapper>
             <TopSection>
@@ -41,8 +73,10 @@ const Header = () => {
                     <WebTitle to="/">ASMR</WebTitle>
                 </WebTitleWrapper>
                 <SearchWrapper>
-                    <SearchInput/>
-                    <Link to ="/search"><SearchBtn /></Link>
+                    <form onSubmit={onSearch}>
+                        <SearchInput type={"text"} value={search} placeholder={"오늘 끌리는 소리는?"} onChange={handleChange}/>
+                        <Link to ="/search"><SearchBtn type={"submit"} onClick={onSearch}/></Link>
+                    </form>
                 </SearchWrapper>
                 <IconSection>
                     <HeartBtn/>
