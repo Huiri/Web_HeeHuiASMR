@@ -1,0 +1,141 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.google.api.services.samples.youtube.cmdline</groupId>
+    <artifactId>youtube-cmdline-channelbulletin-sample</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>youtube-cmdline-channelbulletin-sample</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.youtube.version>v3-rev8-1.12.0-beta</project.youtube.version>
+        <project.http.version>1.42.2</project.http.version>
+        <project.oauth.version>1.34.1</project.oauth.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java-version>1.8</java-version>
+        <org.springframework-version>5.3.22</org.springframework-version>
+
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>google-api-services</id>
+            <url>http://google-api-client-libraries.appspot.com/mavenrepo</url>
+        </repository>
+
+    </repositories>
+
+    <dependencies>
+        <!-- YouTube Data V3 support -->
+       <!--  <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtube</artifactId>
+            <version>${project.youtube.version}</version>
+        </dependency>  -->
+
+        <!-- https://mavenlibs.com/maven/dependency/com.google.apis/google-api-services-youtube -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtube</artifactId>
+            <version>v3-rev20220719-2.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client-jackson2</artifactId>
+            <version>${project.http.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>${project.oauth.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-sheets</artifactId>
+            <version>v4-rev20210629-1.32.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-api</artifactId>
+            <version>1.16.2</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+        <!-- https://mavenlibs.com/maven/dependency/com.davegurnell/bulletin_2.12 -->
+        <dependency>
+            <groupId>com.davegurnell</groupId>
+            <artifactId>bulletin_2.12</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dihedron.activities</groupId>
+            <artifactId>activities-adapters</artifactId>
+            <version>0.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dihedron.activities</groupId>
+            <artifactId>activities-core</artifactId>
+            <version>0.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>us.careydevelopment.model</groupId>
+            <artifactId>activities</artifactId>
+            <version>1.3.0-RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client-jackson2</artifactId>
+            <version>${project.http.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>youtube.data.ChannelBulletin</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Forces Maven to use Java 1.6 -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArgument></compilerArgument>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
