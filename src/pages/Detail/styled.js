@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import {ReactComponent as HeartIcon} from '../../assets/icons/HeartIcon.svg';
+import {ReactComponent as PageIcon} from '../../assets/icons/PageIcon.svg';
 
-//비디오 설명 
+//비디오 설명
 export const TitleWrapper = styled.div`
     margin : 0 0 0 3.5rem;
 `
@@ -12,9 +14,43 @@ export const VideoCreator = styled.p`
   font-size : 1.3rem;
   margin : 0 0 0.3rem 0.4rem;
 `
-export const VideoSub = styled.p`
-  margin : 0.5rem 0 1rem 0.6rem;
 
+//아이콘 부분
+export const IconWrapper = styled.div`
+  float : right;
+  margin : -2rem 4rem 0 0;
+`
+export const HeartBtn = styled(HeartIcon)`
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: #383838;
+  cursor : pointer;
+  margin-right : 1.3rem;
+  &:active, &:hover{
+    fill : red;
+  }
+  
+`
+
+export const PageBtn = styled(PageIcon)`
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: #5b5b5b;
+  cursor : pointer;
+
+
+`
+//비디오 부가 설명
+export const SubWrapper = styled.div`
+  margin : 1rem 0 0 7rem;
+
+`
+export const VideoSubTitle = styled.p`
+  font-size : 1.3rem;
+  font-weight : 600;
+`
+export const VideoSub = styled.p`
+  margin-left : 1rem;
 `
 //비디오 출력 부분
 export const VideoWrapper = styled.div`

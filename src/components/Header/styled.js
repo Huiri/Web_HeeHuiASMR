@@ -31,7 +31,7 @@ export const WebTitle = styled(Link)`
     margin : 60px 40px;
     cursor: pointer;
     text-decoration : none;
-    :hover, :focus {
+    :hover{
         color : #525252;
         transition: all ease 0.4s 0s;
     }
