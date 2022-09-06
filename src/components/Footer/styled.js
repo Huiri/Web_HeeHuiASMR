@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 export const FooterWrapper = styled.div`
     background : lightblue;
-    height: 35vh;
+    height: 38vh;
     width : 100vw;
     margin-top : auto;
     padding : 1rem 0;
@@ -34,7 +34,7 @@ export const FooterContainer = styled.div`
 export const FooterTitle = styled.p`
     font-size : 1.4rem;
     font-weight : 600;
-    margin : 3.5rem 0 1rem 3rem;
+    margin : 2rem 0 1rem 3rem;
 `
 
 export const FooterSub = styled.p`
