@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import {ReactComponent as HeartIcon} from '../../assets/icons/HeartIcon.svg';
 import {ReactComponent as PageIcon} from '../../assets/icons/PageIcon.svg';
-import {ReactComponent as GarbageIcon} from '../../assets/icons/GarbageIcon.svg';
+import {ReactComponent as FilledHeartIcon} from '../../assets/icons/FilledHeartIcon.svg';
 
 //비디오 설명
 export const TitleWrapper = styled.div`
@@ -43,7 +43,17 @@ export const PageBtn = styled(PageIcon)`
   height: 1.8rem;
   fill: #5b5b5b;
   cursor : pointer;
-
+  &:hover {
+    fill : #000000;
+  }
+  
+`
+export const FilledHeartBtn = styled(FilledHeartIcon)`
+  fill : red;
+  margin-right : 1.3rem;
+  cursor : pointer;
+  width: ${props => props.size || "1.8rem"};
+  height: ${props => props.size || "1.8rem"};
 
 `
 //비디오 부가 설명
@@ -102,7 +112,7 @@ export const CommentBtn = styled.button`
   width : 10vw;
   height : 11vh;
   cursor : pointer;
-  font-size : 1.5rem;
+  font-size : 1.3rem;
 `
 //실제 댓글창
 export const CommentSection = styled.div`
@@ -138,14 +148,4 @@ export const CommentIconWrapper = styled.div`
 `
 export const CommentText = styled.p`
   margin : 0.7rem;
-`
-
-export const GarbageBtn = styled(GarbageIcon)`
-  fill: #464646;
-  width : 1.4rem;
-  height : 1.4rem;
-  cursor : pointer;
-  &:hover {
-    fill : black;
-  }
 `

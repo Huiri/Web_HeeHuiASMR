@@ -7,7 +7,6 @@ import {
     VideoWrapper,
     VideoSection,
     CommentContainer,
-    CommentWrapper,
     CommentInputWrapper,
     CommentTitle,
     CommentInput,
@@ -18,15 +17,10 @@ import {
     IconWrapper,
     PageBtn,
     CommentSection,
-    CommentText,
-    CommentUser,
-    CommentIconWrapper,
-    CommentItem,
-    GarbageBtn
+    FilledHeartBtn
 } from './styled';
 import CommentList from "../../components/Comment/CommentList";
-import CommentInputs from "../../components/Comment/CommentInput";
-import {useRecoilValue, useSetRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 import {commentListState} from "../../recoil/comment";
 
 const Detail = () => {
@@ -35,10 +29,10 @@ const Detail = () => {
     const nextId = useRef(0);
     const [text, setText] = useState("");
     // const commentList = useRecoilValue(filteredCommentListState);
-    // const setComments = useSetRecoilState(commentListState);
+    const setComments = useSetRecoilState(commentListState);
     // const comments = useRecoilValue(commentListState);
 
-    const [comments, setComments] = useState([]);
+    // const [comments, setComments] = useState([]);
 
 
     // const addComment = () => {
@@ -68,9 +62,9 @@ const Detail = () => {
         if(text === '') {
             alert('내용을 입력해주세요');
         } else {
-            // setComments(comments => comments.concat({ id: nextId.current + 1, text, completed: false }));
+            setComments(comments => comments.concat({ id: nextId.current + 1, text, clicked : false}));
 
-            setComments(commentValueList => [text, ...commentValueList]);
+            // setComments(commentValueList => [text, ...commentValueList]);
             setText('');
             // addComment(content);
 
@@ -87,7 +81,8 @@ const Detail = () => {
                 <VideoCreator>영상 창작자</VideoCreator>
             </TitleWrapper>
             <IconWrapper>
-                <HeartBtn onClick={()=>setIsLiked(!isLiked)}/>
+                {isLiked ? <FilledHeartBtn onClick={()=>setIsLiked(!isLiked)}/> : <HeartBtn onClick={()=>setIsLiked(!isLiked)}/>}
+                {/*<HeartBtn onClick={()=>setIsLiked(!isLiked)}/>*/}
                 <PageBtn/>
             </IconWrapper>
             <VideoWrapper>
@@ -108,20 +103,8 @@ const Detail = () => {
                     </form>
                 </CommentInputWrapper>
                 <CommentSection>
-                    {comments.map((value, id) => (
-                        <CommentItem key={id}>
-                            <CommentWrapper>
-                                <CommentUser>Chaz</CommentUser>
-                                <CommentText>{value}</CommentText>
+                    <CommentList/>
 
-                            </CommentWrapper>
-
-                            <CommentIconWrapper>
-                                <HeartBtn size={"1.4rem"}/>
-                                <GarbageBtn/>
-                            </CommentIconWrapper>
-                        </CommentItem>
-                    ))}
                     {/*{comments.map((comment) => (*/}
                     {/*    <CommentWrapper key={comment.id}>*/}
                     {/*        <CommentCard {...comment} />*/}
@@ -136,8 +119,6 @@ const Detail = () => {
                     {/*    <CommentItem key={commentItem.id} item={commentItem} />*/}
                     {/*))}*/}
                 </CommentSection>
-                <CommentInputs/>
-                <CommentList/>
 
             </CommentContainer>
 
