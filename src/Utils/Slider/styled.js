@@ -25,8 +25,7 @@ export const SliderImg = styled.img`
 //현재 사용하는 스타일
 export const Container = styled.div`
   margin: auto;
-  width : 100%;
-  height : 100%;
+  background-size: cover;
   overflow: hidden; // 선을 넘어간 이미지들은 숨겨줍니다.
 `
 

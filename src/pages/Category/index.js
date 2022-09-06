@@ -1,11 +1,6 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import {
     PromotionTitle,
-    PromotionSection,
-    PromotionWrapper,
-    VideoThumbnail,
-    PromotionText,
-    PromotionSub,
     PromotionSubTitle,
     SearchInput,
     ViewMoreBtn,
@@ -13,16 +8,35 @@ import {
     SearchDiv,
     SearchBtn,
     CategoryBtn,
-    CategoryContainer
+    CategoryContainer,
+    CategoryWrapper
 } from './styled'
+
+import {PromotionSection, PromotionSub, PromotionText, PromotionWrapper, VideoThumbnail} from "../Main/styled";
+
+import {useNavigate} from "react-router-dom";
 
 //import {ReactComponent as SearchIcon} from '../../assets/icons/SearchIcon.svg'
 const Category = () => {
 
-    const post = 9;
     const [isShowMore, setIsShowMore] = useState(false);
-    const imgLimit = useRef(9);
+    const navigate = useNavigate();
 
+
+    const [categorysearch, setCategorySearch] = useState('');
+
+    const onSearch = e => {
+        e.preventDefault();
+        if(categorysearch === ''){
+            alert("검색어를 입력해주세요.");
+        } else {
+            navigate(`/category/${categorysearch}`);
+        }
+        setCategorySearch('');
+    }
+    const handleChange = e => {
+        setCategorySearch(e.target.value);
+    }
    {/*} const showPost = useMemo(() => {
         const shortPost = post.slice(0, 9);
         if (post.length > imgLimit.current){
@@ -32,14 +46,16 @@ const Category = () => {
         return post;
     }, [isShowMore]);*/}
     return (
-        <PromotionWrapper>
+        <CategoryContainer>
             <PromotionTitle>카테고리별 맞춤 선택</PromotionTitle>
             <PromotionSubTitle>ASMR with US!</PromotionSubTitle>
             <SearchDiv>
-                <SearchInput/>
-                <SearchBtn/>
+                <form onSubmit={onSearch}>
+                    <SearchInput type={"text"} value={categorysearch} placeholder={"오늘의 키워드는?"} onChange={handleChange}/>
+                    <SearchBtn type={"submit"} onClick={onSearch}/>
+                </form>
             </SearchDiv>
-            <CategoryContainer>
+            <CategoryWrapper>
                 <CategoryBtn>#전체</CategoryBtn>
                 <CategoryBtn>#음식</CategoryBtn>
                 <CategoryBtn>#자연</CategoryBtn>
@@ -47,7 +63,7 @@ const Category = () => {
                 <CategoryBtn>#수면</CategoryBtn>
                 <CategoryBtn>#팅글</CategoryBtn>
 
-            </CategoryContainer>
+            </CategoryWrapper>
             <hr/>
             <PromotionSection>
                 <PromotionWrapper>
@@ -99,7 +115,7 @@ const Category = () => {
                 <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
             </ViewMoreBtn>
 
-        </PromotionWrapper>
+        </CategoryContainer>
 
 
     );

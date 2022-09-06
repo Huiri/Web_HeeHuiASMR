@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {ReactComponent as PauseIcon} from '../../assets/icons/PauseIcon.svg';
 import {HomeWrapper, 
     CategoryContainer,
@@ -48,21 +48,22 @@ const Main = () => {
             <Slider
             slideIndex = {slideIndex}/>
             {/*<ImgContainer>이미지 들어갈 예정</ImgContainer> */}
-            <CategoryContainer>
-                <SliderWrapper>
-                    <SliderTitle>나만을 위한 ASMR</SliderTitle>
-                    <SliderSubtitle>주제별로 나뉘어져 원하는 ASMR을 들을 수 있어요!</SliderSubtitle>
-                    <SliderExplain>View more</SliderExplain>
-                    <PagingWrapper>
-                        <PagingArrow>&lt;</PagingArrow>
-                        <PagingText>1/10</PagingText>
-                        <PagingArrow>&gt;</PagingArrow>
-                        <PagingPause>
-                            <PauseIcon/>
-                        </PagingPause>
-                    </PagingWrapper>
+            <SliderWrapper>
+                <SliderTitle>나만을 위한 ASMR</SliderTitle>
+                <SliderSubtitle>주제별로 나뉘어져 원하는 ASMR을 들을 수 있어요!</SliderSubtitle>
+                <SliderExplain>View more</SliderExplain>
+                <PagingWrapper>
+                    <PagingArrow>&lt;</PagingArrow>
+                    <PagingText>1/10</PagingText>
+                    <PagingArrow>&gt;</PagingArrow>
+                    <PagingPause>
+                        <PauseIcon/>
+                    </PagingPause>
+                </PagingWrapper>
 
-                </SliderWrapper>
+            </SliderWrapper>
+
+            <CategoryContainer>
                 <CategoryTitle>Category</CategoryTitle>
 
                 <CategoryList>
