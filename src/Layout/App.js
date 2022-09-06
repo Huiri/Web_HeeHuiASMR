@@ -23,7 +23,7 @@ const App = ({auth}) => {
                     {/*<Route element={<Layout/>}>*/}
                         <Route path="/" element={<Main/>}/>
                         <Route path=" /signup" element={<SignUp/>}/>
-                        <Route path="/category" element={<Category/>}/>
+                        <Route path="/category/:word" element={<Category/>}/>
                         <Route path="/find" element={<Category/>}/>
                         <Route path="/search/:word" element={<SearchResult/>}/>
                         <Route path="/detail" element={<Detail/>}/>
