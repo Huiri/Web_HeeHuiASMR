@@ -13,19 +13,27 @@ export const FooterWrapper = styled.div`
 export const FooterStyle = styled.div`
     display : flex;
     justify-content: flex-start;
-    width : 30vw;
+    width : 40vw;
+  margin-left : 3rem;
+
 
 
 `
 export const StyledLink = styled(Link)`
-    text-decoration: none;
-    color : black;
-    font-weight : 600;
-    font-size : 1rem;
-    cursor: pointer;
-    margin : 0 auto;
-    margin-top : -0.4rem;
-    height : 3rem;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+
+  &:hover {
+    color: #5b5b5b;
+    transition : all 0.2s ease-in-out;
+  }
 `
 
 export const FooterContainer = styled.div`
