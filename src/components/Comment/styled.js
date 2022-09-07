@@ -62,7 +62,7 @@ export const EditBtn = styled(EditIcon)`
   margin-right : 1.3rem;
 
   &:hover {
-    fill : black;
+    fill : #152C70;
     transition : all ease 0.4s 0s;
   }
   
@@ -71,7 +71,7 @@ export const EditBtn = styled(EditIcon)`
 export const EditInput = styled.input`
   background: antiquewhite;
   margin: 0 0 0 0.5rem;
-  width : 70vw;
+  width : 50vw;
   font-size : 1rem;
   font-weight: 600;
   border-style : none;
