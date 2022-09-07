@@ -6,8 +6,7 @@ export const FooterWrapper = styled.div`
     background : lightblue;
     height: 38vh;
     width : 100vw;
-    margin-top : auto;
-    padding : 1rem 0;
+    padding : 0;
 `
 
 export const FooterStyle = styled.div`
@@ -22,17 +21,23 @@ export const FooterStyle = styled.div`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
-  width: 100%;
+  width: 15rem;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  display: inline-block;
   height: 2rem;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  margin-left : -5rem;
 
   &:hover {
     color: #5b5b5b;
     transition : all 0.2s ease-in-out;
+  }
+  @media(max-width: 991px){
+    margin-left : -2rem;
+
   }
 `
 

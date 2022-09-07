@@ -112,13 +112,13 @@ export const CategoryWrapper = styled.div`
     justify-content : center;
 `
 export const CategoryBtn = styled.button`
-    width : 5rem;
-    cursor : pointer;
-    border-radius : 2rem;
-    border : solid 3px #828282;
-    color : #131313;
-    font-weight : 600;
-    font-size : 1.1rem;
-    padding : 6px;
-    margin : 0 1rem 4rem 1rem;
+  width: 5rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  border: solid 3px #e5e5e5;
+  color: #131313;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 6px;
+  margin: 0 1rem 4rem 1rem;
 `

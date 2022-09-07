@@ -27,30 +27,34 @@ export const LoginDiv = styled.div`
     justify-content: center;
     align-items: center;
     display : flex;
-    height: 95vh;
+    height: 100vh;
 
 `
 export const LoginContainer = styled.div`
     background : #f0f0f0;
     padding : 0;
     flex-direction: column;
-    width : 25vw;
-    height : 60vh;
+    width : 22rem;
+    height : 25rem;
+  margin-bottom : 3rem;
     border: none;
     border-radius: 1rem;
     justify-content: center;
     align-items: center;
     display: flex;
+  //@media (max-width: 991px) {
+  //  height :rem;
+  //}
 `
 export const LoginTitle = styled.h1`
     color : #00415d;
     text-align : center;
     display : flex;
     justify-content: center;
-    margin-top : -2rem;
+    margin-top : 2rem;
 `
 export const LoginInput = styled.input`
-    width : 18vw;
+    width : 15rem;
     font-size : 1rem;
     margin-top : 2rem;
     display :flex;
@@ -87,14 +91,14 @@ export const ImgBtnContainer = styled.div`
     display : flex;
     justify-content: space-evenly;
     align-items: center;
-    margin : 1rem 0;
+    margin : 1rem 0 0 0;
 `
 
 export const ImgBtn = styled.button`
     border : none;
     border-radius : 5px;
-    width : 2.5rem;
-    height : 2.5rem;
+    width : 2.4rem;
+    height : 2.4rem;
     cursor : pointer;
     background : ${props => props.color || 'none'};
   &:active {
@@ -104,8 +108,8 @@ export const ImgBtn = styled.button`
 export const LoginCheckTitle = styled.div`
     display : inline;
     color : #454545;
-    font-size : 0.9rem;
-    margin : 1rem 0 0 0.3rem;
+    font-size : 0.7rem;
+    margin-left : 0.4rem;
 `
 
 export const LoginCheck = styled.input`
@@ -114,19 +118,22 @@ export const LoginCheck = styled.input`
 
 `
 
-export const LoginSocial = styled.p`
+export const LoginSocialTitle = styled.p`
     color : #454545;
     text-align: center;
-    margin : 2rem 0 0 0;
+    margin : 1.5rem 0 0 0;
     font-weight : 500;
+`
+export const LoginSubWrapper = styled.div`
+    display : inline;
 `
 
 export const InfoFindLink = styled(Link)`
     display : flex;
-    font-size : 0.9rem;
+    font-size : 0.7rem;
     cursor : pointer;
     justify-content: flex-end;
-    margin-top : -1.2rem;
+    margin-top : -1rem;
     text-decoration: none;
     color : #454545;
     :hover{

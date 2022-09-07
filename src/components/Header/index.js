@@ -20,7 +20,8 @@ import {    StyledNavLink,
     IconSection,
     HeartBtn,
     PageBtn,
-    UserBtn
+    UserBtn,
+    SearchForm
 
 } from './styled';
 import {Link} from "react-router-dom";

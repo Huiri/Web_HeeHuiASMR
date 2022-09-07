@@ -26,6 +26,8 @@ import {commentListState} from "../../recoil/comment";
 const Detail = () => {
 
     const [isLiked, setIsLiked] = useState(false);
+    const [isAdded, setIsAdded] = useState(false);
+
     const nextId = useRef(0);
     const [text, setText] = useState("");
     // const commentList = useRecoilValue(filteredCommentListState);
@@ -83,7 +85,7 @@ const Detail = () => {
             <IconWrapper>
                 {isLiked ? <FilledHeartBtn onClick={()=>setIsLiked(!isLiked)}/> : <HeartBtn onClick={()=>setIsLiked(!isLiked)}/>}
                 {/*<HeartBtn onClick={()=>setIsLiked(!isLiked)}/>*/}
-                <PageBtn/>
+                <PageBtn isAdded={isAdded} onClick={()=>setIsAdded(!isAdded)}/>
             </IconWrapper>
             <VideoWrapper>
                 <VideoSection/>

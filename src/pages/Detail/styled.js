@@ -41,10 +41,17 @@ export const HeartBtn = styled(HeartIcon)`
 export const PageBtn = styled(PageIcon)`
   width: 1.8rem;
   height: 1.8rem;
-  fill: #5b5b5b;
   cursor : pointer;
+  ${({ isAdded }) =>
+      isAdded &&
+      css`
+      fill : #383838;
+    `}
+
   &:hover {
-    fill : #000000;
+    fill : #383838;
+    
+
   }
   
 `
@@ -58,7 +65,10 @@ export const FilledHeartBtn = styled(FilledHeartIcon)`
 `
 //비디오 부가 설명
 export const SubWrapper = styled.div`
-  margin : 1rem 0 0 7rem;
+  margin : 1rem 0 0 5rem;
+  @media (max-width : 991px){
+    margin-left : 3rem;
+  }
 
 `
 export const VideoSubTitle = styled.p`
@@ -67,7 +77,7 @@ export const VideoSubTitle = styled.p`
 `
 export const VideoSub = styled.p`
   font-size: 1.1rem;
-  margin : 1rem 0 3rem 1rem;
+  margin : 1rem 0 3rem 0.5rem;
 `
 //비디오 출력 부분
 export const VideoWrapper = styled.div`

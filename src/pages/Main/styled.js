@@ -36,7 +36,7 @@ export const SliderTitle=styled.p`
     font-weight: 600;
     justify-content:flex-start;
     align-items:center;
-    margin : -30px 0 0 10rem;
+    margin : -30px 0 0 7rem;
 
 `
 export const SliderSubtitle = styled.p`
@@ -46,25 +46,33 @@ export const SliderSubtitle = styled.p`
     justify-content:flex-start;
     align-items:center;
     text-align:center;
-    margin : 10px 0 0 10rem;
+    margin : 10px 0 0 7rem;
     font-weight: 600;
 `
 
 export const SliderExplain = styled.p`
-    margin : 10px 0 0 10rem;
+    margin-left : 7rem;
     cursor: pointer;
-    :focus, :hover {
+    z-index : 5;
+    width : 8%;
+    margin-top : -2rem;
+    &:focus, &:hover {
         font-weight: 600;
         transition : all ease 0.4s 0s;
     }
 
 `
 
-export const SliderWrapper = styled.div`
+export const SliderWrapper = styled.span`
     display : flex;
     flex-direction : column;
+    z-index: 10;
 `
+export const SliderViewMore = styled.div`
+  margin: 10px 0 0 7rem;
+  color: #4d4d4d;
 
+`
 export const CategoryList = styled.div`
     display : flex;
     flex-direction : row;
@@ -73,13 +81,16 @@ export const CategoryList = styled.div`
 export const CategoryTitle = styled.p`
     display : flex;
     justify-content:center;
+  margin-top : 3rem;
     align-items:center;
     font-size : 1.8rem;
 `
 export const PagingWrapper = styled.div`
    display : flex;
    justify-content: flex-end;
-  margin : -30px 10rem 0 0;
+  margin : -1rem 10rem 0 0;
+  z-index: 1;
+
 `
 
 export const PagingArrow = styled.h4`
@@ -120,7 +131,7 @@ export const PromotionContainer = styled.div`
 export const PromotionWrapper = styled.div`
     text-align: center;
     cursor : pointer;
-    margin: 0.5rem 0.5rem;
+    margin: 0.5rem 0.2rem;
     display:inline-block;
 
 `

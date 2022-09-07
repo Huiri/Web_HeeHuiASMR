@@ -14,7 +14,6 @@ import {LoginState} from "../../States/LoginStates";
 
 import {ReactComponent as GoogleIcon} from '../../assets/icons/GoogleIcon.svg';
 import {ReactComponent as NaverIcon} from '../../assets/icons/NaverIcon.svg';
-import {ReactComponent as KakaoIcon} from '../../assets/icons/KakaoIcon.svg';
 import {ReactComponent as FaceBookIcon} from '../../assets/icons/FaceBookIcon.svg';
 
 
@@ -30,9 +29,10 @@ import {Button,
     ImgBtnContainer,
     LoginCheckTitle,
     LoginCheck,
-    LoginSocial,
+    LoginSocialTitle,
     InfoFindLink,
-    LoginWarnSpan
+    LoginWarnSpan,
+    LoginSubWrapper,
 } from './styled';
 
 const Login = () => {
@@ -283,16 +283,19 @@ const Login = () => {
                     {formErrors.password && (
                     <LoginWarnSpan className='error'>{formErrors.password}</LoginWarnSpan>)}
 
-                    <LoginCheck onClick={()=>setIsChecked(!isChecked)} type="checkbox"/>
-                    <LoginCheckTitle>로그인 유지하기</LoginCheckTitle>
-                    <InfoFindLink to="/find">아이디/비밀번호</InfoFindLink>
+                    <LoginSubWrapper>
+                        <LoginCheck onClick={()=>setIsChecked(!isChecked)} type="checkbox"/>
+                        <LoginCheckTitle>로그인 유지하기</LoginCheckTitle>
+                        <InfoFindLink to="/find">아이디/비밀번호</InfoFindLink>
+
+                    </LoginSubWrapper>
                     <Button type = "submit" onClick={signInEmail} className="login_signInButton">Login</Button>
 
-                    <LoginSocial>SNS로 간편하게 시작하기</LoginSocial>
+                    <LoginSocialTitle>SNS로 간편하게 시작하기</LoginSocialTitle>
                     <ImgBtnContainer>
                         <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleIcon/> </ImgBtn>
-                        <div id="naverIdLogin"> <NaverIcon  /> </div>
-                        <ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>
+                        <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
+                        {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
                         <ImgBtn onClick={()=> signInFaceBook()}> <FaceBookIcon/> </ImgBtn>
 
                     </ImgBtnContainer>

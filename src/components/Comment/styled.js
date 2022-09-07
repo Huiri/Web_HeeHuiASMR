@@ -1,14 +1,9 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {ReactComponent as GarbageIcon} from '../../assets/icons/GarbageIcon.svg';
 import {ReactComponent as EditIcon} from '../../assets/icons/EditIcon.svg';
+import {ReactComponent as ConfirmIcon} from '../../assets/icons/ConfirmIcon.svg';
 
 //실제 댓글창
-export const CommentSection = styled.div`
-  width : 100%;
-  display : flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-`
 
 export const CommentWrapper = styled.div`
   display : flex;
@@ -20,6 +15,7 @@ export const CommentItemStyle = styled.div`
   width : 95%;
   background: antiquewhite;
   border-radius: 0.7rem;
+  height : 100%;
   
 
 `
@@ -32,11 +28,20 @@ export const CommentUser = styled.span`
 
 export const CommentIconWrapper = styled.div`
   float : right;
-  margin : -2rem 1rem 0 0;
+  margin : -2.2rem 1rem 0 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+
+  ${({ isEdit }) =>
+        isEdit &&
+        css`
+          margin : -2.7rem 1rem 0 0;
+    `}
 `
 export const CommentText = styled.p`
   margin : 0.7rem;
+  font-size : 1rem;
 `
 
 export const GarbageBtn = styled(GarbageIcon)`
@@ -60,6 +65,41 @@ export const EditBtn = styled(EditIcon)`
     fill : black;
     transition : all ease 0.4s 0s;
   }
+  
+`
 
+export const EditInput = styled.input`
+  background: antiquewhite;
+  margin: 0 0 0 0.5rem;
+  width : 70vw;
+  font-size : 1rem;
+  font-weight: 600;
+  border-style : none;
+  &:focus {
+    outline: none;
+  }
+  
 
+`
+
+export const EditWrapper = styled.div`
+  display : flex;
+  height : 100%;
+  min-height: 2.8rem;
+  align-items: center;
+  margin-bottom : 0.5rem;
+
+`
+export const EditConfirmBtn = styled(ConfirmIcon)`
+  cursor: pointer;
+  display: inline;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1.3rem;
+  fill: #383838;
+
+  &:hover {
+    fill: #4242be;
+
+  }
 `
