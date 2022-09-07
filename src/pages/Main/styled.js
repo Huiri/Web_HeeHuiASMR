@@ -37,6 +37,10 @@ export const SliderTitle=styled.p`
     justify-content:flex-start;
     align-items:center;
     margin : -30px 0 0 7rem;
+  @media(max-width: 991px){
+    margin : -20px 0 0 4rem;
+    font-size: 1.8rem;
+  }
 
 `
 export const SliderSubtitle = styled.p`
@@ -48,18 +52,25 @@ export const SliderSubtitle = styled.p`
     text-align:center;
     margin : 10px 0 0 7rem;
     font-weight: 600;
+  @media(max-width: 991px){
+    margin : 10px 0 0 4rem;
+    font-size: 0.9rem;
+  }
 `
 
 export const SliderExplain = styled.p`
     margin-left : 7rem;
     cursor: pointer;
     z-index : 5;
-    width : 8%;
-    margin-top : -2rem;
+    width : 20%;
+    margin-top : -3rem;
     &:focus, &:hover {
         font-weight: 600;
         transition : all ease 0.4s 0s;
     }
+  @media(max-width: 991px){
+    margin : -3rem 0 0 4.1rem;
+  }
 
 `
 
@@ -71,6 +82,11 @@ export const SliderWrapper = styled.span`
 export const SliderViewMore = styled.div`
   margin: 10px 0 0 7rem;
   color: #4d4d4d;
+  font-size : 0.9rem;
+
+  @media(max-width: 991px){
+    margin-left : 4.1rem;
+  }
 
 `
 export const CategoryList = styled.div`
@@ -88,8 +104,12 @@ export const CategoryTitle = styled.p`
 export const PagingWrapper = styled.div`
    display : flex;
    justify-content: flex-end;
-  margin : -1rem 10rem 0 0;
+  margin : 0 10rem 0 0;
   z-index: 1;
+  @media(max-width: 991px){
+    margin-right : 5rem;
+  }
+  
 
 `
 
