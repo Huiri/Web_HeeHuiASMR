@@ -5,7 +5,8 @@ import {auth} from "../../firebase";
 // import axios from 'axios';
 
 import {useNavigate} from 'react-router-dom';
-import {    StyledNavLink,
+import {InputWrapper,
+    StyledNavLink,
     HeaderWrapper,
     SearchInput,
     SearchWrapper,
@@ -24,6 +25,8 @@ import {    StyledNavLink,
 
 } from './styled';
 import {Link} from "react-router-dom";
+import Login from "../../pages/Login";
+import {signInWithEmailAndPassword} from "firebase/auth";
 
 const Header = () => {
 

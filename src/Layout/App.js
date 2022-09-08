@@ -9,10 +9,16 @@ import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import {
     RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue
 } from 'recoil';
 import SearchResult from "../pages/SearchResult";
 import Detail from "../pages/Detail";
 import { QueryClient, QueryClientProvider } from 'react-query';
+
+// import {firebase} from '.../firebase';
 
 const App = ({auth}) => {
     return (

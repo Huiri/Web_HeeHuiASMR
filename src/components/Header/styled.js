@@ -122,7 +122,7 @@ export const SearchBtn = styled(SearchIcon)`
     cursor: pointer;
     position : absolute;
     margin : 0;
-    left : 18.7rem;
+    left : 18rem;
     top : 6px;
 `
 
