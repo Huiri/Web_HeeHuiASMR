@@ -9,7 +9,7 @@ export const PromotionWrapper= styled.div`
     margin-top : 1rem;
 
 `
-W
+
 export const PromotionImg = styled.div`
     width : 25.9vw;
     height : 50vh;

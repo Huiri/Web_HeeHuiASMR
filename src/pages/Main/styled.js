@@ -34,7 +34,7 @@ export const SliderTitle=styled.p`
     font-weight: 600;
     justify-content:flex-start;
     align-items:center;
-    margin : -30px 0 0 7rem;
+    margin : -30px 0 0 6rem;
   @media(max-width: 991px){
     margin : -20px 0 0 4rem;
     font-size: 1.8rem;
@@ -48,7 +48,7 @@ export const SliderSubtitle = styled.p`
     justify-content:flex-start;
     align-items:center;
     text-align:center;
-    margin : 10px 0 0 7rem;
+    margin : 10px 0 0 6rem;
     font-weight: 600;
   @media(max-width: 991px){
     margin : 10px 0 0 4rem;
@@ -57,10 +57,10 @@ export const SliderSubtitle = styled.p`
 `
 
 export const SliderExplain = styled.p`
-    margin-left : 7rem;
+    margin-left : 6rem;
     cursor: pointer;
     z-index : 5;
-    width : 20%;
+    width :15%;
     margin-top : -3rem;
     &:focus, &:hover {
         font-weight: 600;
@@ -78,12 +78,13 @@ export const SliderWrapper = styled.span`
     z-index: 10;
 `
 export const SliderViewMore = styled.div`
-  margin: 10px 0 0 7rem;
+  margin-top : -4px;
+  margin-left : 6rem;
   color: #4d4d4d;
   font-size : 0.9rem;
 
   @media(max-width: 991px){
-    margin-left : 4.1rem;
+    margin : 10px 0 0 4.1rem;
   }
 
 `
