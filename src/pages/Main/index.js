@@ -103,7 +103,7 @@ const Main = () => {
                         <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
                     </PromotionWrapper>
                 </PromotionSection>
-          
+
             </PromotionContainer>
             <VideoWrapper>
                 <PromotionTitle>New Arrival</PromotionTitle>
@@ -132,21 +132,21 @@ const Main = () => {
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
-                </VideoWrapper>
+            </VideoWrapper>
 
-                <MakerSection>
-                    <PromotionTitle color="#757575">New Maker</PromotionTitle>
-                    
-                    <MakerImgContainer>
-                        <MakerSubImg color="#d9bdbd"/>
-                        <MakerSubImg color="#d9d6bd"/>
-                        <MakerImg/>
-                        <MakerSubImg color="#bed9bd"/>
-                        <MakerSubImg color="#bdc5d9"/>
-                    </MakerImgContainer>
-                </MakerSection>
+            <MakerSection>
+                <PromotionTitle color="#757575">New Maker</PromotionTitle>
 
-                <VideoWrapper>
+                <MakerImgContainer>
+                    <MakerSubImg color="#d9bdbd"/>
+                    <MakerSubImg color="#d9d6bd"/>
+                    <MakerImg/>
+                    <MakerSubImg color="#bed9bd"/>
+                    <MakerSubImg color="#bdc5d9"/>
+                </MakerImgContainer>
+            </MakerSection>
+
+            <VideoWrapper>
                 <PromotionTitle>New Arrival</PromotionTitle>
                 <CategoryBtnContainer>
                     <CategoryBtn>#전체</CategoryBtn>
@@ -182,15 +182,15 @@ const Main = () => {
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
-                </VideoWrapper>
-                <PromotionTitle>Collection</PromotionTitle>
+            </VideoWrapper>
+            <PromotionTitle>Collection</PromotionTitle>
 
-                <CollectionSection>
+            <CollectionSection>
 
-                    <CollectionImg color="#a5aec4"/>
-                    <CollectionImg/>
+                <CollectionImg color="#a5aec4"/>
+                <CollectionImg/>
 
-                </CollectionSection>
+            </CollectionSection>
 
         </HomeWrapper>
     );

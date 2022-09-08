@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
     height : 100%;
-
 `
 export const ImgContainer = styled.div`
     height : 80vh;
@@ -18,7 +17,6 @@ export const CategoryText = styled.p`
     margin : 0.8rem auto;
     font-weight : 600;
     font-size : 1.2rem;
-
     &:hover{
         cursor: pointer;
         color : grey;
@@ -28,7 +26,7 @@ export const CategoryText = styled.p`
 export const CategoryContainer = styled.div`
     display: flex;
     flex-direction : column;
-` 
+`
 export const SliderTitle=styled.p`
     display: flex;
     color : #131313;
@@ -146,14 +144,12 @@ export const BannerWrapper = styled.div`
     margin : 6rem auto;
 `
 export const PromotionContainer = styled.div`
-
 `
 export const PromotionWrapper = styled.div`
     text-align: center;
     cursor : pointer;
     margin: 0.5rem 0.2rem;
     display:inline-block;
-
 `
 
 export const PromotionImg = styled.div`
@@ -162,7 +158,6 @@ export const PromotionImg = styled.div`
     display : flex;
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
-
 `
 
 export const PromotionText = styled.h3`
@@ -171,7 +166,6 @@ export const PromotionText = styled.h3`
 
 export const PromotionSub = styled.p`
     
-
 `
 
 export const PromotionSection = styled.div`
@@ -188,7 +182,6 @@ export const PromotionTitle = styled.h1`
     align-items: center;
     margin : 7rem 0 3rem 0;
     background : ${props => props.color || 'white'};
-
 `
 export const VideoWrapper = styled.div`
 `
@@ -224,7 +217,6 @@ export const ViewMoreBtn = styled.div`
     background: #e6e6e6;
     justify-content: center;
     align-items: center;
-
 `
 export const ViewMoreBtnText = styled.p`
 `
@@ -283,5 +275,4 @@ export const CollectionImg = styled.div`
     height : 65vh;
     margin : 1rem 0 10rem 0;
     background : ${props => props.color || "#b9babd"};
-
 `

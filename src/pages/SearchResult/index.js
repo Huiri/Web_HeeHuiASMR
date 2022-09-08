@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router';
 import {
     LayoutContainer,
     NavBar,
@@ -20,7 +21,21 @@ import {
     SideBarRecommendItem, BlankSpace, ViewMoreBtn
 } from './styled';
 import {PromotionSection, PromotionSub, PromotionText, PromotionWrapper, VideoThumbnail} from "../Main/styled";
+import axios from "axios";
 const SearchResult = () => {
+    const [searchData, setSearchData] = useState([]);
+    const params = useParams();
+
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios.get(
+                `http://localhost:3000/product/search?word=${params.word}`
+            );
+            console.log(result.data.result);
+            setSearchData(result.data.result);
+        }
+        fetchData();
+    }, []);
     return (
         <LayoutContainer>
             <Result>

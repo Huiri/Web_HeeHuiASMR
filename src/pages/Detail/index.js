@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import {
     VideoTitle,
     VideoCreator,
@@ -22,13 +22,14 @@ import {
 import CommentList from "../../components/Comment/CommentList";
 import {useSetRecoilState} from "recoil";
 import {commentListState} from "../../recoil/comment";
-
+let id = 0
+const getId = () => id++
 const Detail = () => {
 
     const [isLiked, setIsLiked] = useState(false);
     const [isAdded, setIsAdded] = useState(false);
 
-    const nextId = useRef(0);
+    // const [nextId, setNextId] = useState(0);
     const [text, setText] = useState("");
     // const commentList = useRecoilValue(filteredCommentListState);
     const setComments = useSetRecoilState(commentListState);
@@ -64,7 +65,7 @@ const Detail = () => {
         if(text === '') {
             alert('내용을 입력해주세요');
         } else {
-            setComments(comments => comments.concat({ id: nextId.current + 1, text, clicked : false}));
+            setComments(comments => comments.concat({ id: getId(), text, clicked : false}));
 
             // setComments(commentValueList => [text, ...commentValueList]);
             setText('');
