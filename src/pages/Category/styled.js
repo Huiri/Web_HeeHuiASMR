@@ -2,12 +2,14 @@ import styled from "styled-components";
 import {ReactComponent as SearchIcon} from '../../assets/icons/SearchIcon.svg';
 
 
-export const CategoryContainer= styled.div`
+export const CategoryContainer= styled.div``
+
+export const PromotionWrapper= styled.div`
     text-align: center;
     margin-top : 1rem;
 
 `
-
+W
 export const PromotionImg = styled.div`
     width : 25.9vw;
     height : 50vh;

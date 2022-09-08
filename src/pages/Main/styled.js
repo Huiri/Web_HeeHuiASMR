@@ -39,6 +39,7 @@ export const SliderTitle=styled.p`
     margin : -20px 0 0 4rem;
     font-size: 1.8rem;
   }
+
 `
 export const SliderSubtitle = styled.p`
     color : #131313;
@@ -68,6 +69,7 @@ export const SliderExplain = styled.p`
   @media(max-width: 991px){
     margin : -3rem 0 0 4.1rem;
   }
+
 `
 
 export const SliderWrapper = styled.span`
@@ -79,9 +81,11 @@ export const SliderViewMore = styled.div`
   margin: 10px 0 0 7rem;
   color: #4d4d4d;
   font-size : 0.9rem;
+
   @media(max-width: 991px){
     margin-left : 4.1rem;
   }
+
 `
 export const CategoryList = styled.div`
     display : flex;
@@ -104,6 +108,7 @@ export const PagingWrapper = styled.div`
     margin-right : 5rem;
   }
   
+
 `
 
 export const PagingArrow = styled.h4`
