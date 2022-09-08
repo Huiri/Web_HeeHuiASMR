@@ -4,7 +4,7 @@ import {LoginState} from "../../States/LoginStates";
 import {auth} from "../../firebase";
 // import axios from 'axios';
 
-import {useNavigate} from 'react-router-dom';
+//import {useNavigate} from 'react-router-dom';
 import {    StyledNavLink,
     HeaderWrapper,
     SearchInput,
@@ -21,7 +21,7 @@ import {    StyledNavLink,
     HeartBtn,
     PageBtn,
     UserBtn,
-    SearchForm
+    //SearchForm
 
 } from './styled';
 import {Link} from "react-router-dom";
@@ -41,7 +41,7 @@ const Header = () => {
        }
     }
 
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const onSearch = e => {
         e.preventDefault();
         if(search === '') { //검색어가 없을 경우 전체 리스트 반환
@@ -57,7 +57,8 @@ const Header = () => {
             // setLists(filterData)
             // setCurrentPosts(filterData.slice(indeOfFirstPost, indexOfLastPost))
             // setCurrentPage(1)
-            navigate(`/search/${search}`);
+            window.location.href = `/search/${search}`;
+            // navigate(`/search/${search}`);
         }
         setSearch('');
     }

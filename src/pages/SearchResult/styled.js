@@ -6,7 +6,7 @@ export const LayoutContainer = styled.div`
   width : 100vw;
   grid-template-rows: 1fr 1fr 1fr 6fr;
   grid-template-columns: 1fr 5fr;
-
+  margin-bottom : 5.1rem;
   grid-template-areas:
     "space space space"
     "sidebar result result"

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
     height : 100%;
-
 `
 export const ImgContainer = styled.div`
     height : 80vh;
@@ -18,7 +17,6 @@ export const CategoryText = styled.p`
     margin : 0.8rem auto;
     font-weight : 600;
     font-size : 1.2rem;
-
     &:hover{
         cursor: pointer;
         color : grey;
@@ -28,7 +26,7 @@ export const CategoryText = styled.p`
 export const CategoryContainer = styled.div`
     display: flex;
     flex-direction : column;
-` 
+`
 export const SliderTitle=styled.p`
     display: flex;
     color : #131313;
@@ -37,7 +35,10 @@ export const SliderTitle=styled.p`
     justify-content:flex-start;
     align-items:center;
     margin : -30px 0 0 7rem;
-
+  @media(max-width: 991px){
+    margin : -20px 0 0 4rem;
+    font-size: 1.8rem;
+  }
 `
 export const SliderSubtitle = styled.p`
     color : #131313;
@@ -48,19 +49,25 @@ export const SliderSubtitle = styled.p`
     text-align:center;
     margin : 10px 0 0 7rem;
     font-weight: 600;
+  @media(max-width: 991px){
+    margin : 10px 0 0 4rem;
+    font-size: 0.9rem;
+  }
 `
 
 export const SliderExplain = styled.p`
     margin-left : 7rem;
     cursor: pointer;
     z-index : 5;
-    width : 8%;
-    margin-top : -2rem;
+    width : 20%;
+    margin-top : -3rem;
     &:focus, &:hover {
         font-weight: 600;
         transition : all ease 0.4s 0s;
     }
-
+  @media(max-width: 991px){
+    margin : -3rem 0 0 4.1rem;
+  }
 `
 
 export const SliderWrapper = styled.span`
@@ -71,7 +78,10 @@ export const SliderWrapper = styled.span`
 export const SliderViewMore = styled.div`
   margin: 10px 0 0 7rem;
   color: #4d4d4d;
-
+  font-size : 0.9rem;
+  @media(max-width: 991px){
+    margin-left : 4.1rem;
+  }
 `
 export const CategoryList = styled.div`
     display : flex;
@@ -88,9 +98,12 @@ export const CategoryTitle = styled.p`
 export const PagingWrapper = styled.div`
    display : flex;
    justify-content: flex-end;
-  margin : -1rem 10rem 0 0;
+  margin : 0 10rem 0 0;
   z-index: 1;
-
+  @media(max-width: 991px){
+    margin-right : 5rem;
+  }
+  
 `
 
 export const PagingArrow = styled.h4`
@@ -126,14 +139,12 @@ export const BannerWrapper = styled.div`
     margin : 6rem auto;
 `
 export const PromotionContainer = styled.div`
-
 `
 export const PromotionWrapper = styled.div`
     text-align: center;
     cursor : pointer;
     margin: 0.5rem 0.2rem;
     display:inline-block;
-
 `
 
 export const PromotionImg = styled.div`
@@ -142,7 +153,6 @@ export const PromotionImg = styled.div`
     display : flex;
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
-
 `
 
 export const PromotionText = styled.h3`
@@ -151,7 +161,6 @@ export const PromotionText = styled.h3`
 
 export const PromotionSub = styled.p`
     
-
 `
 
 export const PromotionSection = styled.div`
@@ -168,7 +177,6 @@ export const PromotionTitle = styled.h1`
     align-items: center;
     margin : 7rem 0 3rem 0;
     background : ${props => props.color || 'white'};
-
 `
 export const VideoWrapper = styled.div`
 `
@@ -204,7 +212,6 @@ export const ViewMoreBtn = styled.div`
     background: #e6e6e6;
     justify-content: center;
     align-items: center;
-
 `
 export const ViewMoreBtnText = styled.p`
 `
@@ -263,5 +270,4 @@ export const CollectionImg = styled.div`
     height : 65vh;
     margin : 1rem 0 10rem 0;
     background : ${props => props.color || "#b9babd"};
-
 `
