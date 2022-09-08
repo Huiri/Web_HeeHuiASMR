@@ -19,6 +19,10 @@ export const TopSection = styled.div`
 `
 export const BottomSection = styled.div`
     margin-left : 10px;
+  @media (max-width: 700px) {
+    margin-top: 0;
+  }
+
 `
 
 export const WebTitleWrapper = styled.div`
@@ -31,10 +35,14 @@ export const WebTitle = styled(Link)`
     margin : 60px 40px;
     cursor: pointer;
     text-decoration : none;
-    :hover{
+    &:hover{
         color : #525252;
         transition: all ease 0.4s 0s;
     }
+  @media (max-width: 991px) {
+    font-size : 2.2rem;
+  }
+
 
 `
 export const MenuWrapper = styled.div`
@@ -62,6 +70,10 @@ export  const StyledNavLink = styled(NavLink)`
         text-decoration-style: solid;
         text-decoration-color: #616161;
     }
+    @media (max-width: 991px) {
+      font-size : 0.8rem;
+    }
+
 
 `
 
@@ -69,7 +81,7 @@ export const SearchWrapper = styled.div`
     position : relative;
     bottom : 2.4rem;
     left : 10rem;
-    width : 70%;
+    width : 30%;
 `
 
 //styled.SearchInput.attrs({ placeholder: "오늘 가장 끌리는 소리는?", placeholerTextColor : "#737373"})`
@@ -106,16 +118,14 @@ export const StylePersonalLink = styled(NavLink)`
         color : #4a4a4a;
         transition: all ease 0.4s 0s;
     }
+  @media (max-width: 991px) {
+    font-size : 0.8rem;
+  }
+
 `
 export const IconSection = styled.div`
   float : right;
-  margin : -4rem 2rem 0 0;
-  @media (max-width: 991px) {
-    margin : -4rem 0 0 0;
-  }
-
-;
-
+  margin : -4rem 1rem 0 0;
 `
 //Icon Style
 export const SearchBtn = styled(SearchIcon)`
@@ -124,30 +134,51 @@ export const SearchBtn = styled(SearchIcon)`
     margin : 0;
     left : 18rem;
     top : 6px;
+    width : 1.3rem;
+    height : 1.3rem;
+
+
 `
 
 export const HeartBtn = styled(HeartIcon)`
     cursor : pointer;
-    width : 1.8rem;
-    height : 1.8rem;
+    width : 1.6rem;
+    height : 1.6rem;
     margin-right : 2rem;
+  @media (max-width: 991px) {
+    width : 1.4rem;
+    height : 1.4rem;
+    margin-right : 1rem;
+
+  }
 
 `
 
 export const PageBtn = styled(PageIcon)`
     cursor : pointer;
-    width : 1.8rem;
-    height : 1.8rem;
+    width : 1.6rem;
+    height : 1.6rem;
     margin-right : 2rem;
+  @media (max-width: 991px) {
+    width : 1.4rem;
+    height : 1.4rem;
+    margin-right : 1rem;
+
+  }
 
 
 `
 
 export const UserBtn = styled(UserIcon)`
     cursor : pointer;
-    width : 1.8rem;
-    height : 1.8rem;
+    width : 1.6rem;
+    height : 1.6rem;
     margin-right : 1.5rem;
+  @media (max-width: 991px) {
+    width : 1.4rem;
+    height : 1.4rem;
+    margin-right: 0;
+  }
 
 
 `
