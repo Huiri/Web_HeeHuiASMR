@@ -6,7 +6,6 @@ export const HomeWrapper = styled.div`
 `
 export const ImgContainer = styled.div`
     height : 80vh;
-    width : 90vw;
     margin : auto;
     background: #bdcede;
     display : flex;
@@ -77,10 +76,10 @@ export const CategoryTitle = styled.p`
     align-items:center;
     font-size : 1.8rem;
 `
-export const PagingWarrper = styled.div`
+export const PagingWrapper = styled.div`
    display : flex;
    justify-content: flex-end;
-  margin : -30px 10rem 0px 0px;
+  margin : -30px 10rem 0 0;
 `
 
 export const PagingArrow = styled.h4`
@@ -120,6 +119,9 @@ export const PromotionContainer = styled.div`
 `
 export const PromotionWrapper = styled.div`
     text-align: center;
+    cursor : pointer;
+    margin: 0.5rem 0.5rem;
+    display:inline-block;
 
 `
 
@@ -145,6 +147,7 @@ export const PromotionSection = styled.div`
     display : flex;
     flex-direction: row;
     justify-content: center;
+  margin : 0 5rem;
     
 `
 

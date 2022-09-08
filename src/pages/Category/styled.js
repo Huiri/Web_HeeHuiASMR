@@ -2,12 +2,14 @@ import styled from "styled-components";
 import {ReactComponent as SearchIcon} from '../../assets/icons/SearchIcon.svg';
 
 
+export const CategoryContainer= styled.div``
+
 export const PromotionWrapper= styled.div`
     text-align: center;
     margin-top : 1rem;
 
 `
-
+W
 export const PromotionImg = styled.div`
     width : 25.9vw;
     height : 50vh;
@@ -59,7 +61,7 @@ export const VideoThumbnail = styled.div`
 `
 
 export const SearchInput = styled.input`
-    width : 100%;
+    width : 28vw;
     height : 7vh;
     border-radius: 1rem;
     border-style: none;
@@ -107,7 +109,7 @@ export const ViewMoreBtn = styled.div`
 export const ViewMoreBtnText = styled.p`
 `
 
-export const CategoryContainer = styled.div`
+export const CategoryWrapper = styled.div`
     display : flex;
     justify-content : center;
 `

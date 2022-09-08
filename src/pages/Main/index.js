@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {ReactComponent as PasueIcon} from '../../assets/icons/PauseIcon.svg';
+import {ReactComponent as PauseIcon} from '../../assets/icons/PauseIcon.svg';
 import {HomeWrapper, 
-    ImgContainer, 
     CategoryContainer,
     SliderExplain,
     SliderTitle,
@@ -12,7 +11,7 @@ import {HomeWrapper,
     SliderWrapper,
     PagingArrow,
     PagingText,
-    PagingWarrper,
+    PagingWrapper,
     PagingPause,
     BannerWrapper,
     PromotionWrapper,
@@ -35,29 +34,36 @@ import {HomeWrapper,
     CollectionSection,
     CollectionImg
 } from './styled';
+import Slider from "../../Utils/Slider";
 
 const Main = () => {
 
     const [isShowMore, setIsShowMore] = useState(false);
-    
-    return (
-        <HomeWrapper> 
-            <ImgContainer>이미지 들어갈 예정</ImgContainer> 
-            <CategoryContainer>
-                <SliderWrapper>
-                    <SliderTitle>나만을 위한 ASMR</SliderTitle>
-                    <SliderSubtitle>주제별로 나뉘어져 원하는 ASMR을 들을 수 있어요!</SliderSubtitle>
-                    <SliderExplain>View more</SliderExplain>
-                    <PagingWarrper>
-                        <PagingArrow>&lt;</PagingArrow>
-                        <PagingText>1/10</PagingText>
-                        <PagingArrow>&gt;</PagingArrow>
-                        <PagingPause>
-                            <PasueIcon/>
-                        </PagingPause>
-                    </PagingWarrper>
 
-                </SliderWrapper>
+    //slider 파트
+    const [slideIndex, setSlideIndex] = useState(1);
+
+    return (
+        <HomeWrapper>
+            <Slider
+            slideIndex = {slideIndex}/>
+            {/*<ImgContainer>이미지 들어갈 예정</ImgContainer> */}
+            <SliderWrapper>
+                <SliderTitle>나만을 위한 ASMR</SliderTitle>
+                <SliderSubtitle>주제별로 나뉘어져 원하는 ASMR을 들을 수 있어요!</SliderSubtitle>
+                <SliderExplain>View more</SliderExplain>
+                <PagingWrapper>
+                    <PagingArrow>&lt;</PagingArrow>
+                    <PagingText>1/10</PagingText>
+                    <PagingArrow>&gt;</PagingArrow>
+                    <PagingPause>
+                        <PauseIcon/>
+                    </PagingPause>
+                </PagingWrapper>
+
+            </SliderWrapper>
+
+            <CategoryContainer>
                 <CategoryTitle>Category</CategoryTitle>
 
                 <CategoryList>

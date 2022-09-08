@@ -31,7 +31,7 @@ export const WebTitle = styled(Link)`
     margin : 60px 40px;
     cursor: pointer;
     text-decoration : none;
-    :hover, :focus {
+    :hover{
         color : #525252;
         transition: all ease 0.4s 0s;
     }
@@ -110,6 +110,10 @@ export const StylePersonalLink = styled(NavLink)`
 export const IconSection = styled.div`
   float : right;
   margin : -4rem 2rem 0 0;
+  @media (max-width: 991px) {
+    margin : -4rem 0 0 0;
+  }
+
 ;
 
 `

@@ -14,6 +14,9 @@ import {
     useRecoilState,
     useRecoilValue
 } from 'recoil';
+import SearchResult from "../pages/SearchResult";
+import Detail from "../pages/Detail";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 // import {firebase} from '.../firebase';
 
@@ -24,14 +27,25 @@ const App = ({auth}) => {
             <Header/>
                 <Routes>
                     {/*<Route element={<Layout/>}>*/}
-                        <Route path="/" element={<Main/>}></Route>
-                        <Route path="/signup" element={<SignUp/>}></Route>
-                        <Route path="/category" element={<Category/>}></Route>
-                        <Route path="/find" element={<Category/>}></Route>
-
-                        <Route path="/login" element={<Login auth={auth}/>} ></Route>
-                        <Route path="*" element={<NotFound/>}></Route>
-                    {/*</Route>*/}
+                        <Route path="/" element={<Main/>}/>
+                        <Route path=" /signup" element={<SignUp/>}/>
+                        <Route path="/category/:word" element={<Category/>}/>
+                        <Route path="/find" element={<Category/>}/>
+                        <Route path="/search/:word" element={<SearchResult/>}/>
+                        <Route path="/detail" element={<Detail/>}/>
+                        <Route path="/login" element={<Login auth={auth}/>} />
+                        <Route path="*" element={<NotFound/>}/>
+                {/*    <Route path='/privacy-policy' component={() => {*/}
+                {/*    window.location.href = 'http://it.daejin.ac.kr/49.html';*/}
+                {/*    return null;*/}
+                {/*}}/>*/}
+                    <Route
+                        path="/graduate"
+                        component={() => {
+                            global.window && (global.window.location.href = 'http://it.daejin.ac.kr/49.html');
+                            return null;
+                        }}
+                    />
                 </Routes>
                 <Footer/>
             </BrowserRouter>
