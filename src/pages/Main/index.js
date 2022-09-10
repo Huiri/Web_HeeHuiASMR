@@ -48,6 +48,20 @@ const Main = () => {
         zIndex : -10,
         position: 'relative'
     }
+    //네이버 로그인 초기화
+    const NaverLogin = () => {
+        const url = window.opener.document.location.href;
+        const {hostname, protocol} = window.location;
+
+        const callbackUrl = `${protocol}//${hostname}/naver-login`;
+        const naverLogin = new window.naver.LoginWithNaverId({
+            clientId : process.env.REACT_APP_NAVER_CLIENT_ID,
+            callbackUrl : process.env.REACT_APP_NAVER_CALLBACK_URL,
+            isPopup : false,
+            callbackHandle : false,
+        });
+        naverLogin.init();
+    }
     return (
         <HomeWrapper>
             {/*<Slider style={styleObj}
