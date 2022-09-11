@@ -97,8 +97,8 @@ export const ImgBtnContainer = styled.div`
 export const ImgBtn = styled.button`
     border : none;
     border-radius : 5px;
-    width : 2.4rem;
-    height : 2.4rem;
+    width : 2.2rem;
+    height : 2.2rem;
     cursor : pointer;
     background : ${props => props.color || 'none'};
   &:active {

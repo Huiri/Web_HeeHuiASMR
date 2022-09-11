@@ -149,14 +149,14 @@ const Login = () => {
      * @todo 쿠키 지워야 원활히 작동할 듯
      * @see https://developers.naver.com/docs/login/devguide/devguide.md
      */
-    const initializeNaverLogin = () => {
-        const naverLogin = new naver.LoginWithNaverId({
+    const signInNaver = () => {
+        const naverLogin = new window.naver.LoginWithNaverId({
             clientId : process.env.REACT_APP_NAVER_CLIENT_ID,
             callbackUrl : process.env.REACT_APP_NAVER_CALLBACK_URL,
             //팝업창으로 로그인 진행 여부
             isPopup : false,
             //버튼타입
-            loginButton : {color : 'green', type : 1, height : 38},
+            loginButton : {color : 'green', type : 1, height : 33},
             callbackHandle : true,
         })
         naverLogin.init()
@@ -188,7 +188,7 @@ const Login = () => {
 
     // 화면 첫 렌더링이후 바로 실행하기 위해 useEffect 를 사용하였다.
     useEffect(() => {
-        initializeNaverLogin()
+        signInNaver()
         userAccessToken()
     }, [])
 
@@ -296,7 +296,7 @@ const Login = () => {
                         <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleIcon/> </ImgBtn>
                         <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
                         {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
-                        <ImgBtn onClick={()=> signInFaceBook()}> <FaceBookIcon/> </ImgBtn>
+                        <ImgBtn onClick={()=> signInFaceBook()}> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>
 
                     </ImgBtnContainer>
 
