@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom';
+import {ReactComponent as GoogleIcon} from '../../assets/icons/GoogleIcon.svg';
 
 export const Button = styled.button`
     color : ${props => props.color || "white"};
@@ -22,6 +23,10 @@ export const Button = styled.button`
 
 `
 
+export const GoogleBtn = styled(GoogleIcon)`
+    margin-top : 0.2rem;
+  margin-left : -0.2rem;
+`
 export const LoginDiv = styled.div`
     background: #e3e3e3;
     justify-content: center;

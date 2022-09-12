@@ -146,25 +146,6 @@ export const BannerWrapper = styled.div`
 `
 export const PromotionContainer = styled.div`
 `
-export const PromotionWrapper = styled.div`
-    text-align: center;
-    cursor : pointer;
-    margin: 0.5rem 0.2rem;
-    display:inline-block;
-`
-
-export const PromotionImg = styled.div`
-    width : 25.9vw;
-    height : 50vh;
-    display : flex;
-    margin : 0.6em 0.5rem;
-    background: #dbdbdb;
-`
-
-export const PromotionText = styled.h3`
-    
-`
-
 export const PromotionSub = styled.p`
     
 `
@@ -197,13 +178,6 @@ export const VideoCreator = styled.h3`
 `
 
 export const VideoCategory = styled.h4`
-`
-export const VideoThumbnail = styled.div`
-    width : 19vw;
-    height : 40vh;
-    display : flex;
-    margin : 0.6em 0.5rem;
-    background: #dbdbdb;
 `
 export const VideoText = styled.p`
 `

@@ -14,15 +14,10 @@ import {HomeWrapper,
     PagingWrapper,
     PagingPause,
     BannerWrapper,
-    PromotionWrapper,
     PromotionTitle,
     PromotionSection,
-    PromotionImg,
-    PromotionText,
-    PromotionSub,
     PromotionContainer,
     VideoWrapper,
-    VideoThumbnail,
     ViewMoreBtn,
     ViewMoreBtnText,
     MakerSection,
@@ -37,6 +32,11 @@ import {HomeWrapper,
     ImgContainer
 } from './styled';
 import Slider from "../../Utils/Slider";
+
+import {useEffect} from "react";
+import axios from "axios";
+import PostVideoCard from "../../components/common/PostVideoCard";
+import PromotionCard from "../../components/common/PromotionCard";
 
 const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
@@ -101,47 +101,19 @@ const Main = () => {
             <PromotionContainer>
                 <PromotionTitle>Promotion</PromotionTitle>
                 <PromotionSection>
-                    <PromotionWrapper>
-                        <PromotionImg className='1'/>
-                        <PromotionText>We've Got Your Style</PromotionText>
-                        <PromotionSub>강유미의 미용실</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <PromotionImg className='2'/>
-                        <PromotionText>22 F/W Essential</PromotionText>
-                        <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <PromotionImg className='3'/>
-                        <PromotionText>Rising ASMR</PromotionText>
-                        <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionWrapper>
+                    <PromotionCard/>
+                    <PromotionCard/>
+                    <PromotionCard/>
                 </PromotionSection>
 
             </PromotionContainer>
             <VideoWrapper>
                 <PromotionTitle>New Arrival</PromotionTitle>
                 <PromotionSection>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='1'/>
-                        <PromotionText>We've Got Your Style</PromotionText>
-                        <PromotionSub>강유미의 미용실</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='2'/>
-                        <PromotionText>22 F/W Essential</PromotionText>
-                        <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='3'/>
-                        <PromotionText>Rising ASMR</PromotionText>
-                        <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='4'/>
-                        <PromotionText>Rising ASMR</PromotionText>
-                        <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionWrapper>
+                    <PostVideoCard/>
+                    <PostVideoCard/>
+                    <PostVideoCard/>
+                    <PostVideoCard/>
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
@@ -172,26 +144,10 @@ const Main = () => {
 
                 </CategoryBtnContainer>
                 <PromotionSection>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='1'/>
-                        <PromotionText>We've Got Your Style</PromotionText>
-                        <PromotionSub>강유미의 미용실</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='2'/>
-                        <PromotionText>22 F/W Essential</PromotionText>
-                        <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='3'/>
-                        <PromotionText>Rising ASMR</PromotionText>
-                        <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionWrapper>
-                    <PromotionWrapper>
-                        <VideoThumbnail className='4'/>
-                        <PromotionText>Rising ASMR</PromotionText>
-                        <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                    </PromotionWrapper>
+                    <PostVideoCard/>
+                    <PostVideoCard/>
+                    <PostVideoCard/>
+                    <PostVideoCard/>
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>

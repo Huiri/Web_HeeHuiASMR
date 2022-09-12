@@ -20,8 +20,10 @@ import {
     SideBarRecommendTitle,
     SideBarRecommendItem, BlankSpace, ViewMoreBtn
 } from './styled';
-import {PromotionSection, PromotionSub, PromotionText, PromotionWrapper, VideoThumbnail} from "../Main/styled";
+import {PromotionSection} from "../Main/styled";
 import axios from "axios";
+import PostVideoCard from "../../components/common/PostVideoCard";
+
 const SearchResult = () => {
     const [searchData, setSearchData] = useState([]);
     const params = useParams();
@@ -59,48 +61,17 @@ const SearchResult = () => {
                 </NavBar>
                 <Main>
                     <PromotionSection>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='1'/>
-                            <PromotionText>We've Got Your Style</PromotionText>
-                            <PromotionSub>강유미의 미용실</PromotionSub>
-                        </PromotionWrapper>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='2'/>
-                            <PromotionText>22 F/W Essential</PromotionText>
-                            <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                        </PromotionWrapper>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='3'/>
-                            <PromotionText>Rising ASMR</PromotionText>
-                            <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                        </PromotionWrapper>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='4'/>
-                            <PromotionText>Rising ASMR</PromotionText>
-                            <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                        </PromotionWrapper>
+                        <PostVideoCard/>
+                        <PostVideoCard/>
+                        <PostVideoCard/>
+                        <PostVideoCard/>
+
                     </PromotionSection>
                     <PromotionSection>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='1'/>
-                            <PromotionText>We've Got Your Style</PromotionText>
-                            <PromotionSub>강유미의 미용실</PromotionSub>
-                        </PromotionWrapper>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='2'/>
-                            <PromotionText>22 F/W Essential</PromotionText>
-                            <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-                        </PromotionWrapper>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='3'/>
-                            <PromotionText>Rising ASMR</PromotionText>
-                            <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                        </PromotionWrapper>
-                        <PromotionWrapper>
-                            <VideoThumbnail className='4'/>
-                            <PromotionText>Rising ASMR</PromotionText>
-                            <PromotionSub>떠오르는 AMSR 영상</PromotionSub>
-                        </PromotionWrapper>
+                        <PostVideoCard/>
+                        <PostVideoCard/>
+                        <PostVideoCard/>
+                        <PostVideoCard/>
                     </PromotionSection>
 
                     <ViewMoreBtn>더보기</ViewMoreBtn>
