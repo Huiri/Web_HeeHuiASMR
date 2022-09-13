@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {PromotionSub, PromotionText, PromotionWrapper, VideoThumbnail} from "./styled";
+import {PromotionChannel, PromotionTitle, PromotionWrapper, VideoThumbnail} from "./styled";
 import axios from "axios";
-import {Link} from "react-router-dom";
 
 const PostVideoCard = () => {
 
@@ -10,7 +9,7 @@ const PostVideoCard = () => {
     useEffect(() => {
         axios
             .get(
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=5&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=4&type=video&regionCode=KR&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
                 // `https://www.googleapis.com/youtube/v3/search?part=snippet&topicId=ASMR&maxResults=10&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
             )
             .then((res) => {
@@ -18,7 +17,9 @@ const PostVideoCard = () => {
                 setVideolist(res.data.items);
             })
             .catch(() => {});
+        return function cleanup(){
 
+        };
     }, []);
     console.log(videolist);
 
@@ -30,9 +31,9 @@ const PostVideoCard = () => {
                 return (
                     <PromotionWrapper key={idx}>
                         {/*<Link to={`/detail/${i.id}`}>*/}
-                            <VideoThumbnail className='1' src={i.snippet.thumbnails.medium["url"]} alt=""/>
-                            <PromotionText>{i.snippet.title}</PromotionText>
-                            <PromotionSub>{i.snippet.description}</PromotionSub>
+                            <VideoThumbnail className={i} src={i.snippet.thumbnails.medium["url"]} alt=""/>
+                            <PromotionTitle>{i.snippet.title}</PromotionTitle>
+                        <PromotionChannel>{i.snippet.channelTitle}</PromotionChannel>
                         {/*</Link>*/}
                     </PromotionWrapper>
 

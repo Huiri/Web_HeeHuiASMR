@@ -11,17 +11,16 @@ import {getAuth,
 
 import { useRecoilState } from 'recoil';
 import {LoginState} from "../../States/LoginStates";
-
-import {ReactComponent as GoogleIcon} from '../../assets/icons/GoogleIcon.svg';
 import {ReactComponent as NaverIcon} from '../../assets/icons/NaverIcon.svg';
 import {ReactComponent as FaceBookIcon} from '../../assets/icons/FaceBookIcon.svg';
 
 
-import {Button, 
-    LoginForm, 
-    LoginInput, 
-    LoginDiv, 
-    LoginTitle, 
+import {
+    Button,
+    LoginForm,
+    LoginInput,
+    LoginDiv,
+    LoginTitle,
     LoginContainer,
     StyledLink,
     LoginWrapper,
@@ -32,7 +31,7 @@ import {Button,
     LoginSocialTitle,
     InfoFindLink,
     LoginWarnSpan,
-    LoginSubWrapper,
+    LoginSubWrapper, GoogleBtn,
 } from './styled';
 
 const Login = () => {
@@ -293,7 +292,7 @@ const Login = () => {
 
                     <LoginSocialTitle>SNS로 간편하게 시작하기</LoginSocialTitle>
                     <ImgBtnContainer>
-                        <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleIcon/> </ImgBtn>
+                        <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleBtn/> </ImgBtn>
                         <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
                         {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
                         <ImgBtn onClick={()=> signInFaceBook()}> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>

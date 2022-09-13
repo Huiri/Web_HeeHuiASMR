@@ -7,16 +7,22 @@ export const PromotionWrapper = styled.div`
     display:inline-block;
 `
 
-export const VideoThumbnail = styled.div`
+export const VideoThumbnail = styled.img`
     width : 19vw;
     height : 40vh;
     display : flex;
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
 `
-export const PromotionText = styled.h3`
+export const PromotionTitle = styled.div`
+  width : 18vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size : 1.1rem;
     
 `
-export const PromotionSub = styled.p`
+export const PromotionChannel = styled.p`
     
 `

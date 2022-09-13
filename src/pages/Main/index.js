@@ -33,8 +33,6 @@ import {HomeWrapper,
 } from './styled';
 import Slider from "../../Utils/Slider";
 
-import {useEffect} from "react";
-import axios from "axios";
 import PostVideoCard from "../../components/common/PostVideoCard";
 import PromotionCard from "../../components/common/PromotionCard";
 
@@ -48,20 +46,37 @@ const Main = () => {
         zIndex : -10,
         position: 'relative'
     }
+    // const [videolist, setVideolist] = useState([]);
+    //
+    // useEffect(() => {
+    //         axios
+    //             .get(
+    //                 `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=3&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
+    //                 // `https://www.googleapis.com/youtube/v3/search?part=snippet&topicId=ASMR&maxResults=10&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
+    //             )
+    //             .then((res) => {
+    //                 console.log(res);
+    //                 setVideolist(res.data.items);
+    //             })
+    //             .catch(() => {});
+    //         return function cleanup(){
+    //
+    //         };
+    //     }, []);
     //네이버 로그인 초기화
-    const NaverLogin = () => {
-        const url = window.opener.document.location.href;
-        const {hostname, protocol} = window.location;
-
-        const callbackUrl = `${protocol}//${hostname}/naver-login`;
-        const naverLogin = new window.naver.LoginWithNaverId({
-            clientId : process.env.REACT_APP_NAVER_CLIENT_ID,
-            callbackUrl : process.env.REACT_APP_NAVER_CALLBACK_URL,
-            isPopup : false,
-            callbackHandle : false,
-        });
-        naverLogin.init();
-    }
+    // const NaverLogin = () => {
+    //     const url = window.opener.document.location.href;
+    //     const {hostname, protocol} = window.location;
+    //
+    //     const callbackUrl = `${protocol}//${hostname}/naver-login`;
+    //     const naverLogin = new window.naver.LoginWithNaverId({
+    //         clientId : process.env.REACT_APP_NAVER_CLIENT_ID,
+    //         callbackUrl : process.env.REACT_APP_NAVER_CALLBACK_URL,
+    //         isPopup : false,
+    //         callbackHandle : false,
+    //     });
+    //     naverLogin.init();
+    // }
     return (
         <HomeWrapper>
             {/*<Slider style={styleObj}
@@ -111,9 +126,6 @@ const Main = () => {
                 <PromotionTitle>New Arrival</PromotionTitle>
                 <PromotionSection>
                     <PostVideoCard/>
-                    <PostVideoCard/>
-                    <PostVideoCard/>
-                    <PostVideoCard/>
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
@@ -144,9 +156,6 @@ const Main = () => {
 
                 </CategoryBtnContainer>
                 <PromotionSection>
-                    <PostVideoCard/>
-                    <PostVideoCard/>
-                    <PostVideoCard/>
                     <PostVideoCard/>
                 </PromotionSection>
                 <ViewMoreBtn>
