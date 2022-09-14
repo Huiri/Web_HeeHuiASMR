@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {ReactComponent as PauseIcon} from '../../assets/icons/PauseIcon.svg';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import {HomeWrapper,
     CategoryContainer,
     SliderExplain,
@@ -9,10 +11,6 @@ import {HomeWrapper,
     CategoryText,
     CategoryList,
     SliderWrapper,
-    PagingArrow,
-    PagingText,
-    PagingWrapper,
-    PagingPause,
     BannerWrapper,
     PromotionTitle,
     PromotionSection,
@@ -29,23 +27,17 @@ import {HomeWrapper,
     CollectionSection,
     CollectionImg,
     SliderViewMore,
-    ImgContainer
 } from './styled';
-import Slider from "../../Utils/Slider";
 
 import PostVideoCard from "../../components/common/PostVideoCard";
 import PromotionCard from "../../components/common/PromotionCard";
+
+import SimpleSlider from "../../Utils/SimpleSlider";
 
 const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
     const [isShowMore, setIsShowMore] = useState(false);
 
-    //slider 파트
-    const [slideIndex, setSlideIndex] = useState(1);
-    const styleObj = {
-        zIndex : -10,
-        position: 'relative'
-    }
     // const [videolist, setVideolist] = useState([]);
     //
     // useEffect(() => {
@@ -81,18 +73,11 @@ const Main = () => {
         <HomeWrapper>
             {/*<Slider style={styleObj}
             slideIndex = {slideIndex}/>*/}
-            <ImgContainer>이미지 들어갈 예정</ImgContainer>
+            {/*<ImgContainer>이미지 들어갈 예정</ImgContainer>*/}
+            <SimpleSlider/>
             <SliderWrapper>
                 <SliderTitle>나만을 위한 ASMR</SliderTitle>
                 <SliderSubtitle>주제별로 나뉘어져 원하는 ASMR을 들을 수 있어요!</SliderSubtitle>
-                <PagingWrapper>
-                    <PagingArrow>&lt;</PagingArrow>
-                    <PagingText>1/10</PagingText>
-                    <PagingArrow>&gt;</PagingArrow>
-                    <PagingPause>
-                        <PauseIcon/>
-                    </PagingPause>
-                </PagingWrapper>
 
                 <SliderExplain onClick={()=>setIsViewMore(!isViewMore)}>View more</SliderExplain>
                 {isViewMore && <SliderViewMore>아무것도 없어요</SliderViewMore>}
@@ -127,7 +112,7 @@ const Main = () => {
                 <PromotionSection>
                     <PostVideoCard/>
                 </PromotionSection>
-                <ViewMoreBtn>
+                <ViewMoreBtn to="/detail">
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
             </VideoWrapper>
@@ -158,7 +143,7 @@ const Main = () => {
                 <PromotionSection>
                     <PostVideoCard/>
                 </PromotionSection>
-                <ViewMoreBtn>
+                <ViewMoreBtn to="/detail">
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
             </VideoWrapper>

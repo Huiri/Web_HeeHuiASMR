@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 export const HomeWrapper = styled.div`
     height : 100%;
@@ -34,9 +35,10 @@ export const SliderTitle=styled.p`
     font-weight: 600;
     justify-content:flex-start;
     align-items:center;
-    margin : -30px 0 0 6rem;
+    margin : -7.3rem 0 0 6rem;
+  z-index: 10;
   @media(max-width: 991px){
-    margin : -20px 0 0 4rem;
+    margin : -7rem 0 0 4rem;
     font-size: 1.8rem;
   }
 
@@ -51,7 +53,7 @@ export const SliderSubtitle = styled.p`
     margin : 10px 0 0 6rem;
     font-weight: 600;
   @media(max-width: 991px){
-    margin : 10px 0 0 4rem;
+    margin : 0 0 0 4rem;
     font-size: 0.9rem;
   }
 `
@@ -61,13 +63,14 @@ export const SliderExplain = styled.p`
     cursor: pointer;
     z-index : 5;
     width :15%;
-    margin-top : -3rem;
-    &:focus, &:hover {
+  margin-top : 0.3rem;
+
+  &:focus, &:hover {
         font-weight: 600;
         transition : all ease 0.4s 0s;
     }
   @media(max-width: 991px){
-    margin : -3rem 0 0 4.1rem;
+    margin : 0.2rem 0 0 4.1rem;
   }
 
 `
@@ -99,41 +102,6 @@ export const CategoryTitle = styled.p`
   margin-top : 3rem;
     align-items:center;
     font-size : 1.8rem;
-`
-export const PagingWrapper = styled.div`
-   display : flex;
-   justify-content: flex-end;
-  margin : 0 10rem 0 0;
-  z-index: 1;
-  @media(max-width: 991px){
-    margin-right : 5rem;
-  }
-  
-
-`
-
-export const PagingArrow = styled.h4`
-    margin : 0.9rem;
-    display : flex;
-    cursor : pointer;
-    color : #828282;
-    :hover, :focus {
-        /* font-size : 1.1rem; */
-        color : #474747;
-        transition : all 0.2s;
-    }
-`
-
-export const PagingText = styled.p`
-    display : inline;
-    color : #474747;
-    font-weight: 500;
-`
-
-export const PagingPause = styled.div`
-    cursor : pointer;
-    /* display : inline; */
-    margin : 3px -4px;
 `
 
 export const BannerWrapper = styled.div`
@@ -182,7 +150,7 @@ export const VideoCategory = styled.h4`
 export const VideoText = styled.p`
 `
 
-export const ViewMoreBtn = styled.div`
+export const ViewMoreBtn = styled(Link)`
     width : 12vw;
     height : 7vh;
     margin : 4rem auto;
@@ -192,8 +160,12 @@ export const ViewMoreBtn = styled.div`
     background: #e6e6e6;
     justify-content: center;
     align-items: center;
+  text-decoration : none;
+
 `
 export const ViewMoreBtnText = styled.p`
+  color : black;
+
 `
 
 export const MakerSection = styled.div`
