@@ -35,9 +35,13 @@ const Category = () => {
         }
         setCategorySearch('');
     }
+    const onCategoryClick = (param) => {
+        navigate(`/category/${param}`);
+    }
     const handleChange = e => {
         setCategorySearch(e.target.value);
     }
+    const categoryList = ["전체", "음식", "자연", "웃음", "수면", "팅글"];
    {/*} const showPost = useMemo(() => {
         const shortPost = post.slice(0, 9);
         if (post.length > imgLimit.current){
@@ -57,26 +61,24 @@ const Category = () => {
                 </form>
             </SearchDiv>
             <CategoryWrapper>
-                <CategoryBtn>#전체</CategoryBtn>
-                <CategoryBtn>#음식</CategoryBtn>
-                <CategoryBtn>#자연</CategoryBtn>
-                <CategoryBtn>#웃음</CategoryBtn>
-                <CategoryBtn>#수면</CategoryBtn>
-                <CategoryBtn>#팅글</CategoryBtn>
+
+                {categoryList.map((category) => (
+                    <CategoryBtn onClick={()=>onCategoryClick(category)}>#{category}</CategoryBtn>
+
+                    ))}
+                {/*<CategoryBtn onClick={onCategoryClick}>#음식</CategoryBtn>*/}
+                {/*<CategoryBtn onClick={onCategoryClick}>#자연</CategoryBtn>*/}
+                {/*<CategoryBtn onClick={onCategoryClick}>#웃음</CategoryBtn>*/}
+                {/*<CategoryBtn onClick={onCategoryClick}>#수면</CategoryBtn>*/}
+                {/*<CategoryBtn onClick={onCategoryClick}>#팅글</CategoryBtn>*/}
 
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                <PostVideoCard/>
-                <PostVideoCard/>
-                <PostVideoCard/>
-                <PostVideoCard/>
+                {/*<PostVideoCard/>*/}
             </PromotionSection>
             <PromotionSection>
-                <PostVideoCard/>
-                <PostVideoCard/>
-                <PostVideoCard/>
-                <PostVideoCard/>
+                {/*<PostVideoCard/>*/}
             </PromotionSection>
             <ViewMoreBtn>
                 <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
