@@ -81,7 +81,13 @@ export const VideoSub = styled.p`
 `
 //비디오 출력 부분
 export const VideoWrapper = styled.div`
-
+  position: relative;
+  width: 80vw;
+  height : 100vh;
+  margin : 2rem auto;
+  @media (max-width : 991px){
+    height : 65vh;
+  }
 `
 
 export const VideoSection = styled.div`
@@ -158,4 +164,11 @@ export const CommentIconWrapper = styled.div`
 `
 export const CommentText = styled.p`
   margin : 0.7rem;
+`
+export const VideoViewer = styled.iframe`
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 `
