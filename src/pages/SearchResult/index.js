@@ -28,7 +28,10 @@ const SearchResult = () => {
     const [searchData, setSearchData] = useState([]);
     const params = useParams();
 
+
+    /*
     useEffect(() => {
+
         async function fetchData() {
             const result = await axios.get(
                 `http://localhost:3000/product/search?word=${params.word}`
@@ -38,6 +41,9 @@ const SearchResult = () => {
         }
         fetchData();
     }, []);
+    */
+
+
     return (
         <LayoutContainer>
             <Result>
@@ -61,16 +67,9 @@ const SearchResult = () => {
                 </NavBar>
                 <Main>
                     <PromotionSection>
-                        <PostVideoCard/>
-                        <PostVideoCard/>
-                        <PostVideoCard/>
-                        <PostVideoCard/>
-
+                        <PostVideoCard param={params}/>
                     </PromotionSection>
                     <PromotionSection>
-                        <PostVideoCard/>
-                        <PostVideoCard/>
-                        <PostVideoCard/>
                         <PostVideoCard/>
                     </PromotionSection>
 

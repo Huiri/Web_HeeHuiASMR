@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useRecoilState } from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import {LoginState} from "../../States/LoginStates";
 import {auth} from "../../firebase";
 // import axios from 'axios';
@@ -30,6 +30,7 @@ import Login from "../../pages/Login";
 import {signInWithEmailAndPassword} from "firebase/auth";
 
 const Header = () => {
+    const isLogged = useRecoilValue(LoginState);
 
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
 
@@ -83,11 +84,14 @@ const Header = () => {
                         <Link to ="/search"><SearchBtn type={"submit"} onClick={onSearch}/></Link>
                     </form>
                 </SearchWrapper>
-                <IconSection>
-                    <HeartBtn/>
-                    <PageBtn/>
-                    <UserBtn/>
-                </IconSection>
+                    {isLogged && (
+                        <IconSection>
+                            <Link to={"/favorite"}><HeartBtn/></Link>
+                            <PageBtn/>
+                            <Link to={"/mypage"}><UserBtn/></Link>
+                        </IconSection>
+
+                    )}
 
             </TopSection>
 

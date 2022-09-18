@@ -69,6 +69,7 @@ const Main = () => {
     //     });
     //     naverLogin.init();
     // }
+    const categorylist = ["음식", "자연", "수면", "웃음", "팅글"];
     return (
         <HomeWrapper>
             {/*<Slider style={styleObj}
@@ -88,11 +89,10 @@ const Main = () => {
                 <CategoryTitle>Category</CategoryTitle>
 
                 <CategoryList>
-                    <CategoryText>음식</CategoryText>
-                    <CategoryText>자연</CategoryText>
-                    <CategoryText>수면</CategoryText>
-                    <CategoryText>웃음</CategoryText>
-                    <CategoryText>팅글</CategoryText>
+                    {categorylist.map((category) => (
+                        <CategoryText>{category}</CategoryText>
+
+                    ))}
 
                 </CategoryList>
             </CategoryContainer>
@@ -141,7 +141,7 @@ const Main = () => {
 
                 </CategoryBtnContainer>
                 <PromotionSection>
-                    <PostVideoCard/>
+                    {/*<PostVideoCard/>*/}
                 </PromotionSection>
                 <ViewMoreBtn to="/detail">
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
