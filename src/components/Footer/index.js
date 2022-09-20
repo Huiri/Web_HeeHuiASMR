@@ -8,21 +8,15 @@ import {FooterStyle,
     FooterExplain,
     FooterExplainSub,
     ExplainContainer,
-    ServiceContainer
+    ServiceContainer,
 } from './styled';
 const Footer = () => {
     return (
         <FooterWrapper>
             <FooterStyle>
-                <StyledLink to="/graduate">
-                        <p>졸업작품</p>
-                </StyledLink>
-                <StyledLink to ="/student">
-                        <p>학생소개</p>
-                </StyledLink>
-                <StyledLink to ="/service">
-                    <p>서비스 소개</p>
-                </StyledLink>
+                <StyledLink to="/graduate">졸업작품</StyledLink>
+                <StyledLink to ="/student">학생소개</StyledLink>
+                <StyledLink to ="/service">서비스 소개</StyledLink>
             </FooterStyle>
             <hr/>
             <FooterContainer>

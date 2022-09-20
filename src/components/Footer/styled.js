@@ -21,15 +21,12 @@ export const FooterStyle = styled.div`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
-  width: 15rem;
-  font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   display: inline-block;
-  height: 2rem;
+  height: 1.6rem;
   text-align: center;
-  margin-bottom: 0.7rem;
-  margin-left : -5rem;
+  margin : 1rem 2rem 0 0;
 
   &:hover {
     color: #5b5b5b;
@@ -54,7 +51,7 @@ export const FooterSub = styled.p`
     font-size : 1rem;
     margin-left : 3rem;
     font-weight : 500;
-    margin-bottom : -0.7rem;
+  margin-bottom : 0.6rem;
 `
 
 export const FooterExplain = styled.p`

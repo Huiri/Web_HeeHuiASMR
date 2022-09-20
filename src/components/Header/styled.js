@@ -30,7 +30,6 @@ export const WebTitleWrapper = styled.div`
 `
 export const WebTitle = styled(Link)`
     font-size: 2.4rem;
-    font-weight: 600;
     color : black;
     margin : 60px 40px;
     cursor: pointer;
@@ -57,7 +56,6 @@ export  const StyledNavLink = styled(NavLink)`
     margin : -0.5rem 30px 1rem 2rem;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 600;
     text-decoration: none;
     color : black;
     &:hover, &:focus {
@@ -79,7 +77,7 @@ export  const StyledNavLink = styled(NavLink)`
 
 export const SearchWrapper = styled.div`
     position : relative;
-    bottom : 2.4rem;
+    bottom : 2rem;
     left : 10rem;
     width : 30%;
 `
@@ -89,7 +87,7 @@ export const SearchInput = styled.input`
     border-radius: 20px;
     border : none;
     background : #ededed;
-    height : 30px;
+    height : 28px;
     width : 302px;
     padding : 0.2rem 1rem;
     :focus{
@@ -125,7 +123,7 @@ export const StylePersonalLink = styled(NavLink)`
 `
 export const IconSection = styled.div`
   float : right;
-  margin : -4rem 1rem 0 0;
+  margin : -3.8rem 1rem 0 0;
 `
 //Icon Style
 export const SearchBtn = styled(SearchIcon)`
@@ -134,8 +132,8 @@ export const SearchBtn = styled(SearchIcon)`
     margin : 0;
     left : 19rem;
     top : 7px;
-    width : 1.3rem;
-    height : 1.3rem;
+    width : 1.2rem;
+    height : 1.2rem;
 
 
 `

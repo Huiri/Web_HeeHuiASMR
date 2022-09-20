@@ -15,13 +15,12 @@ export const ImgContainer = styled.div`
 `
 export const CategoryText = styled.p`
     display : flex;
-    margin : 0.8rem auto;
-    font-weight : 600;
-    font-size : 1.2rem;
+    margin : 1rem auto;
+    font-size : 1.1rem;
     &:hover{
         cursor: pointer;
         color : grey;
-        transition: color 0.3s;
+        transition: color 0.2s;
     }
 `
 export const CategoryContainer = styled.div`
@@ -35,7 +34,7 @@ export const SliderTitle=styled.p`
     font-weight: 600;
     justify-content:flex-start;
     align-items:center;
-    margin : -7.3rem 0 0 6rem;
+    margin : -6.3rem 0 0 6rem;
   z-index: 10;
   @media(max-width: 991px){
     margin : -7rem 0 0 4rem;
@@ -53,7 +52,7 @@ export const SliderSubtitle = styled.p`
     margin : 10px 0 0 6rem;
     font-weight: 600;
   @media(max-width: 991px){
-    margin : 0 0 0 4rem;
+    margin : 0.8rem 0 0 4rem;
     font-size: 0.9rem;
   }
 `
@@ -63,14 +62,14 @@ export const SliderExplain = styled.p`
     cursor: pointer;
     z-index : 5;
     width :15%;
-  margin-top : 0.3rem;
+  margin-top : 0.5rem;
 
   &:focus, &:hover {
         font-weight: 600;
         transition : all ease 0.4s 0s;
     }
   @media(max-width: 991px){
-    margin : 0.2rem 0 0 4.1rem;
+    margin : 0.6rem 0 0 4.1rem;
   }
 
 `
@@ -81,7 +80,7 @@ export const SliderWrapper = styled.span`
     z-index: 10;
 `
 export const SliderViewMore = styled.div`
-  margin-top : -4px;
+  margin-top : 0.8rem;
   margin-left : 6rem;
   color: #4d4d4d;
   font-size : 0.9rem;
@@ -95,11 +94,12 @@ export const CategoryList = styled.div`
     display : flex;
     flex-direction : row;
     background: #f2f2f2;
+  margin-top : 1.5rem;
 `
 export const CategoryTitle = styled.p`
     display : flex;
     justify-content:center;
-  margin-top : 3rem;
+  margin-top : 5rem;
     align-items:center;
     font-size : 1.8rem;
 `
@@ -126,11 +126,12 @@ export const PromotionSection = styled.div`
     
 `
 
-export const PromotionTitle = styled.h1`
+export const PromotionTitle = styled.p`
     display : flex;
+  font-size: 1.8rem;
     justify-content: center;
     align-items: center;
-    margin : 7rem 0 3rem 0;
+    margin : 7rem 0 2rem 0;
     background : ${props => props.color || 'white'};
 `
 export const VideoWrapper = styled.div`
@@ -198,6 +199,7 @@ export const MakerImgContainer = styled.div`
 export const CategoryBtnContainer = styled.div`
     display : flex;
     justify-content : center;
+  margin-top : 3rem;
 `
 export const CategoryBtn = styled.button`
     width : 5rem;
@@ -205,16 +207,21 @@ export const CategoryBtn = styled.button`
     border-radius : 2rem;
     border : solid 3px #b9babd;
     color : #131313;
-    font-weight : 600;
-    font-size : 1.1rem;
+    font-size : 1rem;
     padding : 6px;
     margin : 0 1rem 2rem 1rem;
+  &:hover {
+    background: #b9babd;
+    transition: all 0.2s ease-in-out;
+
+  }
 `
 
 
 export const CollectionSection = styled.div`
     display : flex;
     justify-content : center;
+  margin-top : 2rem;
 `
 
 export const CollectionImg = styled.div`

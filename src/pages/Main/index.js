@@ -38,23 +38,6 @@ const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
     const [isShowMore, setIsShowMore] = useState(false);
 
-    // const [videolist, setVideolist] = useState([]);
-    //
-    // useEffect(() => {
-    //         axios
-    //             .get(
-    //                 `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=3&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
-    //                 // `https://www.googleapis.com/youtube/v3/search?part=snippet&topicId=ASMR&maxResults=10&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
-    //             )
-    //             .then((res) => {
-    //                 console.log(res);
-    //                 setVideolist(res.data.items);
-    //             })
-    //             .catch(() => {});
-    //         return function cleanup(){
-    //
-    //         };
-    //     }, []);
     //네이버 로그인 초기화
     // const NaverLogin = () => {
     //     const url = window.opener.document.location.href;
@@ -90,7 +73,7 @@ const Main = () => {
 
                 <CategoryList>
                     {categorylist.map((category) => (
-                        <CategoryText>{category}</CategoryText>
+                        <CategoryText key={category}>{category}</CategoryText>
 
                     ))}
 
@@ -99,7 +82,7 @@ const Main = () => {
             <BannerWrapper/>
 
             <PromotionContainer>
-                <PromotionTitle>Promotion</PromotionTitle>
+                <PromotionTitle>인기 급상승</PromotionTitle>
                 <PromotionSection>
                     <PromotionCard/>
                     <PromotionCard/>
@@ -108,7 +91,7 @@ const Main = () => {
 
             </PromotionContainer>
             <VideoWrapper>
-                <PromotionTitle>New Arrival</PromotionTitle>
+                <PromotionTitle>최근 업로드</PromotionTitle>
                 <PromotionSection>
                     <PostVideoCard/>
                 </PromotionSection>
@@ -118,7 +101,7 @@ const Main = () => {
             </VideoWrapper>
 
             <MakerSection>
-                <PromotionTitle color="#757575">New Maker</PromotionTitle>
+                <PromotionTitle color="#757575">인기 크리에이터</PromotionTitle>
 
                 <MakerImgContainer>
                     <MakerSubImg color="#d9bdbd"/>
@@ -130,14 +113,11 @@ const Main = () => {
             </MakerSection>
 
             <VideoWrapper>
-                <PromotionTitle>New Arrival</PromotionTitle>
+                <PromotionTitle>카테고리별 영상</PromotionTitle>
                 <CategoryBtnContainer>
-                    <CategoryBtn>#전체</CategoryBtn>
-                    <CategoryBtn>#음식</CategoryBtn>
-                    <CategoryBtn>#자연</CategoryBtn>
-                    <CategoryBtn>#코믹</CategoryBtn>
-                    <CategoryBtn>#수면</CategoryBtn>
-                    <CategoryBtn>#팅글</CategoryBtn>
+                    {categorylist.map((category) => (
+                        <CategoryBtn key={category}>#{category}</CategoryBtn>
+                    ))}
 
                 </CategoryBtnContainer>
                 <PromotionSection>
@@ -147,7 +127,7 @@ const Main = () => {
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
             </VideoWrapper>
-            <PromotionTitle>Collection</PromotionTitle>
+            <PromotionTitle>떠오르는 크리에이터</PromotionTitle>
 
             <CollectionSection>
 

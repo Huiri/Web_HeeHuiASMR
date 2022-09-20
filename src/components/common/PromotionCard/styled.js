@@ -22,9 +22,14 @@ export const VideoThumbnail = styled.div`
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
 `
-export const PromotionText = styled.h3`
+export const PromotionText = styled.p`
+    font-size : 1.1rem;
+  margin-top : 1rem;
+  font-weight: 600;
     
 `
 export const PromotionSub = styled.p`
+    font-size : 0.9rem;
+   margin : 0.7rem 0;
     
 `

@@ -2,13 +2,16 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 export const PromotionWrapper = styled.div`
-    text-align: center;
-    cursor : pointer;
-    margin: 0.5rem 0.2rem;
-    display:inline-block;
-    border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  margin: 0.5rem 0.2rem;
+  display: inline-block;
+  border-radius: 0.3rem;
+  border: 2px #cecece solid;
+
+
   &:hover {
-    background : aliceblue;
+    box-shadow: 3px 3px 3px #b2b2b2;
   }
 `
 
@@ -28,6 +31,8 @@ export const PromotionTitle = styled.div`
   white-space: nowrap;
   font-size : 1.1rem;
   color : black;
+  margin-top : 1rem;
+
 
 
 `
@@ -37,6 +42,8 @@ export const VideoWrapper = styled.div`
 export const PromotionChannel = styled.p`
   color: #5d5d5d;
 text-underline: none;
+  font-size : 0.9rem;
+  margin : 0.7rem 0;
 
 
 `

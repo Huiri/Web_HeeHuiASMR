@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import {
     PromotionTitle,
     PromotionSubTitle,
@@ -17,7 +17,6 @@ import {PromotionSection} from '../Main/styled';
 import {useNavigate} from "react-router-dom";
 import PostVideoCard from "../../components/common/PostVideoCard";
 
-//import {ReactComponent as SearchIcon} from '../../assets/icons/SearchIcon.svg'
 const Category = () => {
 
     const [isShowMore, setIsShowMore] = useState(false);
@@ -63,7 +62,7 @@ const Category = () => {
             <CategoryWrapper>
 
                 {categoryList.map((category) => (
-                    <CategoryBtn onClick={()=>onCategoryClick(category)}>#{category}</CategoryBtn>
+                    <CategoryBtn  key={category} onClick={()=>onCategoryClick(category)}>#{category}</CategoryBtn>
 
                     ))}
                 {/*<CategoryBtn onClick={onCategoryClick}>#음식</CategoryBtn>*/}

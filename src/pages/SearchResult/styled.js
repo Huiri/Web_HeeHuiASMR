@@ -103,11 +103,13 @@ export const SideBarWrapper = styled.div`
 export const SideBarSearchTitle = styled.p`
   font-size : 1.2rem;
   font-weight : 600;
+  display : inline-block;
   margin : 1rem 0 0 0.8rem;
 `
 
 export const SideBarSearchItem = styled.div`
   margin : 1rem 0 0 1.4rem;
+  height : 1.18rem;
   cursor : pointer;
   overflow: auto;
   &:hover, &:active {

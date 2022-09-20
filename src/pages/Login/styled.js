@@ -51,12 +51,14 @@ export const LoginContainer = styled.div`
   //  height :rem;
   //}
 `
-export const LoginTitle = styled.h1`
+export const LoginTitle = styled.p`
     color : #00415d;
     text-align : center;
     display : flex;
     justify-content: center;
-    margin-top : 2rem;
+    margin : 2rem 0 1rem 0;
+  font-size : 2rem;
+  font-weight: 600;
 `
 export const LoginInput = styled.input`
     width : 15rem;

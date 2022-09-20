@@ -33,7 +33,7 @@ export const PrivactSub = styled.p`
 
 export const PassWordChangeEmail = styled.p`
   cursor: pointer;
-  margin-left: 0.8rem;
+  margin:1rem;
   display: inline-block;
 
   &:hover {
@@ -57,7 +57,7 @@ export const PrivacyDelete = styled.p`
 `
 
 export const PrivacyItem = styled.p`
-  margin-left : 0.8rem;
+  margin:1rem;
 
 `
 

@@ -20,11 +20,25 @@ import SearchResult from "../pages/SearchResult";
 import Detail from "../pages/Detail";
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-// import {firebase} from '.../firebase';
+// 글로벌 스타일 만들기 위한 createGlobalStyle
+import { createGlobalStyle } from "styled-components";
 
+// 스타일 초기화를 위한 reset
+import reset from "styled-reset";
+
+// 글로벌 스타일 만들기, reset 사용해서 스타일 초기화하기
+const GlobalStyles = createGlobalStyle`
+    ${reset}
+    body {
+        width : 100vw;
+      margin : 0;
+    }
+`;
 const App = ({auth}) => {
     return (
         <RecoilRoot>
+            <GlobalStyles />
+
             <BrowserRouter>
             <Header/>
                 <Routes>
