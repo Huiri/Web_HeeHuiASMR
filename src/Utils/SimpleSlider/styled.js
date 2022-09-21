@@ -52,12 +52,15 @@ export const PagingText = styled.p`
     display : inline;
     color : #474747;
     font-weight: 500;
+  margin-top : 1rem;
+  font-family : ridi,sans-serif;
+
 `
 
 export const PagingPause = styled.div`
     cursor : pointer;
     /* display : inline; */
-    margin : 3px -4px;
+    margin : 0-4px;
 `
 export const PagingWrapper = styled.div`
    display : flex;

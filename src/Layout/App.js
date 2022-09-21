@@ -10,15 +10,11 @@ import SignUp from '../pages/SignUp';
 import MyPage from '../pages/MyPage';
 import Favorite from '../pages/Favorite';
 import {
-    RecoilRoot,
-    atom,
-    selector,
-    useRecoilState,
-    useRecoilValue
+    RecoilRoot
 } from 'recoil';
 import SearchResult from "../pages/SearchResult";
 import Detail from "../pages/Detail";
-import { QueryClient, QueryClientProvider } from 'react-query';
+// import { QueryClient, QueryClientProvider } from 'react-query';
 
 // 글로벌 스타일 만들기 위한 createGlobalStyle
 import { createGlobalStyle } from "styled-components";
@@ -44,7 +40,7 @@ const App = ({auth}) => {
                 <Routes>
                     {/*<Route element={<Layout/>}>*/}
                         <Route path="/" element={<Main/>}/>
-                        <Route path=" /signup" element={<SignUp/>}/>
+                        <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/category/:word" element={<Category/>}/>
                         <Route path="/find" element={<Category/>}/>
                         <Route path="/search/:word" element={<SearchResult/>}/>

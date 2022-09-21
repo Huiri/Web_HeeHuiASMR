@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {useCallback, useRef, useState} from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import img1 from "../../assets/img/harry.jpg";
@@ -15,74 +15,62 @@ const ImgContainer = styled.img`
   z-index: 1;
 `
 
-export default class SimpleSlider extends Component {
+const PlayBtn = styled(PlayIcon)`
+  margin-top : -14.5rem;
+  margin-bottom : -14.5rem;
+  width : 1.4rem;
+  display: inline-block;
+  color : gray;
+`
 
-    constructor(props) {
-        super(props);
-        this.play = this.play.bind(this);
-        this.pause = this.pause.bind(this);
-    }
-    play() {
-        this.slider.slickPlay();
-    }
-    pause() {
-        this.slider.slickPause();
-    }
-    render() {
-        let isPlay = false;
+const SimpleSlider = () => {
 
-        const setIsPlay = () => {
-            console.log(isPlay);
-            isPlay = isPlay === false;
-        }
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            // lazyLoad: true,
-            arrow : true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            cssEase: "linear",
-            pauseOnHover: true,
-            // nextArrow: <NextArrow />,
-            // prevArrow: <PrevArrow />,
-        };
-        return (
-            <div>
-                <Slider ref={slider => (this.slider = slider)} {...settings}>
-                    <div>
-                        <ImgContainer src={img1}  alt=""/>
-                    </div>
-                    <div>
-                        <ImgContainer src={img2}  alt=""/>
-                    </div>
-                    <div>
-                        <ImgContainer src={img3}  alt=""/>
-                    </div>
-                </Slider>
+    const slickRef = useRef(null);
+    const [isPlay, setIsPlay] = useState(false);
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrow : true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
+        pauseOnHover: true,
+    };
 
-                {/*<div style={{ textAlign: "center" }}>*/}
-                {/*    <button className="button" onClick={this.play}>*/}
-                {/*        Play*/}
-                {/*    </button>*/}
-                {/*    <button className="button" onClick={this.pause}>*/}
-                {/*        Pause*/}
-                {/*    </button>*/}
-                {/*</div>*/}
+    const previous = useCallback(() => slickRef.current.slickPrev(), []);
+    const next = useCallback(() => slickRef.current.slickNext(), []);
+    const play = useCallback(() => slickRef.current.slickPlay(), []);
+    const pause = useCallback(() => slickRef.current.slickPause(), []);
 
-                <PagingWrapper>
-                    <PagingArrow>&lt;</PagingArrow>
-                    <PagingText>1/3</PagingText>
-                    <PagingArrow>&gt;</PagingArrow>
-                    <PagingPause onClick={setIsPlay}>
-                        {isPlay ? <PlayIcon onClick={this.play}/> : <PauseIcon onClick={this.pause}/> }
-                    </PagingPause>
-                </PagingWrapper>
+    return (
+        <div>
+            <Slider ref={slickRef} {...settings}>
+                <div>
+                    <ImgContainer src={img1}  alt=""/>
+                </div>
+                <div>
+                    <ImgContainer src={img2}  alt=""/>
+                </div>
+                <div>
+                    <ImgContainer src={img3}  alt=""/>
+                </div>
+            </Slider>
 
-            </div>
-        );
-    }
+
+            <PagingWrapper>
+                <PagingArrow onClick={previous}>&lt;</PagingArrow>
+                <PagingText>1/3</PagingText>
+                <PagingArrow onClick={next}>&gt;</PagingArrow>
+                <PagingPause onClick={()=>setIsPlay(!isPlay)}>
+                    {isPlay ? <PlayBtn onClick={play}/> : <PauseIcon onClick={pause}/> }
+                </PagingPause>
+            </PagingWrapper>
+
+        </div>
+    );
+
 }
+export default SimpleSlider;
