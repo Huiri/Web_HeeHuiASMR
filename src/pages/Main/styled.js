@@ -16,7 +16,8 @@ export const ImgContainer = styled.div`
 export const CategoryText = styled.p`
     display : flex;
     margin : 1rem auto;
-    font-size : 1.1rem;
+  font-family: mabinogi, sans-serif;
+    font-size : 1.2rem;
     &:hover{
         cursor: pointer;
         color : grey;
@@ -30,12 +31,13 @@ export const CategoryContainer = styled.div`
 export const SliderTitle=styled.p`
     display: flex;
     color : #131313;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 500;
     justify-content:flex-start;
     align-items:center;
     margin : -6.3rem 0 0 6rem;
   z-index: 10;
+  font-family: tway, sans-serif;
   @media(max-width: 991px){
     margin : -7rem 0 0 4rem;
     font-size: 1.8rem;
@@ -50,7 +52,9 @@ export const SliderSubtitle = styled.p`
     align-items:center;
     text-align:center;
     margin : 10px 0 0 6rem;
-    font-weight: 600;
+  font-family: gangwonbold, sans-serif;
+
+  font-weight: 600;
   @media(max-width: 991px){
     margin : 0.8rem 0 0 4rem;
     font-size: 0.9rem;
@@ -58,18 +62,21 @@ export const SliderSubtitle = styled.p`
 `
 
 export const SliderExplain = styled.p`
-    margin-left : 6rem;
-    cursor: pointer;
-    z-index : 5;
-    width :15%;
-  margin-top : 0.5rem;
+  margin-left: 6.1rem;
+  cursor: pointer;
+  z-index: 5;
+  width: 15%;
+  margin-top: 0.7rem;
+  font-family: ridi, sans-serif;
+  color: #595959;
 
   &:focus, &:hover {
-        font-weight: 600;
-        transition : all ease 0.4s 0s;
-    }
-  @media(max-width: 991px){
-    margin : 0.6rem 0 0 4.1rem;
+    transition: all ease 0.4s 0s;
+    color : black;
+  }
+
+  @media (max-width: 991px) {
+    margin: 0.6rem 0 0 4.1rem;
   }
 
 `
@@ -81,9 +88,10 @@ export const SliderWrapper = styled.span`
 `
 export const SliderViewMore = styled.div`
   margin-top : 0.8rem;
-  margin-left : 6rem;
+  margin-left : 6.1rem;
   color: #4d4d4d;
-  font-size : 0.9rem;
+  font-size : 0.97rem;
+  font-family: geonggilight, sans-serif;
 
   @media(max-width: 991px){
     margin : 10px 0 0 4.1rem;
@@ -102,6 +110,7 @@ export const CategoryTitle = styled.p`
   margin-top : 5rem;
     align-items:center;
     font-size : 1.8rem;
+  font-family: geonggimedium, sans-serif;
 `
 
 export const BannerWrapper = styled.div`
@@ -132,7 +141,9 @@ export const PromotionTitle = styled.p`
     justify-content: center;
     align-items: center;
     margin : 7rem 0 2rem 0;
-    background : ${props => props.color || 'white'};
+  font-family: geonggimedium, sans-serif;
+
+  background : ${props => props.color || 'white'};
 `
 export const VideoWrapper = styled.div`
 `
@@ -166,7 +177,8 @@ export const ViewMoreBtn = styled(Link)`
 `
 export const ViewMoreBtnText = styled.p`
   color : black;
-
+  font-family: lee, sans-serif;
+  font-size: 1.1rem;
 `
 
 export const MakerSection = styled.div`
@@ -176,9 +188,9 @@ export const MakerSection = styled.div`
 
 export const MakerImg = styled.div`
     background: #dbdbdb;
-    width : 30vw;
+    width : 35vw;
     height : 80vh;
-    margin : 3rem 12rem;
+    margin : 0 11rem 4rem 11rem;
     
 `
 
@@ -210,6 +222,7 @@ export const CategoryBtn = styled.button`
     font-size : 1rem;
     padding : 6px;
     margin : 0 1rem 2rem 1rem;
+  font-family: mabinogi,sans-serif;
   &:hover {
     background: #b9babd;
     transition: all 0.2s ease-in-out;

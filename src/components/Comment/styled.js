@@ -24,11 +24,12 @@ export const CommentUser = styled.span`
   font-weight : 600;
   font-size : 1.2rem;
   margin-left : 1rem;
+  font-family: cookieregular, sans-serif;
 `
 
 export const CommentIconWrapper = styled.div`
   float : right;
-  margin : -2.2rem 1rem 0 0;
+  margin : -2rem 1rem 0 0;
   text-align: center;
   display: flex;
   align-items: center;
@@ -41,7 +42,9 @@ export const CommentIconWrapper = styled.div`
 `
 export const CommentText = styled.p`
   margin : 0.7rem;
-  font-size : 1rem;
+  font-size : 1.1rem;
+  font-family: lee, sans-serif;
+
 `
 
 export const GarbageBtn = styled(GarbageIcon)`
@@ -73,6 +76,8 @@ export const EditInput = styled.input`
   margin: 0 0 0 0.5rem;
   width : 50vw;
   font-size : 1rem;
+  font-family: lee, sans-serif;
+
   font-weight: 600;
   border-style : none;
   &:focus {

@@ -6,7 +6,6 @@ export const LayoutContainer = styled.div`
   width : 100vw;
   grid-template-rows: 1fr 1fr 1fr 6fr;
   grid-template-columns: 1fr 5fr;
-  margin-bottom : 5.1rem;
   grid-template-areas:
     "space space space"
     "sidebar result result"
@@ -63,8 +62,9 @@ export const RelatedSearchTitle = styled.div`
   font-weight : 600;
   display : flex;
   align-items: center;
-  margin-left : 2rem;
-  font-size : 1.1rem;
+  margin-left : 0.8rem;
+  font-size : 1.3rem;
+  font-family: lee, sans-serif;
 `
 export const RelatedSearchWrapper = styled.div`
   display : flex;
@@ -74,44 +74,52 @@ export const RelatedSearchItem = styled.p`
   color : white;
   font-weight : 500;
   cursor : pointer;
-  font-size : 1rem;
-  margin-left : 2rem;
+  font-size : 0.9rem;
+  margin : auto 1rem;
+  font-family: diary, sans-serif;
   &:hover, &:active {
     font-weight : 600;
   }
 `
 
 export const SearchResultWrapper = styled.p` 
-  margin : 1rem 0 0 0.3rem;
+  margin : 1rem 0 0 0.6rem;
 `
 
 export const SearchResultCount = styled.p`
   color: #333375;
   display : inline;
   font-weight : 600;
-  font-size : 1.2rem;
+  font-size : 1.1rem;
   margin-left : 0.3rem;
+  font-family: cookieregular, sans-serif;
 `
 export const SearchResultText = styled.p`
   color: #8d8d8d;
   display: inline;
   font-weight: 500;
+  font-size: 1rem;
+  font-family: lee, sans-serif;
+
 
 `
 export const SideBarWrapper = styled.div`
 `
 export const SideBarSearchTitle = styled.p`
-  font-size : 1.2rem;
+  font-size : 1.5rem;
   font-weight : 600;
   display : inline-block;
   margin : 1rem 0 0 0.8rem;
+  font-family: lee, sans-serif;
 `
 
 export const SideBarSearchItem = styled.div`
   margin : 1rem 0 0 1.4rem;
-  height : 1.18rem;
+  height : 1.3rem;
   cursor : pointer;
   overflow: auto;
+  font-size: 1.3rem;
+  font-family: lee, sans-serif;
   &:hover, &:active {
     font-weight : 600;
   }
@@ -125,14 +133,18 @@ export const SideBarRecommendWrapper = styled.div`
 
 export const SideBarRecommendTitle = styled.div`
   margin : 2.5rem 0 0 0.8rem;
-  font-size : 1.2rem;
+  font-size : 1.5rem;
   font-weight : 600;
+  font-family: lee, sans-serif;
 
 `
 
 export const SideBarRecommendItem = styled.div`
   margin : 1rem 0 0 1.4rem;
   cursor : pointer;
+  font-family: lee, sans-serif;
+  font-size: 1.3rem;
+
   &:hover, &:active, &:active {
    font-weight : 600;
   }
@@ -146,10 +158,11 @@ export const ViewMoreBtn = styled.button`
     border : none;
     width : 8rem;
     height : 2.5rem;
-    font-size : 1rem;
+    font-size : 1.2rem;
     margin : 2rem auto;
     cursor: pointer;
     position : relative;
+  font-family: lee, sans-serif;
     left : 45%;
 `
 

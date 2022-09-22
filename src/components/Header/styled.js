@@ -31,10 +31,12 @@ export const WebTitleWrapper = styled.div`
 export const WebTitle = styled(Link)`
     font-size: 2.4rem;
     color : black;
-    margin : 60px 40px;
+  margin : 1rem 2.4rem 0 2.4rem;
     cursor: pointer;
     text-decoration : none;
-    &:hover{
+  font-family: cookiebold, sans-serif;
+
+  &:hover{
         color : #525252;
         transition: all ease 0.4s 0s;
     }
@@ -56,6 +58,7 @@ export  const StyledNavLink = styled(NavLink)`
     margin : -0.5rem 30px 1rem 2rem;
     cursor: pointer;
     font-size: 1rem;
+  font-family: cookieregular,sans-serif;
     text-decoration: none;
     color : black;
     &:hover, &:focus {
@@ -89,6 +92,8 @@ export const SearchInput = styled.input`
     background : #ededed;
     height : 28px;
     width : 302px;
+  font-size : 1rem;
+  font-family: lee, sans-serif;
     padding : 0.2rem 1rem;
     :focus{
         outline : none;
@@ -105,19 +110,22 @@ export const PersonalWrapper = styled.div`
 `
 
 export const StylePersonalLink = styled(NavLink)`
-    float : right;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    color : #5e5e5e;
-    cursor: pointer;
-  margin-right : -0.6rem;
-    &:hover, &:focus {
-        color : #4a4a4a;
-        transition: all ease 0.4s 0s;
-    }
+  float: right;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: cookieregular, sans-serif;
+  color: #5e5e5e;
+  cursor: pointer;
+  margin-right: -0.6rem;
+
+  &:hover, &:focus {
+    color: #333333;
+    transition: all ease 0.4s 0s;
+  }
+
   @media (max-width: 991px) {
-    font-size : 0.8rem;
+    font-size: 0.8rem;
   }
 
 `

@@ -21,6 +21,7 @@ export const VideoThumbnail = styled.img`
     display : flex;
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
+    border-radius: 5px;
 `
 export const PromotionTitle = styled.div`
   width : 16vw;
@@ -29,7 +30,7 @@ export const PromotionTitle = styled.div`
   text-overflow: ellipsis;
   font-weight: 600;
   white-space: nowrap;
-  font-size : 1.1rem;
+  font-size : 1.2rem;
   color : black;
   margin-top : 1rem;
 
@@ -42,7 +43,7 @@ export const VideoWrapper = styled.div`
 export const PromotionChannel = styled.p`
   color: #5d5d5d;
 text-underline: none;
-  font-size : 0.9rem;
+  font-size : 1rem;
   margin : 0.7rem 0;
 
 
@@ -50,4 +51,5 @@ text-underline: none;
 
 export const StyledLink = styled(Link)`
     text-decoration : none;
+  font-family: lee, sans-serif;
 `

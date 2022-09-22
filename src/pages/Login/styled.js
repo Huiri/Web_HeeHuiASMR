@@ -16,6 +16,7 @@ export const Button = styled.button`
     text-align: center;
     justify-content: center;
     align-items: center;
+  font-family: geonggimedium, sans-serif;
     &:hover{
         background: skyblue;
         cursor: pointer;
@@ -59,10 +60,11 @@ export const LoginTitle = styled.p`
     margin : 2rem 0 1rem 0;
   font-size : 2rem;
   font-weight: 600;
+  font-family: cookieregular, sans-serif;
 `
 export const LoginInput = styled.input`
     width : 15rem;
-    font-size : 1rem;
+    font-size : 1.1rem;
     margin-top : 2rem;
     display :flex;
     justify-content: center;
@@ -70,6 +72,7 @@ export const LoginInput = styled.input`
     border : none;
     border-bottom : 3px solid #575757;
     background : #f0f0f0;
+  font-family : lee, sans-serif;
     ::placeholder,
      ::-webkit-input-placeholder {
     color: #8f8f8f;
@@ -117,19 +120,21 @@ export const LoginCheckTitle = styled.div`
     color : #454545;
     font-size : 0.7rem;
     margin-left : 0.4rem;
+  font-family: geonggilight, sans-serif;
 `
 
 export const LoginCheck = styled.input`
-    margin : 1rem 0 0 0;
+    margin : 0.6rem 0 0 0;
     cursor : pointer;
 
 `
 
 export const LoginSocialTitle = styled.p`
     color : #454545;
+  font-family: cookieregular, sans-serif;
     text-align: center;
-    margin : 1.5rem 0 0 0;
-    font-weight : 500;
+  font-size : 1rem;
+    margin : 1.8rem 0 0 0;
 `
 export const LoginSubWrapper = styled.div`
     display : inline;
@@ -137,10 +142,12 @@ export const LoginSubWrapper = styled.div`
 
 export const InfoFindLink = styled(Link)`
     display : flex;
-    font-size : 0.7rem;
+  font-family: geonggilight, sans-serif;
+
+  font-size : 0.7rem;
     cursor : pointer;
     justify-content: flex-end;
-    margin-top : -1rem;
+    margin-top : -0.8rem;
     text-decoration: none;
     color : #454545;
     :hover{

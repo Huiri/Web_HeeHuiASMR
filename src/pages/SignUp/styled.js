@@ -14,7 +14,9 @@ export const Button = styled.button`
     text-align: center;
     justify-content: center;
     align-items: center;
-    &:hover{
+  font-family: geonggimedium, sans-serif;
+
+  &:hover{
         background: skyblue;
         cursor: pointer;
     }
@@ -42,25 +44,30 @@ export const RegisterContainer = styled.div`
     display: flex;
 
 `
-export const RegisterTitle = styled.h1`
+export const RegisterTitle = styled.p`
  color : #00415d;
     text-align : center;
     display : flex;
     justify-content: center;
-    margin-top : -2rem;
-    `
+    margin : -2rem 0 1rem 0;
+  font-family: cookieregular, sans-serif;
+  font-size : 2rem;
+
+`
 
 export const RegisterInput = styled.input`
     width : 15vw;
-    font-size : 0.9rem;
-    margin : 0 0 2rem 0;
+    font-size : 1.1rem;
+    margin : 1.5rem 0 1rem 0;
     display :flex;
     justify-content: center;
     align-items: center;
     border : none;
     border-bottom : 3px solid #575757;
     background : #f0f0f0;
-    ::placeholder,
+  font-family : lee, sans-serif;
+
+  ::placeholder,
      ::-webkit-input-placeholder {
     color: #8f8f8f;
     }

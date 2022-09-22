@@ -21,20 +21,23 @@ export const LikedVideoImg = styled.p`
 export const LikedVideoTitle = styled.p`
     display: inline-block;
   color : black;
-  font-size : 1.7rem;
+  font-size : 1.6rem;
   position : absolute;
-  top : 5.6rem;
+  top : 7rem;
   margin-left : 1rem;
-  
+  font-family: cookieregular, sans-serif;
+
 `
 
 export const LikedVideoChannel = styled.p`
   display: inline-block;
   color : black;
-  font-size : 1.2rem;
+  font-size : 1.3rem;
   position : absolute;
-  top : 8.6rem;
+  top : 9rem;
   margin-left : 1.2rem;
+  font-family: lee, sans-serif;
+
 
 `
 export const LikedVideoDescription = styled.p`
@@ -42,7 +45,9 @@ export const LikedVideoDescription = styled.p`
   color : black;
   font-size : 1rem;
   position : absolute;
-  top : 10.6rem;
+  top : 10.8rem;
   margin-left : 1.2rem;
+  font-family: lee, sans-serif;
+
 
 `

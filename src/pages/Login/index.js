@@ -285,7 +285,7 @@ const Login = () => {
                     <LoginSubWrapper>
                         <LoginCheck onClick={()=>setIsChecked(!isChecked)} type="checkbox"/>
                         <LoginCheckTitle>로그인 유지하기</LoginCheckTitle>
-                        <InfoFindLink to="/find">아이디/비밀번호</InfoFindLink>
+                        <InfoFindLink to="/findaccount">아이디/비밀번호</InfoFindLink>
 
                     </LoginSubWrapper>
                     <Button type = "submit" onClick={signInEmail} className="login_signInButton">Login</Button>
