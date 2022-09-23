@@ -9,11 +9,13 @@ import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import MyPage from '../pages/MyPage';
 import Favorite from '../pages/Favorite';
+import FindAccount from "../pages/FindAccount";
+import SearchResult from "../pages/SearchResult";
+import Detail from "../pages/Detail";
+
 import {
     RecoilRoot
 } from 'recoil';
-import SearchResult from "../pages/SearchResult";
-import Detail from "../pages/Detail";
 // import { QueryClient, QueryClientProvider } from 'react-query';
 
 // 글로벌 스타일 만들기 위한 createGlobalStyle
@@ -42,7 +44,7 @@ const App = ({auth}) => {
                         <Route path="/" element={<Main/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/category/:word" element={<Category/>}/>
-                        <Route path="/find" element={<Category/>}/>
+                        <Route path="/findaccount" element={<FindAccount/>}/>
                         <Route path="/search/:word" element={<SearchResult/>}/>
                         <Route path="/detail/:video_id" element={<Detail/>}/>
                         <Route path="/mypage" element={<MyPage auth={auth}/>} />
