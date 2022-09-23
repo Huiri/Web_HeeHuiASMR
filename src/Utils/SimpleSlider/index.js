@@ -1,33 +1,17 @@
 import React, {useCallback, useRef, useState} from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
-import img1 from "../../assets/img/harry.jpg";
-import img2 from "../../assets/img/music.jpg";
-import img3 from "../../assets/img/tape.jpg";
-import {PagingArrow, PagingPause, PagingText, PagingWrapper} from "./styled";
+import {PagingArrow, PagingPause, PagingText, PagingWrapper, ImgWrapper, ImgContainer, PlayBtn} from "./styled";
 import {ReactComponent as PauseIcon} from "../../assets/icons/PauseIcon.svg";
-import {ReactComponent as PlayIcon} from "../../assets/icons/PlayIcon.svg";
+import Slick from "react-slick";
+import {sliderList} from "./sliderlist";
 
-const ImgContainer = styled.img`
-  width : 100vw;
-  //height : 80vh;
-  overflow: hidden;
-  z-index: 1;
-`
-
-const PlayBtn = styled(PlayIcon)`
-  margin-top : -14.5rem;
-  margin-bottom : -14.5rem;
-  width : 1.4rem;
-  display: inline-block;
-  color : gray;
-`
 
 const SimpleSlider = () => {
 
+    console.log(sliderList);
     const slickRef = useRef(null);
     const [isPlay, setIsPlay] = useState(false);
-    const settings = {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    /*const settings = {
         dots: false,
         infinite: true,
         speed: 500,
@@ -38,8 +22,13 @@ const SimpleSlider = () => {
         autoplaySpeed: 3000,
         cssEase: "linear",
         pauseOnHover: true,
-    };
+    };*/
 
+    const setting = {
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+    };
     const previous = useCallback(() => slickRef.current.slickPrev(), []);
     const next = useCallback(() => slickRef.current.slickNext(), []);
     const play = useCallback(() => slickRef.current.slickPlay(), []);
@@ -47,22 +36,27 @@ const SimpleSlider = () => {
 
     return (
         <div>
-            <Slider ref={slickRef} {...settings}>
-                <div>
-                    <ImgContainer src={img1}  alt=""/>
-                </div>
-                <div>
-                    <ImgContainer src={img2}  alt=""/>
-                </div>
-                <div>
-                    <ImgContainer src={img3}  alt=""/>
-                </div>
-            </Slider>
+            <Slick
+                {...setting}
+                initialSlide={0}
+                afterChange={(slide) => setCurrentSlide(slide)}
+                infinite
+                arrow={false}
+                slidesToshow={1}
+                slidesToScroll={1}
+            ref={slickRef}>
+                {sliderList.map((image) => (
+                    <ImgWrapper key={image.id}>
+                        <ImgContainer src={image.src} alt={image.alt} />
+                    </ImgWrapper>
+                ))}
+
+            </Slick>
 
 
             <PagingWrapper>
                 <PagingArrow onClick={previous}>&lt;</PagingArrow>
-                <PagingText>1/3</PagingText>
+                <PagingText> {currentSlide + 1}/{sliderList.length}</PagingText>
                 <PagingArrow onClick={next}>&gt;</PagingArrow>
                 <PagingPause onClick={()=>setIsPlay(!isPlay)}>
                     {isPlay ? <PlayBtn onClick={play}/> : <PauseIcon onClick={pause}/> }
