@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     VideoTitle,
     VideoCreator,
@@ -17,11 +17,13 @@ import {
     IconWrapper,
     PageBtn,
     CommentSection,
-    FilledHeartBtn
+    FilledHeartBtn, VideoViewer
 } from './styled';
 import CommentList from "../../components/Comment/CommentList";
 import {useSetRecoilState} from "recoil";
 import {commentListState} from "../../recoil/comment";
+import axios from "axios";
+import {useLocation, useParams} from "react-router-dom";
 let id = 0
 const getId = () => id++
 const Detail = () => {
@@ -29,36 +31,10 @@ const Detail = () => {
     const [isLiked, setIsLiked] = useState(false);
     const [isAdded, setIsAdded] = useState(false);
 
-    // const [nextId, setNextId] = useState(0);
     const [text, setText] = useState("");
-    // const commentList = useRecoilValue(filteredCommentListState);
     const setComments = useSetRecoilState(commentListState);
-    // const comments = useRecoilValue(commentListState);
-
-    // const [comments, setComments] = useState([]);
 
 
-    // const addComment = () => {
-    //
-    //     setComments((oldComments) => {
-    //         const id = oldComments.length
-    //             ? oldComments[oldComments.length -1].id+1
-    //             :0;
-    //
-    //         //기존 oldComments에 원소가 있으면 id + 1 없으면 id = 0
-    //         return [
-    //             ...oldComments,
-    //             {
-    //                 content: content,
-    //                 id : Math.random() * 100,
-    //                 isCompleted : fa
-    //                 // date : date.getUTCDate()
-    //             },
-    //         ];
-    //     });
-    //     setContent('');
-    //
-    // };
     const addCommentHandler = e =>{
         e.preventDefault();
 
@@ -67,21 +43,34 @@ const Detail = () => {
         } else {
             setComments(comments => comments.concat({ id: getId(), text, clicked : false}));
 
-            // setComments(commentValueList => [text, ...commentValueList]);
             setText('');
-            // addComment(content);
 
         }
     };
 
+    let params = useParams().video_id;
+    console.log(params);
+
+
+    const location = useLocation().state; // 추가된 부분
+    console.log(location.data.title);
+
+
     const handleChange = e => {
         setText(e.target.value);
     };
+
+
+    const [videoURL, setVideoURL] = useState(`https://www.youtube.com/embed/`);
+
+    useEffect(()=>{
+        setVideoURL(`https://www.youtube.com/embed/${params}`)
+    })
     return (
         <div>
             <TitleWrapper>
-                <VideoTitle>영상 제목</VideoTitle>
-                <VideoCreator>영상 창작자</VideoCreator>
+                <VideoTitle>{location.data.title}</VideoTitle>
+                <VideoCreator>{location.data.channelTitle}</VideoCreator>
             </TitleWrapper>
             <IconWrapper>
                 {isLiked ? <FilledHeartBtn onClick={()=>setIsLiked(!isLiked)}/> : <HeartBtn onClick={()=>setIsLiked(!isLiked)}/>}
@@ -89,11 +78,15 @@ const Detail = () => {
                 <PageBtn isAdded={isAdded} onClick={()=>setIsAdded(!isAdded)}/>
             </IconWrapper>
             <VideoWrapper>
-                <VideoSection/>
+                <VideoViewer id="ytplayer" type="text/html" width="85%" height="630"
+                        src={videoURL}
+                             //https://www.youtube.com/embed/m0x6tUkaI3c
+                        frameBorder="0" allowFullScreen/>
+                {/*<VideoSection/>*/}
             </VideoWrapper>
             <SubWrapper>
                 <VideoSubTitle>영상 부가 설명</VideoSubTitle>
-                <VideoSub>영상 부가 설명 들어갈 자리입니다.</VideoSub>
+                <VideoSub>{location.data.description}</VideoSub>
 
             </SubWrapper>
             <hr/>

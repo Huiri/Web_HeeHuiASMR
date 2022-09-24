@@ -7,6 +7,8 @@ import Login from '../pages/Login';
 import Main from '../pages/Main';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
+import MyPage from '../pages/MyPage';
+import Favorite from '../pages/Favorite';
 import {
     RecoilRoot,
     atom,
@@ -32,8 +34,11 @@ const App = ({auth}) => {
                         <Route path="/category/:word" element={<Category/>}/>
                         <Route path="/find" element={<Category/>}/>
                         <Route path="/search/:word" element={<SearchResult/>}/>
-                        <Route path="/detail" element={<Detail/>}/>
-                        <Route path="/login" element={<Login auth={auth}/>} />
+                        <Route path="/detail/:video_id" element={<Detail/>}/>
+                        <Route path="/mypage" element={<MyPage auth={auth}/>} />
+                        <Route path="/favorite" element={<Favorite/>} />
+
+                    <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
                 {/*    <Route path='/privacy-policy' component={() => {*/}
                 {/*    window.location.href = 'http://it.daejin.ac.kr/49.html';*/}
