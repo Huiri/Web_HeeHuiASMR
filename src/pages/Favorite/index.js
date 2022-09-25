@@ -13,8 +13,6 @@ const Favorite = () => {
                 <LikedVideoCard/>
                 <LikedVideoCard/>
                 <LikedVideoCard/>
-                <LikedVideoCard/>
-                <LikedVideoCard/>
             </Main>
             <SideBar>
 

@@ -15,13 +15,13 @@ export const ImgContainer = styled.div`
 `
 export const CategoryText = styled.p`
     display : flex;
-    margin : 0.8rem auto;
-    font-weight : 600;
+    margin : 1rem auto;
+  font-family: mabinogi, sans-serif;
     font-size : 1.2rem;
     &:hover{
         cursor: pointer;
         color : grey;
-        transition: color 0.3s;
+        transition: color 0.2s;
     }
 `
 export const CategoryContainer = styled.div`
@@ -31,12 +31,13 @@ export const CategoryContainer = styled.div`
 export const SliderTitle=styled.p`
     display: flex;
     color : #131313;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 500;
     justify-content:flex-start;
     align-items:center;
-    margin : -7.3rem 0 0 6rem;
+    margin : -6.3rem 0 0 6rem;
   z-index: 10;
+  font-family: tway, sans-serif;
   @media(max-width: 991px){
     margin : -7rem 0 0 4rem;
     font-size: 1.8rem;
@@ -51,26 +52,31 @@ export const SliderSubtitle = styled.p`
     align-items:center;
     text-align:center;
     margin : 10px 0 0 6rem;
-    font-weight: 600;
+  font-family: gangwonbold, sans-serif;
+
+  font-weight: 600;
   @media(max-width: 991px){
-    margin : 0 0 0 4rem;
+    margin : 0.8rem 0 0 4rem;
     font-size: 0.9rem;
   }
 `
 
 export const SliderExplain = styled.p`
-    margin-left : 6rem;
-    cursor: pointer;
-    z-index : 5;
-    width :15%;
-  margin-top : 0.3rem;
+  margin-left: 6.1rem;
+  cursor: pointer;
+  z-index: 5;
+  width: 15%;
+  margin-top: 0.7rem;
+  font-family: ridi, sans-serif;
+  color: #595959;
 
   &:focus, &:hover {
-        font-weight: 600;
-        transition : all ease 0.4s 0s;
-    }
-  @media(max-width: 991px){
-    margin : 0.2rem 0 0 4.1rem;
+    transition: all ease 0.4s 0s;
+    color : black;
+  }
+
+  @media (max-width: 991px) {
+    margin: 0.6rem 0 0 4.1rem;
   }
 
 `
@@ -81,10 +87,11 @@ export const SliderWrapper = styled.span`
     z-index: 10;
 `
 export const SliderViewMore = styled.div`
-  margin-top : -4px;
-  margin-left : 6rem;
+  margin-top : 0.8rem;
+  margin-left : 6.1rem;
   color: #4d4d4d;
-  font-size : 0.9rem;
+  font-size : 0.97rem;
+  font-family: geonggilight, sans-serif;
 
   @media(max-width: 991px){
     margin : 10px 0 0 4.1rem;
@@ -95,13 +102,15 @@ export const CategoryList = styled.div`
     display : flex;
     flex-direction : row;
     background: #f2f2f2;
+  margin-top : 1.5rem;
 `
 export const CategoryTitle = styled.p`
     display : flex;
     justify-content:center;
-  margin-top : 3rem;
+  margin-top : 5rem;
     align-items:center;
     font-size : 1.8rem;
+  font-family: geonggimedium, sans-serif;
 `
 
 export const BannerWrapper = styled.div`
@@ -126,12 +135,15 @@ export const PromotionSection = styled.div`
     
 `
 
-export const PromotionTitle = styled.h1`
+export const PromotionTitle = styled.p`
     display : flex;
+  font-size: 1.8rem;
     justify-content: center;
     align-items: center;
-    margin : 7rem 0 3rem 0;
-    background : ${props => props.color || 'white'};
+    margin : 7rem 0 2rem 0;
+  font-family: geonggimedium, sans-serif;
+
+  background : ${props => props.color || 'white'};
 `
 export const VideoWrapper = styled.div`
 `
@@ -165,7 +177,8 @@ export const ViewMoreBtn = styled(Link)`
 `
 export const ViewMoreBtnText = styled.p`
   color : black;
-
+  font-family: lee, sans-serif;
+  font-size: 1.1rem;
 `
 
 export const MakerSection = styled.div`
@@ -175,9 +188,9 @@ export const MakerSection = styled.div`
 
 export const MakerImg = styled.div`
     background: #dbdbdb;
-    width : 30vw;
+    width : 35vw;
     height : 80vh;
-    margin : 3rem 12rem;
+    margin : 0 11rem 4rem 11rem;
     
 `
 
@@ -198,6 +211,7 @@ export const MakerImgContainer = styled.div`
 export const CategoryBtnContainer = styled.div`
     display : flex;
     justify-content : center;
+  margin-top : 3rem;
 `
 export const CategoryBtn = styled.button`
     width : 5rem;
@@ -205,16 +219,22 @@ export const CategoryBtn = styled.button`
     border-radius : 2rem;
     border : solid 3px #b9babd;
     color : #131313;
-    font-weight : 600;
-    font-size : 1.1rem;
+    font-size : 1rem;
     padding : 6px;
     margin : 0 1rem 2rem 1rem;
+  font-family: mabinogi,sans-serif;
+  &:hover {
+    background: #b9babd;
+    transition: all 0.2s ease-in-out;
+
+  }
 `
 
 
 export const CollectionSection = styled.div`
     display : flex;
     justify-content : center;
+  margin-top : 2rem;
 `
 
 export const CollectionImg = styled.div`

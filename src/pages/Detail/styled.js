@@ -8,12 +8,15 @@ export const TitleWrapper = styled.div`
     margin : 0 0 0 3.5rem;
 `
 export const VideoTitle = styled.h2`
-    margin-bottom : 0.5rem;
-    font-size : 2rem;  
+    margin : 1rem 0;
+  width : 85%;
+    font-size : 1.9rem; 
+  font-family: lee, sans-serif;
 `
 export const VideoCreator = styled.p`
-  font-size : 1.3rem;
+  font-size : 1.4rem;
   margin : 0 0 0.3rem 0.4rem;
+  font-family: lee, sans-serif;
 `
 
 //아이콘 부분
@@ -72,12 +75,18 @@ export const SubWrapper = styled.div`
 
 `
 export const VideoSubTitle = styled.p`
-  font-size : 1.4rem;
+  font-size : 1.6rem;
   margin-bottom : 0;
+  font-weight: bold;
+  font-family: lee, sans-serif;
+
 `
 export const VideoSub = styled.p`
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  width : 87%;
   margin : 1rem 0 3rem 0.5rem;
+  font-family: lee, sans-serif;
+
 `
 //비디오 출력 부분
 export const VideoWrapper = styled.div`
@@ -106,7 +115,9 @@ export const CommentContainer = styled.div`
 
 export const CommentTitle = styled.h1`
   margin-bottom : 0;
-  font-size : 2rem
+  margin-top : 1.7rem;
+  font-size : 2rem;
+  font-family : lee, sans-serif;
 
 `
 
@@ -120,6 +131,7 @@ export const CommentInput = styled.input`
   width: 80vw;
   height: 10vh;
   margin : 1rem 0;
+  font-family: lee, sans-serif;
   
   &:focus {
   }
@@ -129,6 +141,8 @@ export const CommentBtn = styled.button`
   height : 11vh;
   cursor : pointer;
   font-size : 1.3rem;
+  font-family: cookieregular, sans-serif;
+
 `
 //실제 댓글창
 export const CommentSection = styled.div`

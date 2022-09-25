@@ -2,6 +2,7 @@ body {
   height : 100vh;
   width : 100vw;
   margin: 0;
+  overflow-X : hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -12,4 +13,48 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@font-face {
+  font-family: "cookieblack";
+  src: url("./font/CookieRunBlack.ttf");
+}
+@font-face {
+  font-family: "cookiebold";
+  src: url("./font/CookieRunBold.ttf");
+}
+@font-face {
+  font-family: "cookieregular";
+  src: url("./font/CookieRunRegular.ttf");
+}
+@font-face {
+  font-family: "mabinogi";
+  src: url("./font/Mabinogi_Classic_TTF.ttf");
+}
+@font-face {
+  font-family: "ridi";
+  src: url("./font/RIDIBatang.otf");
+}
+@font-face {
+  font-family: "tway";
+  src: url("./font/tway_air.ttf");
+}
+@font-face {
+  font-family: "ulsanjunggu";
+  src: url("./font/ulsanjunggu.ttf");
+}
+@font-face {
+  font-family: "diary";
+  src: url("./font/EF_Diary.ttf");
+}
+@font-face {
+  font-family: "lee";
+  src: url("./font/LeeSeoyun.ttf");
+}
+@font-face {
+  font-family: "geonggilight";
+  src: url("./font/Title_Light.otf");
+}
+@font-face {
+  font-family: "geonggimedium";
+  src: url("./font/Title_Medium.otf");
 }

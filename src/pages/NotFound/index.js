@@ -14,11 +14,14 @@ const ErrorWrapper = styled.div`
 const ErrorTitle = styled.h1`
     font-size: 4rem;
     margin : 0;
+  font-family: cookieregular, sans-serif;
 `
 
 const ErrorText = styled.p`
     font-size : 3rem;
     margin : 0;
+  font-family: cookieregular, sans-serif;
+
 
 `
 const NotFound = () => {

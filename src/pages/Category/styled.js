@@ -35,12 +35,13 @@ export const PromotionSection = styled.div`
     
 `
 
-export const PromotionTitle = styled.h1`
+export const PromotionTitle = styled.p`
     display : flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.7rem;
-    margin : 3rem 0 0 0;
+    font-size: 2.4rem;
+    margin : 5rem 0 0 0;
+    font-family: cookieregular, sans-serif;
 
 `
 export const PromotionSubTitle = styled.h3`
@@ -50,7 +51,8 @@ export const PromotionSubTitle = styled.h3`
     font-size: 1.6rem;
     font-weight: 400;
     color : #8a8a8a;
-    margin : 0 0 3rem 0;
+    margin : 1rem 0 3rem 0;
+  font-family: cookieregular, sans-serif;
 `
 export const VideoThumbnail = styled.div`
     width : 19vw;
@@ -66,8 +68,9 @@ export const SearchInput = styled.input`
     border-radius: 1rem;
     border-style: none;
     background: #ededed;
-    font-size : 1rem;
+    font-size : 1.2rem;
     padding : 0 1rem;
+  font-family: lee, sans-serif;
     &:hover, &:focus {
         outline : none;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -82,7 +85,7 @@ export const SearchDiv = styled.div`
     width : 30vw;
     margin : 0 auto;
     margin-bottom : 3rem;
-    margin-top : 5rem;
+    margin-top : 3rem;
 `
 
 export const SearchBtn = styled(SearchIcon)`
@@ -99,7 +102,9 @@ export const ViewMoreBtn = styled.div`
     height : 7vh;
     margin : 2rem auto;
     cursor : pointer;
-    display: flex;
+  font-family: lee, sans-serif;
+  font-size: 1.1rem;
+  display: flex;
     border-radius: 40px;
     background: #e6e6e6;
     justify-content: center;
@@ -119,8 +124,13 @@ export const CategoryBtn = styled.button`
   border-radius: 2rem;
   border: solid 3px #e5e5e5;
   color: #131313;
-  font-weight: 600;
   font-size: 1.1rem;
+  font-family: mabinogi, sans-serif;
   padding: 6px;
-  margin: 0 1rem 4rem 1rem;
+  margin: 0 1rem 3rem 1rem;
+  &:hover {
+    background: #e5e5e5;
+    transition : all ease 0.2s 0s;
+
+  }
 `
