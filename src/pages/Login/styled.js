@@ -20,6 +20,8 @@ export const Button = styled.button`
     &:hover{
         background: skyblue;
         cursor: pointer;
+      transition : all ease 0.2s 0s;
+
     }
 
 `

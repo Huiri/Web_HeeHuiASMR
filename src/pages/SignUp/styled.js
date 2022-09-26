@@ -5,7 +5,7 @@ export const Button = styled.button`
     background : ${props => props.background || "#5d7c9c"} ;
     display : flex;
     font-size: 1rem;
-    margin :3rem 0 1rem 0;
+    margin :1.5rem 0 1rem 0;
     width :100%;
     height :5.5vh;
     border-radius: 5px;
@@ -19,7 +19,9 @@ export const Button = styled.button`
   &:hover{
         background: skyblue;
         cursor: pointer;
-    }
+    transition : all ease 0.2s 0s;
+
+  }
 
 `
 
@@ -35,8 +37,8 @@ export const RegisterContainer = styled.div`
     background : #f0f0f0;
     padding : 0;
     flex-direction: column;
-    width : 25vw;
-    height : 40vh;
+    width : 22rem;
+    height : 50vh;
     border: none;
     border-radius: 1rem;
     justify-content: center;
@@ -56,7 +58,7 @@ export const RegisterTitle = styled.p`
 `
 
 export const RegisterInput = styled.input`
-    width : 15vw;
+    width : 15rem;
     font-size : 1.1rem;
     margin : 1.5rem 0 1rem 0;
     display :flex;
