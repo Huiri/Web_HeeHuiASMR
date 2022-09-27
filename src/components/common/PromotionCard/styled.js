@@ -15,6 +15,11 @@ export const PromotionWrapper = styled.div`
     cursor : pointer;
     margin: 0.5rem 0.2rem;
     display:inline-block;
+  border-radius: 5px;
+  border: 2px #cecece solid;
+  &:hover {
+    box-shadow: 3px 3px 3px #b2b2b2;
+  }
 `
 
 export const VideoThumbnail = styled.div`
