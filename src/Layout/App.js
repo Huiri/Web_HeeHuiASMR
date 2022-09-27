@@ -23,6 +23,7 @@ import { createGlobalStyle } from "styled-components";
 
 // 스타일 초기화를 위한 reset
 import reset from "styled-reset";
+import NewVideo from "../pages/NewVideo";
 
 // 글로벌 스타일 만들기, reset 사용해서 스타일 초기화하기
 const GlobalStyles = createGlobalStyle`
@@ -49,6 +50,7 @@ const App = ({auth}) => {
                         <Route path="/detail/:video_id" element={<Detail/>}/>
                         <Route path="/mypage" element={<MyPage auth={auth}/>} />
                         <Route path="/favorite" element={<Favorite/>} />
+                        <Route path="/new" element={<NewVideo/>} />
 
                     <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
