@@ -24,6 +24,9 @@ import { createGlobalStyle } from "styled-components";
 // 스타일 초기화를 위한 reset
 import reset from "styled-reset";
 import NewVideo from "../pages/NewVideo";
+import MadeBy from "../pages/MadeBy";
+import Service from "../pages/Service";
+import StudentPage from "../pages/StudentPage";
 
 // 글로벌 스타일 만들기, reset 사용해서 스타일 초기화하기
 const GlobalStyles = createGlobalStyle`
@@ -51,20 +54,12 @@ const App = ({auth}) => {
                         <Route path="/mypage" element={<MyPage auth={auth}/>} />
                         <Route path="/favorite" element={<Favorite/>} />
                         <Route path="/new" element={<NewVideo/>} />
+                        <Route path="/madeby" element={<MadeBy/>} />
+                        <Route path="/service" element={<Service/>} />
+                        <Route path="/student" element={<StudentPage/>} />
 
                     <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
-                {/*    <Route path='/privacy-policy' component={() => {*/}
-                {/*    window.location.href = 'http://it.daejin.ac.kr/49.html';*/}
-                {/*    return null;*/}
-                {/*}}/>*/}
-                    <Route
-                        path="/graduate"
-                        component={() => {
-                            global.window && (global.window.location.href = 'http://it.daejin.ac.kr/49.html');
-                            return null;
-                        }}
-                    />
                 </Routes>
                 <Footer/>
             </BrowserRouter>
