@@ -7,7 +7,6 @@ import {sliderList} from "./sliderlist";
 
 const SimpleSlider = () => {
 
-    console.log(sliderList);
     const slickRef = useRef(null);
     const [isPlay, setIsPlay] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
