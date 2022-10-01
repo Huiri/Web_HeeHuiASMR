@@ -20,6 +20,11 @@ const StudentPage = () => {
                     <StudentExplain>컴퓨터공학전공</StudentExplain>
                     <StudentExplain>20191523</StudentExplain>
                     <StudentExplain>전은희</StudentExplain>
+                    <StudentTitle>기술 스택</StudentTitle>
+                    <StudentExplain>Java, SpringBoot</StudentExplain>
+                    <StudentExplain>Mysql</StudentExplain>
+                    <StudentExplain>Python</StudentExplain>
+
                 </ExplainSection>
 
                 <ExplainSection>
@@ -28,6 +33,11 @@ const StudentPage = () => {
                     <StudentExplain>컴퓨터공학전공</StudentExplain>
                     <StudentExplain>20191524</StudentExplain>
                     <StudentExplain>문희리</StudentExplain>
+                    <StudentTitle>기술 스택</StudentTitle>
+                    <StudentExplain>React</StudentExplain>
+                    <StudentExplain>Html, Css, Js</StudentExplain>
+                    <StudentExplain>Python</StudentExplain>
+
                 </ExplainSection>
 
             </ExplainWrapper>
