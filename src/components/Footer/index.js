@@ -11,10 +11,14 @@ import {FooterStyle,
     ServiceContainer,
 } from './styled';
 const Footer = () => {
+    function openTab() {
+        window.open('http://it.daejin.ac.kr/49.html');
+    }
+
     return (
         <FooterWrapper>
             <FooterStyle>
-                <StyledLink to="/graduate">졸업작품</StyledLink>
+                <StyledLink to="" onClick={openTab}>졸업작품</StyledLink>
                 <StyledLink to ="/student">학생소개</StyledLink>
                 <StyledLink to ="/service">서비스 소개</StyledLink>
             </FooterStyle>
