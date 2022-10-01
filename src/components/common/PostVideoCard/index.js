@@ -1,30 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {PromotionChannel, PromotionTitle, PromotionWrapper, VideoThumbnail, VideoWrapper, StyledLink} from "./styled";
-import axios from "axios";
+import useFetch from "../../../hooks/useYoutube";
 
-const PostVideoCard = (param) => {
+const PostVideoCard = ({param, offset, limit, page}) => {
 
-    const [videolist, setVideolist] = useState([]);
-
-
-    useEffect(() => {
-        axios
-            //AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA
-            .get(
-                // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=4&type=video&regionCode=KR&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=에셈알${param}&maxResults=4&type=video&regionCode=KR&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
-            )
-            .then((res) => {
-                console.log(res);
-                setVideolist(res.data.items);
-            })
-            .catch(() => {});
-        return function cleanup(){
-
-        };
-    }, []);
-    console.log(videolist);
-
+    const videolist = useFetch("");
+    //.slice(offset, offset + limit)
 
     return (
         <>
