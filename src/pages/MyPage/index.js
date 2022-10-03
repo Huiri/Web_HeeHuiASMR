@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SideBarSearchItem, SideBarSearchTitle, SideBarWrapper, Main, SideBar} from "../SearchResult/styled";
 import { getAuth, sendPasswordResetEmail, deleteUser } from "firebase/auth";
 import {LayoutContainer,
@@ -9,8 +9,13 @@ import {LayoutContainer,
     PrivacyDelete,
     PassWordChangeEmail,
 } from './styled';
+import {useRecoilState} from "recoil";
+import {LoginState} from "../../States/LoginStates";
+import {useNavigate} from "react-router-dom";
 
 const MyPage = () => {
+    const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+    const navigate = useNavigate();
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -78,6 +83,12 @@ const MyPage = () => {
         });
 
     }
+
+    useEffect(()=> {
+        if(isLoggedIn === false){
+            navigate('/', {replace:true})
+        }
+    },[isLoggedIn])
     return (
 
         <LayoutContainer>
@@ -90,7 +101,6 @@ const MyPage = () => {
                     <PrivacyItem>사진 : {photoURL ? photoURL : "X"}</PrivacyItem>
                     <PrivactSub>비밀번호 변경</PrivactSub>
                     <PassWordChangeEmail onClick={sendChangePasswordEmail}>비밀번호 재설정 이메일 전송</PassWordChangeEmail>
-
                     <PrivacyDelete onClick={deleteAccount}>회원 탈퇴하기</PrivacyDelete>
 
                 </PrivacyWrapper>
