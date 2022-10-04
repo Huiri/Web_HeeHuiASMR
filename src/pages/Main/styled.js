@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
 
 export const HomeWrapper = styled.div`
     height : 100%;
@@ -113,13 +112,14 @@ export const CategoryTitle = styled.p`
   font-family: geonggimedium, sans-serif;
 `
 
-export const BannerWrapper = styled.div`
+export const BannerWrapper = styled.img`
     background: #c9c9c9;
     justify-content: center;
     display : flex;
     width : 80vw;
     height : 30vh;
     margin : 6rem auto;
+  object-fit: cover;
 `
 export const PromotionContainer = styled.div`
 `
@@ -128,13 +128,20 @@ export const PromotionSub = styled.p`
 `
 
 export const PromotionSection = styled.div`
-    display : flex;
-    flex-direction: row;
-    justify-content: center;
-  margin : 0 5rem;
-    
+    display : grid;
+  grid-template-columns: repeat(auto-fill, minmax(21.4%, auto));
+  justify-content: center;
 `
 
+export const HotSection = styled.div`
+  display : grid;
+  grid-template-columns: repeat(auto-fill, minmax(28.6%, auto));
+  justify-content: center;
+  gap : 10px 0;
+  grid-gap : 10px 0;
+
+
+`
 export const PromotionTitle = styled.p`
     display : flex;
   font-size: 1.8rem;
@@ -162,7 +169,7 @@ export const VideoCategory = styled.h4`
 export const VideoText = styled.p`
 `
 
-export const ViewMoreBtn = styled(Link)`
+export const ViewMoreBtn = styled.div`
     width : 12vw;
     height : 7vh;
     margin : 4rem auto;

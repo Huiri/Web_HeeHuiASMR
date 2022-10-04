@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
   display: grid;
-  height: 150vh;
   width : 100vw;
-  grid-template-rows: 1fr 1fr 1fr 6fr;
-  grid-template-columns: 1fr 5fr;
+  height: 100%;
+  grid-template-rows: 1px 2rem 4rem 6fr;
+  grid-template-columns: 1.2fr 5fr;
   grid-template-areas:
     "space space space"
     "sidebar result result"
@@ -56,6 +56,11 @@ export const  Result = styled.div`
 export const NavWrapper = styled.div`
   width : 100%;
   display : flex;
+`
+export const PromotionSection = styled.div`
+    display : grid;
+  grid-template-columns: repeat(auto-fill, minmax(26%, auto));
+  justify-content: center;
 `
 export const RelatedSearchTitle = styled.div`
   color : white;

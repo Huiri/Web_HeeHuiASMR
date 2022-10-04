@@ -8,7 +8,10 @@ export const PromotionWrapper = styled.div`
   display: inline-block;
   border-radius: 0.3rem;
   border: 2px #cecece solid;
-
+  width : 16.2rem;
+  height : 20rem;
+grid-gap : 10px 10px;
+  gap : 10px 10px;
 
   &:hover {
     box-shadow: 3px 3px 3px #b2b2b2;
@@ -31,9 +34,8 @@ export const PromotionTitle = styled.div`
   font-weight: 600;
   white-space: nowrap;
   font-size : 1.2rem;
-  color : black;
   margin-top : 1rem;
-
+  color : ${props => props.color || 'black'}
 
 
 `

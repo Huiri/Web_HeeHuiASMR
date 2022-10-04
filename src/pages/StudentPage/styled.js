@@ -34,3 +34,10 @@ export const ExplainWrapper = styled.div`
   justify-content: center;
 
 `
+export const PageTitle = styled.p`
+  font-size: 2rem;
+  font-family: cookieregular, sans-serif;
+  margin : 3rem 0 1rem 0;
+  justify-content: center;
+  display: flex;
+`
