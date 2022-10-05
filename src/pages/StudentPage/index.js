@@ -1,18 +1,18 @@
 import React from 'react';
 import {LayoutContainer} from "../MadeBy/styled";
-import { ServiceTitle} from "../Service/styled";
 import {ExplainSection,
     StudentExplain,
     StudentTitle,
     Img,
-    ExplainWrapper} from "./styled";
+    ExplainWrapper,
+    PageTitle} from "./styled";
 import img1 from "../../assets/img/woman.png";
 import img2 from "../../assets/img/girl.png";
 
 const StudentPage = () => {
     return (
         <LayoutContainer>
-            <ServiceTitle>학생 소개</ServiceTitle>
+            <PageTitle>학생 소개</PageTitle>
             <ExplainWrapper>
                 <ExplainSection>
                     <Img src={img2} alt={""}/>

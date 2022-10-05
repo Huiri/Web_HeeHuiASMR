@@ -3,10 +3,6 @@ import {
     LayoutContainer,
     ServiceSubTitle,
     ServiceTitle,
-    SoundGraph,
-    IconWrapper,
-    Note1, Note2, Note3, Note4,
-    IconContainer,
     TextContainer, ServiceExplain,
     Section
 

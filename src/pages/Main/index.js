@@ -1,7 +1,13 @@
 import React, {useState} from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import sound from "../../assets/img/sound.jpg";
+import oceanpan from "../../assets/img/oceanpan.jpg";
+import dark from "../../assets/img/dark.jpg";
+import tree from "../../assets/img/tree.jpg";
+import headphone from "../../assets/img/headphone.jpg";
+import ocean from "../../assets/img/ocean.jpg";
+import atom from "../../assets/img/atom.jpg";
 import {HomeWrapper,
     CategoryContainer,
     SliderExplain,
@@ -27,12 +33,15 @@ import {HomeWrapper,
     CollectionSection,
     CollectionImg,
     SliderViewMore,
+    HotSection
 } from './styled';
 
 import PostVideoCard from "../../components/common/PostVideoCard";
 import PromotionCard from "../../components/common/PromotionCard";
 
 import SimpleSlider from "../../Utils/SimpleSlider";
+import {useNavigate} from "react-router-dom";
+import CenterSlider from "../../Utils/CenterSlider";
 
 const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
@@ -52,12 +61,13 @@ const Main = () => {
     //     });
     //     naverLogin.init();
     // }
+    const navigate = useNavigate();
     const categorylist = ["음식", "자연", "수면", "웃음", "팅글"];
+    const onCategoryClick = (param) => {
+        navigate(`/category/${param}`);
+    }
     return (
         <HomeWrapper>
-            {/*<Slider style={styleObj}
-            slideIndex = {slideIndex}/>*/}
-            {/*<ImgContainer>이미지 들어갈 예정</ImgContainer>*/}
             <SimpleSlider/>
             <SliderWrapper>
                 <SliderTitle>나만을 위한 ASMR</SliderTitle>
@@ -73,21 +83,24 @@ const Main = () => {
 
                 <CategoryList>
                     {categorylist.map((category) => (
-                        <CategoryText key={category}>{category}</CategoryText>
+                        <CategoryText key={category} onClick={()=>onCategoryClick(category)}>{category}</CategoryText>
 
                     ))}
 
                 </CategoryList>
             </CategoryContainer>
-            <BannerWrapper/>
+            <BannerWrapper src={sound} alt={"배너"}/>
 
             <PromotionContainer>
                 <PromotionTitle>인기 급상승</PromotionTitle>
-                <PromotionSection>
+                <HotSection>
                     <PromotionCard/>
                     <PromotionCard/>
                     <PromotionCard/>
-                </PromotionSection>
+                    <PromotionCard/>
+                    <PromotionCard/>
+                    <PromotionCard/>
+                </HotSection>
 
             </PromotionContainer>
             <VideoWrapper>
@@ -95,20 +108,21 @@ const Main = () => {
                 <PromotionSection>
                     <PostVideoCard/>
                 </PromotionSection>
-                <ViewMoreBtn to="/detail">
+                <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
             </VideoWrapper>
 
             <MakerSection>
                 <PromotionTitle color="#757575">인기 크리에이터</PromotionTitle>
+                <CenterSlider/>
 
                 <MakerImgContainer>
-                    <MakerSubImg color="#d9bdbd"/>
-                    <MakerSubImg color="#d9d6bd"/>
-                    <MakerImg/>
-                    <MakerSubImg color="#bed9bd"/>
-                    <MakerSubImg color="#bdc5d9"/>
+                    <MakerSubImg src={oceanpan} alt={"서브"}/>
+                    <MakerSubImg src={dark} alt={"서브"}/>
+                    <MakerImg src={tree} alt={"메인"}/>
+                    <MakerSubImg src={ocean} alt={"서브"}/>
+                    <MakerSubImg src={headphone} alt={"서브"}/>
                 </MakerImgContainer>
             </MakerSection>
 
@@ -131,7 +145,7 @@ const Main = () => {
 
             <CollectionSection>
 
-                <CollectionImg color="#a5aec4"/>
+                <CollectionImg src={atom} alt={"atom"}/>
                 <CollectionImg/>
 
             </CollectionSection>

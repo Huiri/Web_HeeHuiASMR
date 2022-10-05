@@ -2,7 +2,7 @@ import React from 'react';
 import {PromotionChannel, PromotionTitle, PromotionWrapper, VideoThumbnail, VideoWrapper, StyledLink} from "./styled";
 import useFetch from "../../../hooks/useYoutube";
 
-const PostVideoCard = ({param, offset, limit, page}) => {
+const PostVideoCard = () => {
 
     const videolist = useFetch("");
     //.slice(offset, offset + limit)

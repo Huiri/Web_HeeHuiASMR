@@ -35,7 +35,7 @@ const NewVideo = () => {
     return (
         <LayoutContainer>
             <PromotionTitle>최신 업로드 영상</PromotionTitle>
-            <PromotionSubTitle>ASMR with US!</PromotionSubTitle>
+            <PromotionSubTitle>오늘 업로드 된 영상은?</PromotionSubTitle>
             <SearchDiv>
                 <form onSubmit={onSearch}>
                     <SearchInput type={"text"} value={newsearch} placeholder={"요즘 뜨는 키워드는?"} onChange={handleChange}/>
