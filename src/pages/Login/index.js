@@ -6,7 +6,10 @@ import {getAuth,
     GoogleAuthProvider,
     getRedirectResult,
     signInWithRedirect,
-    FacebookAuthProvider
+    FacebookAuthProvider,
+    setPersistence,
+    browserSessionPersistence
+
 } from "firebase/auth";
 
 import { useRecoilState } from 'recoil';
@@ -51,6 +54,9 @@ const Login = () => {
         signInWithEmailAndPassword(auth, formValues.email, formValues.password)
         .then((userCredential) => {
             setIsLoggedIn(true);
+            if(isChecked===true){
+                setIsLogin();
+            }
             history('/', {replace:true})
     })
         .catch((error) => {
@@ -119,13 +125,14 @@ const Login = () => {
         signInWithPopup(auth, facebookprovider)
             .then((result) => {
                 // The signed-in user info.
+                setIsLoggedIn(true);
+                history('/', {replace:true})
+
                 const user = result.user;
 
                 // This gives you a Facebook Access Token. You can use it to access the Facebook API.
                 const credential = FacebookAuthProvider.credentialFromResult(result);
                 const accessToken = credential.accessToken;
-                setIsLoggedIn(true);
-                history('/', {replace:true})
 
                 // ...
             })
@@ -199,9 +206,22 @@ const Login = () => {
 
     //로그인 유지하기 파트
     const [isChecked, setIsChecked] = useState(false);
-    const checkHandler = ({target}) =>{
-        setIsChecked(!isChecked);
-    };
+    const setIsLogin = (email, password) => {
+        setPersistence(auth, browserSessionPersistence)
+            .then(() => {
+                // Existing and future Auth states are now persisted in the current
+                // session only. Closing the window would clear any existing state even
+                // if a user forgets to sign out.
+                // ...
+                // New sign-in will be persisted with session persistence.
+                return signInWithEmailAndPassword(auth, email, password);
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            })
+    }
 
     //form, input 데이터
     const initialValues = {email : "", password : ""};
@@ -243,8 +263,8 @@ const Login = () => {
             errors.email = "Invalid email format";
         }
 
-        if(values.password.length < 4){
-            errors.password = "Password must be more than 4 chracters";
+        if(values.password.length < 6){
+            errors.password = "Password must be more than 6 chracters";
         }
 
         return errors;
@@ -283,7 +303,7 @@ const Login = () => {
                     <LoginWarnSpan className='error'>{formErrors.password}</LoginWarnSpan>)}
 
                     <LoginSubWrapper>
-                        <LoginCheck onClick={()=>setIsChecked(!isChecked)} type="checkbox"/>
+                        <LoginCheck onClick={()=>{setIsChecked(!isChecked)}} defaultValu={isChecked} type="checkbox"/>
                         <LoginCheckTitle>로그인 유지하기</LoginCheckTitle>
                         <InfoFindLink to="/findaccount">아이디/비밀번호</InfoFindLink>
 
@@ -295,7 +315,7 @@ const Login = () => {
                         <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleBtn/> </ImgBtn>
                         <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
                         {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
-                        <ImgBtn onClick={()=> signInFaceBook()}> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>
+                        <ImgBtn> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>
 
                     </ImgBtnContainer>
 
