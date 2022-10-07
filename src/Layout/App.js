@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -27,6 +27,7 @@ import NewVideo from "../pages/NewVideo";
 import MadeBy from "../pages/MadeBy";
 import Service from "../pages/Service";
 import StudentPage from "../pages/StudentPage";
+import axios from "axios";
 
 // 글로벌 스타일 만들기, reset 사용해서 스타일 초기화하기
 const GlobalStyles = createGlobalStyle`
@@ -37,6 +38,11 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 const App = ({auth}) => {
+    useEffect(() => {
+        axios.get('/api/test')
+            .then(res => console.log(res))
+            .catch()
+    })
     return (
         <RecoilRoot>
             <GlobalStyles />
