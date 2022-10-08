@@ -17,6 +17,9 @@ import {HomeWrapper,
     CategoryText,
     CategoryList,
     SliderWrapper,
+    BannerImg,
+    BannerText,
+    BannerTitle,
     BannerWrapper,
     PromotionTitle,
     PromotionSection,
@@ -33,7 +36,8 @@ import {HomeWrapper,
     CollectionSection,
     CollectionImg,
     SliderViewMore,
-    HotSection
+    HotSection,
+    TextWrapper
 } from './styled';
 
 import PostVideoCard from "../../components/common/PostVideoCard";
@@ -46,6 +50,8 @@ import CenterSlider from "../../Utils/CenterSlider";
 const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
     const [isShowMore, setIsShowMore] = useState(false);
+    const [page, setPage] = useState(1)
+    const [pageNum, setPageNum] = useState(1)
 
     //네이버 로그인 초기화
     // const NaverLogin = () => {
@@ -89,14 +95,18 @@ const Main = () => {
 
                 </CategoryList>
             </CategoryContainer>
-            <BannerWrapper src={sound} alt={"배너"}/>
+            <BannerWrapper>
+                <BannerImg src={sound} alt={"배너"}/>
+                <TextWrapper>
+                    <BannerTitle>오늘의 수면을 위한 선택</BannerTitle>
+                    <BannerText>HH ASMR</BannerText>
+
+                </TextWrapper>
+            </BannerWrapper>
 
             <PromotionContainer>
                 <PromotionTitle>인기 급상승</PromotionTitle>
                 <HotSection>
-                    <PromotionCard/>
-                    <PromotionCard/>
-                    <PromotionCard/>
                     <PromotionCard/>
                     <PromotionCard/>
                     <PromotionCard/>
@@ -106,16 +116,16 @@ const Main = () => {
             <VideoWrapper>
                 <PromotionTitle>최근 업로드</PromotionTitle>
                 <PromotionSection>
-                    <PostVideoCard/>
+                    <PostVideoCard page={page}/>
                 </PromotionSection>
                 <ViewMoreBtn>
-                    <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
+                    <ViewMoreBtnText onClick={()=> setPage(page+1)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
             </VideoWrapper>
 
             <MakerSection>
                 <PromotionTitle color="#757575">인기 크리에이터</PromotionTitle>
-                <CenterSlider/>
+                {/*<CenterSlider/>*/}
 
                 <MakerImgContainer>
                     <MakerSubImg src={oceanpan} alt={"서브"}/>
@@ -135,10 +145,10 @@ const Main = () => {
 
                 </CategoryBtnContainer>
                 <PromotionSection>
-                    {/*<PostVideoCard/>*/}
+                    {/*<PostVideoCard  page={pageNum}/>*/}
                 </PromotionSection>
                 <ViewMoreBtn to="/detail">
-                    <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
+                    <ViewMoreBtnText onClick={()=> setPageNum(pageNum+1)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
                 </ViewMoreBtn>
             </VideoWrapper>
             <PromotionTitle>떠오르는 크리에이터</PromotionTitle>

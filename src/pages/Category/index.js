@@ -21,20 +21,23 @@ const Category = () => {
 
     const [isShowMore, setIsShowMore] = useState(false);
     const navigate = useNavigate();
-
-    const [categorysearch, setCategorySearch] = useState('');
+    const [page, setPage] = useState(1);
+    const [categorySearch, setCategorySearch] = useState('');
+    const [param, setParam] = useState('');
 
     const onSearch = e => {
         e.preventDefault();
-        if(categorysearch === ''){
+        if(categorySearch === ''){
             alert("검색어를 입력해주세요.");
         } else {
-            navigate(`/category/${categorysearch}`);
+            setParam(categorySearch);
+            navigate(`/category/${categorySearch}`);
         }
         setCategorySearch('');
     }
-    const onCategoryClick = (param) => {
-        navigate(`/category/${param}`);
+    const onCategoryClick = (category) => {
+        setParam(category);
+        navigate(`/category/${category}`);
     }
     const handleChange = e => {
         setCategorySearch(e.target.value);
@@ -54,7 +57,7 @@ const Category = () => {
             <PromotionSubTitle>ASMR with US!</PromotionSubTitle>
             <SearchDiv>
                 <form onSubmit={onSearch}>
-                    <SearchInput type={"text"} value={categorysearch} placeholder={"오늘의 키워드는?"} onChange={handleChange}/>
+                    <SearchInput type={"text"} value={categorySearch} placeholder={"오늘의 키워드는?"} onChange={handleChange}/>
                     <SearchBtn type={"submit"} onClick={onSearch}/>
                 </form>
             </SearchDiv>
@@ -67,13 +70,10 @@ const Category = () => {
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                <PostVideoCard/>
-            </PromotionSection>
-            <PromotionSection>
-                {/*<PostVideoCard/>*/}
+                <PostVideoCard page={page} param={param}/>
             </PromotionSection>
             <ViewMoreBtn>
-                <ViewMoreBtnText onClick={()=> setIsShowMore(!isShowMore)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
+                <ViewMoreBtnText onClick={()=> setPage(page+1)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
             </ViewMoreBtn>
 
         </CategoryContainer>
