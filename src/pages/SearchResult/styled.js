@@ -87,7 +87,7 @@ export const RelatedSearchItem = styled.p`
   }
 `
 
-export const SearchResultWrapper = styled.p` 
+export const SearchResultWrapper = styled.div` 
   margin : 1rem 0 0 0.6rem;
 `
 

@@ -7,6 +7,10 @@ export const PromotionImg = styled.div`
     margin : 0.6em 0.5rem;
     background: #dbdbdb;    
   border-radius: 5px;
+  @media(max-width: 991px){
+    width : 49.4vw;
+
+  }
 
 `
 
@@ -36,6 +40,10 @@ export const PromotionText = styled.p`
   margin-top : 1rem;
   font-weight: 600;
   font-family: lee, sans-serif;
+  @media(max-width: 991px){
+    width : 100%;
+
+  }
 
 
 `
@@ -43,6 +51,10 @@ export const PromotionSub = styled.p`
     font-size : 1rem;
    margin : 0.7rem 0;
   font-family: lee, sans-serif;
+  @media(max-width: 991px){
+    width : 100%;
+
+  }
 
 
 `

@@ -112,7 +112,7 @@ export const CategoryTitle = styled.p`
   font-family: geonggimedium, sans-serif;
 `
 
-export const BannerWrapper = styled.img`
+export const BannerImg = styled.img`
     background: #c9c9c9;
     justify-content: center;
     display : flex;
@@ -120,6 +120,30 @@ export const BannerWrapper = styled.img`
     height : 30vh;
     margin : 6rem auto;
   object-fit: cover;
+`
+export const BannerTitle = styled.p`
+    color : black;
+  font-size : 1.7rem;
+  font-family: geonggimedium,sans-serif;
+`
+export const TextWrapper= styled.div`
+  margin : -10.4rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width : 87vw;
+
+`
+export const BannerText = styled.p`
+  color : black;
+  display: flex;
+  font-size : 1.3rem;
+  margin-top : 0.3rem;
+  font-family: geonggimedium,sans-serif;
+
+`
+export const BannerWrapper = styled.span`
+
 `
 export const PromotionContainer = styled.div`
 `
@@ -129,9 +153,17 @@ export const PromotionSub = styled.p`
 
 export const PromotionSection = styled.div`
     display : grid;
+  //grid-template-columns: repeat(auto-fill, minmax(21.4%, auto));
   grid-template-columns: repeat(auto-fill, minmax(21.4%, auto));
+
   justify-content: center;
+  @media(max-width: 991px){
+    grid-template-columns: repeat(auto-fill, minmax(43%, auto));
+
+  }
+
 `
+
 
 export const HotSection = styled.div`
   display : grid;
@@ -139,6 +171,10 @@ export const HotSection = styled.div`
   justify-content: center;
   gap : 10px 0;
   grid-gap : 10px 0;
+  @media(max-width: 991px){
+    grid-template-columns: repeat(auto-fill, minmax(55%, auto));
+
+  }
 
 
 `
@@ -179,13 +215,23 @@ export const ViewMoreBtn = styled.div`
     background: #e6e6e6;
     justify-content: center;
     align-items: center;
-  text-decoration : none;
+    text-decoration : none;
+  &:hover{
+    background : #737373;
+    transition: all 0.2s ease-in-out;
+
+  }
 
 `
 export const ViewMoreBtnText = styled.p`
   color : black;
   font-family: lee, sans-serif;
   font-size: 1.1rem;
+  &:hover {
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
 `
 
 export const MakerSection = styled.div`
