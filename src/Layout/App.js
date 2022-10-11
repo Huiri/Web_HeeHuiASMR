@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -9,11 +9,13 @@ import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import MyPage from '../pages/MyPage';
 import Favorite from '../pages/Favorite';
+import FindAccount from "../pages/FindAccount";
+import SearchResult from "../pages/SearchResult";
+import Detail from "../pages/Detail";
+
 import {
     RecoilRoot
 } from 'recoil';
-import SearchResult from "../pages/SearchResult";
-import Detail from "../pages/Detail";
 // import { QueryClient, QueryClientProvider } from 'react-query';
 
 // 글로벌 스타일 만들기 위한 createGlobalStyle
@@ -21,6 +23,11 @@ import { createGlobalStyle } from "styled-components";
 
 // 스타일 초기화를 위한 reset
 import reset from "styled-reset";
+import NewVideo from "../pages/NewVideo";
+import MadeBy from "../pages/MadeBy";
+import Service from "../pages/Service";
+import StudentPage from "../pages/StudentPage";
+import axios from "axios";
 
 // 글로벌 스타일 만들기, reset 사용해서 스타일 초기화하기
 const GlobalStyles = createGlobalStyle`
@@ -31,6 +38,11 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 const App = ({auth}) => {
+    useEffect(() => {
+        axios.get('/api/test')
+            .then(res => console.log(res))
+            .catch()
+    })
     return (
         <RecoilRoot>
             <GlobalStyles />
@@ -42,25 +54,18 @@ const App = ({auth}) => {
                         <Route path="/" element={<Main/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/category/:word" element={<Category/>}/>
-                        <Route path="/find" element={<Category/>}/>
+                        <Route path="/findaccount" element={<FindAccount/>}/>
                         <Route path="/search/:word" element={<SearchResult/>}/>
                         <Route path="/detail/:video_id" element={<Detail/>}/>
                         <Route path="/mypage" element={<MyPage auth={auth}/>} />
                         <Route path="/favorite" element={<Favorite/>} />
+                        <Route path="/new" element={<NewVideo/>} />
+                        <Route path="/madeby" element={<MadeBy/>} />
+                        <Route path="/service" element={<Service/>} />
+                        <Route path="/student" element={<StudentPage/>} />
 
                     <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
-                {/*    <Route path='/privacy-policy' component={() => {*/}
-                {/*    window.location.href = 'http://it.daejin.ac.kr/49.html';*/}
-                {/*    return null;*/}
-                {/*}}/>*/}
-                    <Route
-                        path="/graduate"
-                        component={() => {
-                            global.window && (global.window.location.href = 'http://it.daejin.ac.kr/49.html');
-                            return null;
-                        }}
-                    />
                 </Routes>
                 <Footer/>
             </BrowserRouter>

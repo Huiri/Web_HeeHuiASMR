@@ -2,46 +2,12 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import {ReactComponent as PlayIcon} from "../../assets/icons/PlayIcon.svg";
 
-export const StyledSlider = styled(Slider)`
-  margin-left: 19%;
-  width: 60%;
-  text-align: center;
-
-  .slick-list {
-    overflow: hidden;
-    height: 15.5vw;
-    text-align: center;
-  }
-
-  .slick-arrow {
-    display: flex;
-    z-index: 20;
-    width: 1vw;
-    height: 1vw;
-  }
-
-  .slick-prev {
-    left: -1.2vw;
-    cursor: pointer;
-    &::before {
-      content: '';
-    }
-  }
-
-  .slick-next {
-    right: -1.1vw;
-    cursor: pointer;
-    &::before {
-      content: '';
-    }
-  }
-`
-
-export const PagingArrow = styled.h4`
+export const PagingArrow = styled.p`
     margin : 0.9rem;
-    display : flex;
     cursor : pointer;
     color : #828282;
+  z-index : 10;
+  
     :hover, :focus {
         /* font-size : 1.1rem; */
         color : #474747;

@@ -22,7 +22,6 @@ const Category = () => {
     const [isShowMore, setIsShowMore] = useState(false);
     const navigate = useNavigate();
 
-
     const [categorysearch, setCategorySearch] = useState('');
 
     const onSearch = e => {
@@ -65,16 +64,10 @@ const Category = () => {
                     <CategoryBtn  key={category} onClick={()=>onCategoryClick(category)}>#{category}</CategoryBtn>
 
                     ))}
-                {/*<CategoryBtn onClick={onCategoryClick}>#음식</CategoryBtn>*/}
-                {/*<CategoryBtn onClick={onCategoryClick}>#자연</CategoryBtn>*/}
-                {/*<CategoryBtn onClick={onCategoryClick}>#웃음</CategoryBtn>*/}
-                {/*<CategoryBtn onClick={onCategoryClick}>#수면</CategoryBtn>*/}
-                {/*<CategoryBtn onClick={onCategoryClick}>#팅글</CategoryBtn>*/}
-
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                {/*<PostVideoCard/>*/}
+                <PostVideoCard/>
             </PromotionSection>
             <PromotionSection>
                 {/*<PostVideoCard/>*/}

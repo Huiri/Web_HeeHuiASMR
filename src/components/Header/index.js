@@ -5,7 +5,7 @@ import {auth} from "../../firebase";
 // import axios from 'axios';
 
 import {useNavigate} from 'react-router-dom';
-import {InputWrapper,
+import {
     StyledNavLink,
     HeaderWrapper,
     SearchInput,
@@ -26,8 +26,6 @@ import {InputWrapper,
 
 } from './styled';
 import {Link} from "react-router-dom";
-import Login from "../../pages/Login";
-import {signInWithEmailAndPassword} from "firebase/auth";
 
 const Header = () => {
     const isLogged = useRecoilValue(LoginState);
@@ -100,7 +98,6 @@ const Header = () => {
                     <StyledNavLink to="/category/:word">CATEGORY</StyledNavLink>
                     <StyledNavLink to="/new">NEW</StyledNavLink>
                     <StyledNavLink to="/madeby">MADE BY</StyledNavLink>
-                    <StyledNavLink to="/special">SPECIAL</StyledNavLink>
                     <StyledNavLink to="/event">EVENT</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>

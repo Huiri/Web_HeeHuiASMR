@@ -2,7 +2,12 @@ import styled from "styled-components";
 import {ReactComponent as SearchIcon} from '../../assets/icons/SearchIcon.svg';
 
 
-export const CategoryContainer= styled.div``
+export const CategoryContainer= styled.div`
+  background: aliceblue;
+  display: flex;
+  flex-direction: column;
+  
+`
 
 export const PromotionWrapper= styled.div`
     text-align: center;
@@ -40,7 +45,7 @@ export const PromotionTitle = styled.p`
     justify-content: center;
     align-items: center;
     font-size: 2.4rem;
-    margin : 5rem 0 0 0;
+  margin-top : 5rem;
     font-family: cookieregular, sans-serif;
 
 `
@@ -85,7 +90,7 @@ export const SearchDiv = styled.div`
     width : 30vw;
     margin : 0 auto;
     margin-bottom : 3rem;
-    margin-top : 3rem;
+
 `
 
 export const SearchBtn = styled(SearchIcon)`

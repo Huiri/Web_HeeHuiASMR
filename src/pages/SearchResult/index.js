@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router';
+import React from 'react';
 import {
     LayoutContainer,
     NavBar,
@@ -18,31 +17,14 @@ import {
     SideBarSearchItem,
     SideBarRecommendWrapper,
     SideBarRecommendTitle,
-    SideBarRecommendItem, BlankSpace, ViewMoreBtn
+    SideBarRecommendItem,
+    BlankSpace,
+    ViewMoreBtn,
+    PromotionSection
 } from './styled';
-import {PromotionSection} from "../Main/styled";
-import axios from "axios";
 import PostVideoCard from "../../components/common/PostVideoCard";
 
 const SearchResult = () => {
-    const [searchData, setSearchData] = useState([]);
-    const params = useParams();
-
-
-    /*
-    useEffect(() => {
-
-        async function fetchData() {
-            const result = await axios.get(
-                `http://localhost:3000/product/search?word=${params.word}`
-            );
-            console.log(result.data.result);
-            setSearchData(result.data.result);
-        }
-        fetchData();
-    }, []);
-    */
-
 
     return (
         <LayoutContainer>
@@ -66,9 +48,6 @@ const SearchResult = () => {
                     </NavWrapper>
                 </NavBar>
                 <Main>
-                    <PromotionSection>
-                        <PostVideoCard param={params}/>
-                    </PromotionSection>
                     <PromotionSection>
                         <PostVideoCard/>
                     </PromotionSection>
