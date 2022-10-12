@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended", // @typescript-eslint/eslint-plugin
+    "eslint-config-prettier",
+    "plugin:prettier/recommended",  // eslint-plugin-prettier, eslint-config-prettier
+    "plugin:react/recommended" // react 추천 규칙
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+
+  "rules": {
+    "react/prop-types": "off",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["all", "single", "multiple", "none"],
+        "allowSeparatedGroups": false
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "no-nested-ternary": 0,
+    "react/display-name": "off",
+    "no-console": "error",
+    "no-unused-vars": "warn",
+    "un-useless-escape": "off",
+    "quotes": [2, "single", { "allowTemplateLiterals": true }],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  }
+}
