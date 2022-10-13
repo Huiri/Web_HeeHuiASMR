@@ -5,7 +5,7 @@ import {getAuth,
     signInWithPopup,
     GoogleAuthProvider,
     getRedirectResult,
-    signInWithRedirect,
+    // signInWithRedirect,
     FacebookAuthProvider,
     setPersistence,
     browserSessionPersistence
@@ -13,7 +13,7 @@ import {getAuth,
 } from "firebase/auth";
 
 import { useRecoilState } from 'recoil';
-import {LoginState} from "../../States/LoginStates";
+import {LoginState, UserNameState} from "../../States/LoginStates";
 import {ReactComponent as NaverIcon} from '../../assets/icons/NaverIcon.svg';
 import {ReactComponent as FaceBookIcon} from '../../assets/icons/FaceBookIcon.svg';
 
@@ -40,6 +40,8 @@ import {
 const Login = () => {
     const history = useNavigate();
 
+    const [displayName, setDisplayName] = useRecoilState(UserNameState);
+
     //로그인 상태 확인을 위한 변수
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
 
@@ -52,18 +54,19 @@ const Login = () => {
     const signInEmail = e => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, formValues.email, formValues.password)
-        .then((userCredential) => {
-            setIsLoggedIn(true);
-            if(isChecked===true){
-                setIsLogin();
-            }
-            history('/', {replace:true})
-    })
-        .catch((error) => {
-            alert(error.message);
-            console.warn(error.message);
-    });
-    }
+            .then((userCredential) => {
+                setIsLoggedIn(true);
+                if(isChecked===true){
+                    setIsLogin();
+                }
+                setDisplayName(formValues.email);
+                history('/', {replace:true});
+            })
+            .catch((error) => {
+                alert(error.message);
+                console.warn(error.message);
+            });
+    };
 
     //구글 로그인(팝업)
     const signInGoogle = () => {
@@ -73,22 +76,24 @@ const Login = () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 // The signed-in user info.
-                const user = result.user;
+                // const user = result.user;
+                const user = auth.currentUser.displayName;
+                setDisplayName(user);
                 setIsLoggedIn(true);
-                history('/', {replace:true})
+                history('/', {replace:true});
 
                 // ...
             }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-        });
-    }
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    };
 
     //구글 로그인(리다이렉트)
     /**
@@ -105,19 +110,19 @@ const Login = () => {
                 const user = result.user;
 
                 setIsLoggedIn(true);
-                history('/', {replace:true})
+                history('/', {replace:true});
 
             }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-        });
-    }
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    };
     // signInWithRedirect(auth, googleprovider);
 
     //facebook 로그인
@@ -126,9 +131,12 @@ const Login = () => {
             .then((result) => {
                 // The signed-in user info.
                 setIsLoggedIn(true);
-                history('/', {replace:true})
+                history('/', {replace:true});
 
-                const user = result.user;
+                // const user = result.user;
+                const user = auth.currentUser;
+                const name = user.displayName;
+                setDisplayName(name);
 
                 // This gives you a Facebook Access Token. You can use it to access the Facebook API.
                 const credential = FacebookAuthProvider.credentialFromResult(result);
@@ -147,7 +155,7 @@ const Login = () => {
 
                 // ...
             });
-    }
+    };
     //네이버 로그인
     const {naver} = window;
 
@@ -164,8 +172,8 @@ const Login = () => {
             //버튼타입
             loginButton : {color : 'green', type : 1, height : 33},
             callbackHandle : true,
-        })
-        naverLogin.init()
+        });
+        naverLogin.init();
 
         //로그인한 유저 정보 추출
         naverLogin.getLoginStatus(async function (status) {
@@ -176,9 +184,9 @@ const Login = () => {
                 const usernick = naverLogin.user.getNickName();
                 // 정보 전체를 아래처럼 state 에 저장하여 추출하여 사용가능하다.
                 // setUserInfo(naverLogin.user)
-            }
-        })
-    }
+            };
+        });
+    };
     //네이버 로그인 토큰 추출
     const userAccessToken = () => {
         window.location.href.includes('access_token') && getToken();
@@ -190,19 +198,19 @@ const Login = () => {
         // 로컬 스토리지 || state에 저장하여 사용
         // localStorage.setItem('access_token', token)
         // setGetToken(token)
-    }
+    };
 
     // 화면 첫 렌더링이후 바로 실행하기 위해 useEffect 를 사용하였다.
     useEffect(() => {
-        signInNaver()
-        userAccessToken()
-    }, [])
+        signInNaver();
+        userAccessToken();
+    }, []);
 
     const loginAccount = (e) => {
         auth
             .login(e.target.txtContent)
             .then(console.log);
-    }
+    };
 
     //로그인 유지하기 파트
     const [isChecked, setIsChecked] = useState(false);
@@ -220,8 +228,8 @@ const Login = () => {
                 // Handle Errors here.
                 const errorCode = error.code;
                 const errorMessage = error.message;
-            })
-    }
+            });
+    };
 
     //form, input 데이터
     const initialValues = {email : "", password : ""};
@@ -232,10 +240,6 @@ const Login = () => {
     //양식 제출 중인지 여부 추적(Boolean)
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    //제출된 내용 확인
-    const submitForm = () => {
-        console.log(formValues);
-    };
     //input 입력값 받기
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -275,55 +279,54 @@ const Login = () => {
     //form 값 0, isSubmitting이 false 일 때 submit시 formerror 마운트
     useEffect(()=>{
         if(Object.keys(formErrors).length === 0 && isSubmitting){
-            submitForm();
         }
     }, [formErrors]);
 
     return (
         <LoginDiv className="login">
             <LoginWrapper>
-            <LoginTitle>LOGIN</LoginTitle>
+                <LoginTitle>LOGIN</LoginTitle>
 
-            <LoginContainer className='login_container'>
-                <LoginForm onSubmit={handleSubmit}>
-                    <LoginInput 
-                        placeholder="이메일을 입력하세요."
-                        value={formValues.email} 
-                        onChange={handleChange}
-                        type = "email" name="email" id="email"/>
-                    {formErrors.email && (
-                        <LoginWarnSpan className='error'>{formErrors.email}</LoginWarnSpan>)}
-                    
-                    <LoginInput 
-                        placeholder="비밀번호를 입력하세요."
-                        value={formValues.password} 
-                        onChange={handleChange}
-                        type ="password" name="password" id="password"/>
-                    {formErrors.password && (
-                    <LoginWarnSpan className='error'>{formErrors.password}</LoginWarnSpan>)}
+                <LoginContainer className='login_container'>
+                    <LoginForm onSubmit={handleSubmit}>
+                        <LoginInput
+                            placeholder="이메일을 입력하세요."
+                            value={formValues.email}
+                            onChange={handleChange}
+                            type = "email" name="email" id="email"/>
+                        {formErrors.email && (
+                            <LoginWarnSpan className='error'>{formErrors.email}</LoginWarnSpan>)}
 
-                    <LoginSubWrapper>
-                        <LoginCheck onClick={()=>{setIsChecked(!isChecked)}} defaultValu={isChecked} type="checkbox"/>
-                        <LoginCheckTitle>로그인 유지하기</LoginCheckTitle>
-                        <InfoFindLink to="/findaccount">아이디/비밀번호</InfoFindLink>
+                        <LoginInput
+                            placeholder="비밀번호를 입력하세요."
+                            value={formValues.password}
+                            onChange={handleChange}
+                            type ="password" name="password" id="password"/>
+                        {formErrors.password && (
+                            <LoginWarnSpan className='error'>{formErrors.password}</LoginWarnSpan>)}
 
-                    </LoginSubWrapper>
-                    <Button type = "submit" onClick={signInEmail} className="login_signInButton">Login</Button>
+                        <LoginSubWrapper>
+                            <LoginCheck onClick={()=>{setIsChecked(!isChecked);}} defaultValu={isChecked} type="checkbox"/>
+                            <LoginCheckTitle>로그인 유지하기</LoginCheckTitle>
+                            <InfoFindLink to="/findaccount">아이디/비밀번호</InfoFindLink>
 
-                    <LoginSocialTitle>SNS로 간편하게 시작하기</LoginSocialTitle>
-                    <ImgBtnContainer>
-                        <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleBtn/> </ImgBtn>
-                        <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
-                        {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
-                        <ImgBtn> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>
+                        </LoginSubWrapper>
+                        <Button type = "submit" onClick={signInEmail} className="login_signInButton">Login</Button>
 
-                    </ImgBtnContainer>
+                        <LoginSocialTitle>SNS로 간편하게 시작하기</LoginSocialTitle>
+                        <ImgBtnContainer>
+                            <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleBtn/> </ImgBtn>
+                            <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
+                            {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
+                            <ImgBtn> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>
 
-                    <StyledLink to ='/signup'>
-                        <Button color="#4f4f4f" background="#d1d1d1" className="login_registerButton">Register</Button>
-                    </StyledLink>
-                </LoginForm>
-            </LoginContainer>
+                        </ImgBtnContainer>
+
+                        <StyledLink to ='/signup'>
+                            <Button color="#4f4f4f" background="#d1d1d1" className="login_registerButton">Register</Button>
+                        </StyledLink>
+                    </LoginForm>
+                </LoginContainer>
 
             </LoginWrapper>
         </LoginDiv>
