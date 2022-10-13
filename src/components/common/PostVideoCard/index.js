@@ -34,7 +34,7 @@ const PostVideoCard = ({page, param, order}) => {
                 console.warn("error");
                 setHasMore(false);
             });
-    }
+    };
 
     useEffect(() => {
         setVideoList([]);
@@ -44,14 +44,14 @@ const PostVideoCard = ({page, param, order}) => {
     useEffect(() => {
         console.log('pageNUm' + page);
         setPageNumber(page);
-    }, [page])
+    }, [page]);
 
 
     return (
         <>
             {isLoading ? <Loading /> : null}
             {videoList &&
-                videoList.map((i, idx) => {
+            videoList.map((i, idx) => {
                 return (
                     <PromotionWrapper key={idx}>
                         <StyledLink to={`/detail/${i.id.videoId}`}  state={{ data: i.snippet }}>
@@ -64,8 +64,8 @@ const PostVideoCard = ({page, param, order}) => {
                         </StyledLink>
                     </PromotionWrapper>
 
-                )
-            })}
+                );
+            })};
         </>
     );
 };

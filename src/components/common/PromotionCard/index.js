@@ -13,7 +13,7 @@ const PromotionCard = () => {
                     <PromotionText>{i.snippet.title}</PromotionText>
                     <PromotionSub>{i.snippet.channelTitle}</PromotionSub>
                 </PromotionWrapper>
-            )})}
+            );})}
         </>
     );
 };

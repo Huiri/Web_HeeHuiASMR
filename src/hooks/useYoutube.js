@@ -1,4 +1,4 @@
-import {useEffect, useState,useRef} from 'react';
+import {useEffect, useState} from 'react';
 import axios from "axios";
 
 function useFetch(param){
@@ -10,7 +10,7 @@ function useFetch(param){
     const PAGE_LIMIT = 50;
     const fetchData = () => {
         axios
-          //AIzaSyCPRq28ZkbXZ6_eJ3nGe9RfxLoO2Cfh7uI
+            //AIzaSyCPRq28ZkbXZ6_eJ3nGe9RfxLoO2Cfh7uI
             //AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA
             .get(
                 // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&maxResults=4&type=video&regionCode=KR&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
@@ -25,7 +25,7 @@ function useFetch(param){
 
             })
             .catch(() => {});
-    }
+    };
 
     useEffect(() => {
         fetchData();
