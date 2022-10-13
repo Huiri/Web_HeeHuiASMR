@@ -1,15 +1,19 @@
 import React from 'react';
 import {PromotionImg, PromotionSub, PromotionText, PromotionWrapper} from "./styled";
-
+import useFetch from "../../../hooks/useYoutube";
 const PromotionCard = () => {
+    const videoList = useFetch([]);
     return (
         <>
-            <PromotionWrapper>
-                <PromotionImg className='2'/>
-                <PromotionText>22 F/W Essential</PromotionText>
-                <PromotionSub>추운 날씨의 군고구마</PromotionSub>
-            </PromotionWrapper>
+            {videoList &&
+            videoList.map((i) => {return (
 
+                <PromotionWrapper>
+                    <PromotionImg className={i} src={i.snippet.thumbnails.medium["url"]} alt=""/>
+                    <PromotionText>{i.snippet.title}</PromotionText>
+                    <PromotionSub>{i.snippet.channelTitle}</PromotionSub>
+                </PromotionWrapper>
+            )})}
         </>
     );
 };

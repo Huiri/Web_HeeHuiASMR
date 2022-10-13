@@ -43,14 +43,7 @@ const Category = () => {
         setCategorySearch(e.target.value);
     }
     const categoryList = ["전체", "음식", "자연", "웃음", "수면", "팅글"];
-   {/*} const showPost = useMemo(() => {
-        const shortPost = post.slice(0, 9);
-        if (post.length > imgLimit.current){
-            if(isShowMore) {return post};
-            return shortPost;
-        }
-        return post;
-    }, [isShowMore]);*/}
+
     return (
         <CategoryContainer>
             <PromotionTitle>카테고리별 맞춤 선택</PromotionTitle>
@@ -70,7 +63,7 @@ const Category = () => {
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                <PostVideoCard page={page} param={param}/>
+                {/*<PostVideoCard page={page} param={param} orders={'rating'}/>*/}
             </PromotionSection>
             <ViewMoreBtn>
                 <ViewMoreBtnText onClick={()=> setPage(page+1)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
