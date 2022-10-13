@@ -9,12 +9,13 @@ import {LayoutContainer,
     PrivacyDelete,
     PassWordChangeEmail,
 } from './styled';
-import {useRecoilState} from "recoil";
-import {LoginState} from "../../States/LoginStates";
+import {useRecoilState,useRecoilValue} from "recoil";
+import {LoginState, UserNameState} from "../../States/LoginStates";
 import {useNavigate} from "react-router-dom";
 
 const MyPage = () => {
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+    const displayName = useRecoilValue(UserNameState);
     const navigate = useNavigate();
 
     const auth = getAuth();
@@ -38,9 +39,8 @@ const MyPage = () => {
 
 
      */
-        const name = user?.displayName;
-        const photoURL = user?.photoURL;
-        const email = user?.email;
+    const photoURL = user?.photoURL;
+    const email = user?.email;
 
 
     //비밀번호 변경 이메일 전송
@@ -56,7 +56,7 @@ const MyPage = () => {
                 // ..
             });
 
-    }
+    };
 
     //비밀번호 변경
     // const changePassword = () => {
@@ -82,13 +82,13 @@ const MyPage = () => {
             // ...
         });
 
-    }
+    };
 
     useEffect(()=> {
         if(isLoggedIn === false){
-            navigate('/', {replace:true})
+            navigate('/', {replace:true});
         }
-    },[isLoggedIn])
+    },[isLoggedIn]);
     return (
 
         <LayoutContainer>
@@ -96,7 +96,7 @@ const MyPage = () => {
                 <PrivacyWrapper>
                     <PrivacyTitle>개인정보 확인 및 변경</PrivacyTitle>
                     <PrivactSub>등록된 정보</PrivactSub>
-                    <PrivacyItem>이름 : {name ? name : "X"}</PrivacyItem>
+                    <PrivacyItem>이름 : {displayName ? displayName : "X"}</PrivacyItem>
                     <PrivacyItem>이메일 : {email ? email : "X"}</PrivacyItem>
                     <PrivacyItem>사진 : {photoURL ? photoURL : "X"}</PrivacyItem>
                     <PrivactSub>비밀번호 변경</PrivactSub>
