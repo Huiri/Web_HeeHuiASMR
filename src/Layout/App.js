@@ -28,6 +28,7 @@ import MadeBy from "../pages/MadeBy";
 import Service from "../pages/Service";
 import StudentPage from "../pages/StudentPage";
 import axios from "axios";
+import Event from "../pages/Event";
 
 // 글로벌 스타일 만들기, reset 사용해서 스타일 초기화하기
 const GlobalStyles = createGlobalStyle`
@@ -63,6 +64,7 @@ const App = ({auth}) => {
                         <Route path="/madeby" element={<MadeBy/>} />
                         <Route path="/service" element={<Service/>} />
                         <Route path="/student" element={<StudentPage/>} />
+                        <Route path="/event" element={<Event/>} />
 
                     <Route path="/login" element={<Login auth={auth}/>} />
                         <Route path="*" element={<NotFound/>}/>
