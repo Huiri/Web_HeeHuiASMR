@@ -24,7 +24,7 @@ import { createGlobalStyle } from "styled-components";
 // 스타일 초기화를 위한 reset
 import reset from "styled-reset";
 import NewVideo from "../pages/NewVideo";
-import MadeBy from "../pages/MadeBy";
+import Inquiry from "../pages/Inquiry";
 import Service from "../pages/Service";
 import StudentPage from "../pages/StudentPage";
 import axios from "axios";
@@ -42,32 +42,31 @@ const App = ({auth}) => {
     useEffect(() => {
         axios.get('/api/test')
             .then(res => console.log(res))
-            .catch()
-    })
+            .catch();
+    });
     return (
         <RecoilRoot>
             <GlobalStyles />
 
             <BrowserRouter>
-            <Header/>
+                <Header/>
                 <Routes>
                     {/*<Route element={<Layout/>}>*/}
-                        <Route path="/" element={<Main/>}/>
-                        <Route path="/signup" element={<SignUp/>}/>
-                        <Route path="/category/:word" element={<Category/>}/>
-                        <Route path="/findaccount" element={<FindAccount/>}/>
-                        <Route path="/search/:word" element={<SearchResult/>}/>
-                        <Route path="/detail/:video_id" element={<Detail/>}/>
-                        <Route path="/mypage" element={<MyPage auth={auth}/>} />
-                        <Route path="/favorite" element={<Favorite/>} />
-                        <Route path="/new" element={<NewVideo/>} />
-                        <Route path="/madeby" element={<MadeBy/>} />
-                        <Route path="/service" element={<Service/>} />
-                        <Route path="/student" element={<StudentPage/>} />
-                        <Route path="/event" element={<Event/>} />
-
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/signup" element={<SignUp/>}/>
+                    <Route path="/category/:word" element={<Category/>}/>
+                    <Route path="/findaccount" element={<FindAccount/>}/>
+                    <Route path="/search/:word" element={<SearchResult/>}/>
+                    <Route path="/detail/:video_id" element={<Detail/>}/>
+                    <Route path="/mypage" element={<MyPage auth={auth}/>} />
+                    <Route path="/favorite" element={<Favorite/>} />
+                    <Route path="/new" element={<NewVideo/>} />
+                    <Route path="/inquiry" element={<Inquiry/>} />
+                    <Route path="/service" element={<Service/>} />
+                    <Route path="/student" element={<StudentPage/>} />
+                    <Route path="/event" element={<Event/>} />
                     <Route path="/login" element={<Login auth={auth}/>} />
-                        <Route path="*" element={<NotFound/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>

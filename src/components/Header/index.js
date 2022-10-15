@@ -99,7 +99,7 @@ const Header = () => {
                 <MenuWrapper>
                     <StyledNavLink to="/category/:word">CATEGORY</StyledNavLink>
                     <StyledNavLink to="/new">NEW</StyledNavLink>
-                    <StyledNavLink to="/madeby">MADE BY</StyledNavLink>
+                    <StyledNavLink to="/inquiry">Inquiry</StyledNavLink>
                     <StyledNavLink to="/event">EVENT</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>
