@@ -12,3 +12,8 @@ export const UserNameState = atom({
     default : '',
     effects_UNSTABLE : [persistAtom],
 });
+export const UserEmailState = atom({
+    key : 'UserEmailState',
+    default : '',
+    effects_UNSTABLE : [persistAtom],
+});

@@ -13,7 +13,7 @@ import {getAuth,
 } from "firebase/auth";
 
 import { useRecoilState } from 'recoil';
-import {LoginState, UserNameState} from "../../States/LoginStates";
+import {LoginState, UserNameState, UserEmailState} from "../../States/LoginStates";
 import {ReactComponent as NaverIcon} from '../../assets/icons/NaverIcon.svg';
 import {ReactComponent as FaceBookIcon} from '../../assets/icons/FaceBookIcon.svg';
 
@@ -41,6 +41,7 @@ const Login = () => {
     const history = useNavigate();
 
     const [displayName, setDisplayName] = useRecoilState(UserNameState);
+    const [userEmail, setUserEmail] = useRecoilState(UserEmailState);
 
     //로그인 상태 확인을 위한 변수
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
@@ -59,6 +60,7 @@ const Login = () => {
                 if(isChecked===true){
                     setIsLogin();
                 }
+                setUserEmail(formValues.email);
                 setDisplayName(formValues.email);
                 history('/', {replace:true});
             })
@@ -78,6 +80,8 @@ const Login = () => {
                 // The signed-in user info.
                 // const user = result.user;
                 const user = auth.currentUser.displayName;
+                const useremail = auth.currentUser.email;
+                setUserEmail(useremail);
                 setDisplayName(user);
                 setIsLoggedIn(true);
                 history('/', {replace:true});
@@ -135,6 +139,9 @@ const Login = () => {
 
                 // const user = result.user;
                 const user = auth.currentUser;
+                const useremail = user.email;
+                setUserEmail(useremail);
+
                 const name = user.displayName;
                 setDisplayName(name);
 

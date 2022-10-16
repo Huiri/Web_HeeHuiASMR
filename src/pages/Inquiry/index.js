@@ -14,14 +14,15 @@ import {
 } from './styled';
 import { PromotionTitle} from "../Category/styled";
 import emailjs from '@emailjs/browser';
-import { init, send  } from 'emailjs-com';
+import { init } from 'emailjs-com';
 import { useRecoilValue } from 'recoil';
-import { UserNameState } from '../../States/LoginStates';
+import { UserEmailState, UserNameState } from '../../States/LoginStates';
 
 
 const Inquiry = () => {
     const [emailText, setEmailText] = useState('');
     const displayName = useRecoilValue(UserNameState);
+    const userEmail = useRecoilValue(UserEmailState);
 
     const textarea = useRef(null);
 
@@ -33,10 +34,6 @@ const Inquiry = () => {
         init('sa5wx5sa7WVqn7itv');
     }, []);
 
-    const templateParams = {
-        from_name: displayName,
-        messege: emailText,
-    };
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -50,7 +47,6 @@ const Inquiry = () => {
                 console.log(error.text);
             });
     };
-    console.log(emailText);
     return (
         <LayoutContainer>
             <PromotionTitle>문의사항</PromotionTitle>
@@ -64,7 +60,7 @@ const Inquiry = () => {
                     <InputWrapper>
 
                         <Label>Email</Label>
-                        <Input type="email" name="user_email" />
+                        <Input type="email" name="user_email" value={userEmail ? userEmail : null} />
                     </InputWrapper>
                     <InputWrapper>
                         <Label>Message</Label>
