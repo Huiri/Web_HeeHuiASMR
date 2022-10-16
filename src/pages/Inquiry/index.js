@@ -1,22 +1,77 @@
-import React, {useRef} from 'react';
-import { InquiryWrapper, LayoutContainer, InquiryInput, InputIcon, InquiryForm, InquiryText, TextWrapper, InquiryTitle } from './styled';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+    Label,
+    InquiryWrapper,
+    LayoutContainer,
+    InquiryInput,
+    SubmitBtn,
+    InquiryForm,
+    InquiryText,
+    TextWrapper,
+    InquiryTitle,
+    Input,
+    InputWrapper
+} from './styled';
 import { PromotionTitle} from "../Category/styled";
+import emailjs from '@emailjs/browser';
+import { init, send  } from 'emailjs-com';
+import { useRecoilValue } from 'recoil';
+import { UserNameState } from '../../States/LoginStates';
+
 
 const Inquiry = () => {
+    const [emailText, setEmailText] = useState('');
+    const displayName = useRecoilValue(UserNameState);
+
     const textarea = useRef(null);
+
     const handleResizeHeight = () => {
         textarea.current.style.height = 'auto';
         textarea.current.style.height = textarea.current.scrollHeight + 'px';
     };
+    useEffect(() => {
+        init('sa5wx5sa7WVqn7itv');
+    }, []);
+
+    const templateParams = {
+        from_name: displayName,
+        messege: emailText,
+    };
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_aq6ngyv', 'template_hu5qil3', form.current, 'sa5wx5sa7WVqn7itv')
+            .then((result) => {
+                setEmailText('');
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+    console.log(emailText);
     return (
         <LayoutContainer>
             <PromotionTitle>문의사항</PromotionTitle>
             <InquiryTitle>불편 및 건의사항을 적어주세요!</InquiryTitle>
             <InquiryWrapper>
-                <InquiryForm>
-                    <InquiryInput type='text'/>
+                <InquiryForm ref={form} onSubmit={sendEmail}>
+                    <InputWrapper>
+                        <Label>Name</Label>
+                        <Input type="text" name="user_name" value={displayName ? displayName : null}/>
+                    </InputWrapper>
+                    <InputWrapper>
 
-                    <InputIcon/>
+                        <Label>Email</Label>
+                        <Input type="email" name="user_email" />
+                    </InputWrapper>
+                    <InputWrapper>
+                        <Label>Message</Label>
+                        <InquiryInput onChange={handleResizeHeight} row={1} name="message" />
+
+                    </InputWrapper>
+                    <SubmitBtn type="submit" value="메일 보내기" />
                 </InquiryForm>
 
             </InquiryWrapper>
