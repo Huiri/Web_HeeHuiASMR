@@ -10,12 +10,12 @@ const ErrorWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     background : #aec1d4;
-`
+`;
 const ErrorTitle = styled.h1`
     font-size: 4rem;
     margin : 0;
   font-family: cookieregular, sans-serif;
-`
+`;
 
 const ErrorText = styled.p`
     font-size : 3rem;
@@ -23,7 +23,7 @@ const ErrorText = styled.p`
   font-family: cookieregular, sans-serif;
 
 
-`
+`;
 const NotFound = () => {
     return (
         <ErrorWrapper>

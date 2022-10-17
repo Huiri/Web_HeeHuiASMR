@@ -25,7 +25,7 @@ const Footer = () => {
             <hr/>
             <FooterContainer>
 
-            <ServiceContainer>
+                <ServiceContainer>
                     <FooterExplain>문의사항 1555-9999</FooterExplain>
                     <FooterExplainSub>운영시간 : 평일 09:00 - 18:00</FooterExplainSub>
 

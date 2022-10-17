@@ -8,7 +8,7 @@ import {ReactComponent as ConfirmIcon} from '../../assets/icons/ConfirmIcon.svg'
 export const CommentWrapper = styled.div`
   display : flex;
   align-items: center;
-`
+`;
 
 export const CommentItemStyle = styled.div`
   margin-bottom : 0.5rem;
@@ -18,14 +18,14 @@ export const CommentItemStyle = styled.div`
   height : 100%;
   
 
-`
+`;
 
 export const CommentUser = styled.span`
   font-weight : 600;
   font-size : 1.2rem;
   margin-left : 1rem;
   font-family: cookieregular, sans-serif;
-`
+`;
 
 export const CommentIconWrapper = styled.div`
   float : right;
@@ -39,13 +39,13 @@ export const CommentIconWrapper = styled.div`
         css`
           margin : -2.7rem 1rem 0 0;
     `}
-`
+`;
 export const CommentText = styled.p`
   margin : 0.7rem;
   font-size : 1.1rem;
   font-family: lee, sans-serif;
 
-`
+`;
 
 export const GarbageBtn = styled(GarbageIcon)`
   fill: #464646;
@@ -55,7 +55,7 @@ export const GarbageBtn = styled(GarbageIcon)`
   &:hover {
     fill : black;
   }
-`
+`;
 
 export const EditBtn = styled(EditIcon)`
   fill: #464646;
@@ -69,7 +69,7 @@ export const EditBtn = styled(EditIcon)`
     transition : all ease 0.4s 0s;
   }
   
-`
+`;
 
 export const EditInput = styled.input`
   background: antiquewhite;
@@ -85,7 +85,7 @@ export const EditInput = styled.input`
   }
   
 
-`
+`;
 
 export const EditWrapper = styled.div`
   display : flex;
@@ -94,7 +94,7 @@ export const EditWrapper = styled.div`
   align-items: center;
   margin-bottom : 0.5rem;
 
-`
+`;
 export const EditConfirmBtn = styled(ConfirmIcon)`
   cursor: pointer;
   display: inline;
@@ -107,4 +107,4 @@ export const EditConfirmBtn = styled(ConfirmIcon)`
     fill: #4242be;
 
   }
-`
+`;

@@ -39,11 +39,6 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 const App = ({auth}) => {
-    useEffect(() => {
-        axios.get('/api/test')
-            .then(res => console.log(res))
-            .catch();
-    });
     return (
         <RecoilRoot>
             <GlobalStyles />

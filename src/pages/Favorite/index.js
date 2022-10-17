@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react';
-import {LayoutContainer} from "../MyPage/styled"
+import {LayoutContainer} from "../MyPage/styled";
 
 import {Main,
     SideBar} from "../SearchResult/styled";
@@ -15,9 +15,9 @@ const Favorite = () => {
 
     useEffect(()=> {
         if(isLoggedIn === false){
-            navigate('/', {replace:true})
+            navigate('/', {replace:true});
         }
-    },[isLoggedIn])
+    },[isLoggedIn]);
 
     return (
         <LayoutContainer>

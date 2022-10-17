@@ -1,5 +1,5 @@
 import React from 'react';
-import {LayoutContainer} from "../MadeBy/styled";
+import {LayoutContainer} from "../Inquiry/styled";
 import {ExplainSection,
     StudentExplain,
     StudentTitle,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PromotionImg = styled.div`
+export const PromotionImg = styled.img`
     width : 25.9vw;
     height : 50vh;
     display : flex;
@@ -12,7 +12,7 @@ export const PromotionImg = styled.div`
 
   }
 
-`
+`;
 
 export const PromotionWrapper = styled.div`
     text-align: center;
@@ -26,7 +26,7 @@ export const PromotionWrapper = styled.div`
   &:hover {
     box-shadow: 3px 3px 3px #b2b2b2;
   }
-`
+`;
 
 export const VideoThumbnail = styled.div`
     width : 19vw;
@@ -34,19 +34,25 @@ export const VideoThumbnail = styled.div`
     display : flex;
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
-`
+`;
 export const PromotionText = styled.p`
-    font-size : 1.2rem;
-  margin-top : 1rem;
+  width : 24vw;
+  margin-left : 1.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 600;
+  white-space: nowrap;
+  font-size : 1.2rem;
+  margin-top : 1rem;
+
   font-family: lee, sans-serif;
   @media(max-width: 991px){
-    width : 100%;
+    width : 85%;
 
   }
 
 
-`
+`;
 export const PromotionSub = styled.p`
     font-size : 1rem;
    margin : 0.7rem 0;
@@ -57,4 +63,4 @@ export const PromotionSub = styled.p`
   }
 
 
-`
+`;

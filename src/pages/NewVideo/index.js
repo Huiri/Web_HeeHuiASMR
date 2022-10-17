@@ -28,13 +28,13 @@ const NewVideo = () => {
             navigate(`/new/${newsearch}`);
         }
         setNewSearch('');
-    }
+    };
     const onCategoryClick = (param) => {
         navigate(`/category/${param}`);
-    }
+    };
     const handleChange = e => {
         setNewSearch(e.target.value);
-    }
+    };
     return (
         <LayoutContainer>
             <PromotionTitle>최신 업로드 영상</PromotionTitle>

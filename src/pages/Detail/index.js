@@ -24,8 +24,8 @@ import {useSetRecoilState} from "recoil";
 import {commentListState} from "../../recoil/comment";
 import axios from "axios";
 import {useLocation, useParams} from "react-router-dom";
-let id = 0
-const getId = () => id++
+let id = 0;
+const getId = () => id++;
 const Detail = () => {
 
     const [isLiked, setIsLiked] = useState(false);
@@ -64,8 +64,8 @@ const Detail = () => {
     const [videoURL, setVideoURL] = useState(`https://www.youtube.com/embed/`);
 
     useEffect(()=>{
-        setVideoURL(`https://www.youtube.com/embed/${params}`)
-    })
+        setVideoURL(`https://www.youtube.com/embed/${params}`);
+    });
     return (
         <div>
             <TitleWrapper>
@@ -79,9 +79,9 @@ const Detail = () => {
             </IconWrapper>
             <VideoWrapper>
                 <VideoViewer id="ytplayer" type="text/html" width="85%" height="630"
-                        src={videoURL}
-                             //https://www.youtube.com/embed/m0x6tUkaI3c
-                        frameBorder="0" allowFullScreen/>
+                    src={videoURL}
+                    //https://www.youtube.com/embed/m0x6tUkaI3c
+                    frameBorder="0" allowFullScreen/>
                 {/*<VideoSection/>*/}
             </VideoWrapper>
             <SubWrapper>

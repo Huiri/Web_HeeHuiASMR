@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Button = styled.button`
     color : ${props => props.color || "white"};
@@ -23,7 +23,7 @@ export const Button = styled.button`
 
   }
 
-`
+`;
 
 export const RegisterDiv = styled.div`
     background: #e3e3e3;
@@ -32,7 +32,7 @@ export const RegisterDiv = styled.div`
     display : flex;
     height: 75vh;
 
-`
+`;
 export const RegisterContainer = styled.div`
     background : #f0f0f0;
     padding : 0;
@@ -45,7 +45,7 @@ export const RegisterContainer = styled.div`
     align-items: center;
     display: flex;
 
-`
+`;
 export const RegisterTitle = styled.p`
  color : #00415d;
     text-align : center;
@@ -55,7 +55,7 @@ export const RegisterTitle = styled.p`
   font-family: cookieregular, sans-serif;
   font-size : 2rem;
 
-`
+`;
 
 export const RegisterInput = styled.input`
     width : 15rem;
@@ -80,10 +80,10 @@ export const RegisterInput = styled.input`
         outline : none;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
-`
+`;
 
 export const RegisterForm = styled.form`
-`
+`;
 
 export const RegisterWrapper = styled.div`
-`
+`;

@@ -27,10 +27,10 @@ export const LayoutContainer = styled.div`
       "footer";
   }
   color: white;
-`
+`;
 export const BlankSpace = styled.nav`
   grid-area : space;
-`
+`;
 export const NavBar = styled.nav`
   border-top: solid 2px #808080;
   background: #3a3a55;
@@ -38,30 +38,30 @@ export const NavBar = styled.nav`
   padding: 0.25rem;
   display: flex;
   align-items: center;
-`
+`;
 export const Main = styled.main`
   background: #1f2128;
   color: white;
   grid-area: main;
   padding: 0.25rem;
-`
+`;
 export const SideBar = styled.div`
   background: #9aaab7;
   grid-area: sidebar;
   padding: 0.25rem;
-`
+`;
 export const  Result = styled.div`
   grid-area: result;
-`
+`;
 export const NavWrapper = styled.div`
   width : 100%;
   display : flex;
-`
+`;
 export const PromotionSection = styled.div`
     display : grid;
   grid-template-columns: repeat(auto-fill, minmax(26%, auto));
   justify-content: center;
-`
+`;
 export const RelatedSearchTitle = styled.div`
   color : white;
   font-weight : 600;
@@ -70,11 +70,11 @@ export const RelatedSearchTitle = styled.div`
   margin-left : 0.8rem;
   font-size : 1.3rem;
   font-family: lee, sans-serif;
-`
+`;
 export const RelatedSearchWrapper = styled.div`
   display : flex;
   
-`
+`;
 export const RelatedSearchItem = styled.p`
   color : white;
   font-weight : 500;
@@ -85,11 +85,11 @@ export const RelatedSearchItem = styled.p`
   &:hover, &:active {
     font-weight : 600;
   }
-`
+`;
 
 export const SearchResultWrapper = styled.div` 
   margin : 1rem 0 0 0.6rem;
-`
+`;
 
 export const SearchResultCount = styled.p`
   color: #333375;
@@ -98,7 +98,7 @@ export const SearchResultCount = styled.p`
   font-size : 1.1rem;
   margin-left : 0.3rem;
   font-family: cookieregular, sans-serif;
-`
+`;
 export const SearchResultText = styled.p`
   color: #8d8d8d;
   display: inline;
@@ -107,16 +107,16 @@ export const SearchResultText = styled.p`
   font-family: lee, sans-serif;
 
 
-`
+`;
 export const SideBarWrapper = styled.div`
-`
+`;
 export const SideBarSearchTitle = styled.p`
   font-size : 1.5rem;
   font-weight : 600;
   display : inline-block;
   margin : 1rem 0 0 0.8rem;
   font-family: lee, sans-serif;
-`
+`;
 
 export const SideBarSearchItem = styled.div`
   margin : 1rem 0 0 1.4rem;
@@ -130,11 +130,11 @@ export const SideBarSearchItem = styled.div`
   }
 
 
-`
+`;
 
 export const SideBarRecommendWrapper = styled.div`
 
-`
+`;
 
 export const SideBarRecommendTitle = styled.div`
   margin : 2.5rem 0 0 0.8rem;
@@ -142,7 +142,7 @@ export const SideBarRecommendTitle = styled.div`
   font-weight : 600;
   font-family: lee, sans-serif;
 
-`
+`;
 
 export const SideBarRecommendItem = styled.div`
   margin : 1rem 0 0 1.4rem;
@@ -154,7 +154,7 @@ export const SideBarRecommendItem = styled.div`
    font-weight : 600;
   }
 
-`
+`;
 
 export const ViewMoreBtn = styled.button`
     border-radius: 1rem;
@@ -169,5 +169,5 @@ export const ViewMoreBtn = styled.button`
     position : relative;
   font-family: lee, sans-serif;
     left : 45%;
-`
+`;
 

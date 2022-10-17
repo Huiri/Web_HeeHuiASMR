@@ -10,7 +10,7 @@ import {
     CategoryBtn,
     CategoryContainer,
     CategoryWrapper
-} from './styled'
+} from './styled';
 
 import {PromotionSection} from '../Main/styled';
 
@@ -34,14 +34,14 @@ const Category = () => {
             navigate(`/category/${categorySearch}`);
         }
         setCategorySearch('');
-    }
+    };
     const onCategoryClick = (category) => {
         setParam(category);
         navigate(`/category/${category}`);
-    }
+    };
     const handleChange = e => {
         setCategorySearch(e.target.value);
-    }
+    };
     const categoryList = ["전체", "음식", "자연", "웃음", "수면", "팅글"];
 
     return (
@@ -59,7 +59,7 @@ const Category = () => {
                 {categoryList.map((category) => (
                     <CategoryBtn  key={category} onClick={()=>onCategoryClick(category)}>#{category}</CategoryBtn>
 
-                    ))}
+                ))}
             </CategoryWrapper>
             <hr/>
             <PromotionSection>

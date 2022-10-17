@@ -7,13 +7,13 @@ export const CategoryContainer= styled.div`
   display: flex;
   flex-direction: column;
   
-`
+`;
 
 export const PromotionWrapper= styled.div`
     text-align: center;
     margin-top : 1rem;
 
-`
+`;
 
 export const PromotionImg = styled.div`
     width : 25.9vw;
@@ -22,23 +22,23 @@ export const PromotionImg = styled.div`
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
 
-`
+`;
 
 export const PromotionText = styled.h3`
     
-`
+`;
 
 export const PromotionSub = styled.p`
     
 
-`
+`;
 
 export const PromotionSection = styled.div`
     display : flex;
     flex-direction: row;
     justify-content: center;
     
-`
+`;
 
 export const PromotionTitle = styled.p`
     display : flex;
@@ -48,7 +48,7 @@ export const PromotionTitle = styled.p`
   margin-top : 5rem;
     font-family: cookieregular, sans-serif;
 
-`
+`;
 export const PromotionSubTitle = styled.h3`
     display : flex;
     justify-content: center;
@@ -58,14 +58,14 @@ export const PromotionSubTitle = styled.h3`
     color : #8a8a8a;
     margin : 1rem 0 3rem 0;
   font-family: cookieregular, sans-serif;
-`
+`;
 export const VideoThumbnail = styled.div`
     width : 19vw;
     height : 40vh;
     display : flex;
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
-`
+`;
 
 export const SearchInput = styled.input`
     width : 28vw;
@@ -82,7 +82,7 @@ export const SearchInput = styled.input`
 
     }
 
-`
+`;
 
 export const SearchDiv = styled.div`
     position : relative;
@@ -91,7 +91,7 @@ export const SearchDiv = styled.div`
     margin : 0 auto;
     margin-bottom : 3rem;
 
-`
+`;
 
 export const SearchBtn = styled(SearchIcon)`
     cursor: pointer;
@@ -100,7 +100,7 @@ export const SearchBtn = styled(SearchIcon)`
     right : 7px;
     top : 9px;
 
-`
+`;
 
 export const ViewMoreBtn = styled.div`
     width : 12vw;
@@ -115,14 +115,14 @@ export const ViewMoreBtn = styled.div`
     justify-content: center;
     align-items: center;
 
-`
+`;
 export const ViewMoreBtnText = styled.p`
-`
+`;
 
 export const CategoryWrapper = styled.div`
     display : flex;
     justify-content : center;
-`
+`;
 export const CategoryBtn = styled.button`
   width: 5rem;
   cursor: pointer;
@@ -138,4 +138,4 @@ export const CategoryBtn = styled.button`
     transition : all ease 0.2s 0s;
 
   }
-`
+`;
