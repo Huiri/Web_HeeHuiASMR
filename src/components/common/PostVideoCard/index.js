@@ -13,7 +13,9 @@ const PostVideoCard = ({page, param, order}) => {
         const real = [...array];
         return real.sort(() => Math.random() - 0.5);
     }
-    const realVideo = shuffle(video);
+    useEffect(()=>{
+        setVideoList(shuffle(video));
+    }, []);
     // const fetchData = () => {
     //     setIsLoading(true);
     //
@@ -46,7 +48,7 @@ const PostVideoCard = ({page, param, order}) => {
 
     useEffect(()=>{
         setIsLoading(false);
-        setShowVideo(realVideo.slice(0, (number*8)));
+        setShowVideo(videoList.slice(0, (number*8)));
     }, [number]);
 
     const [showVideo, setShowVideo] = useState();
@@ -62,7 +64,7 @@ const PostVideoCard = ({page, param, order}) => {
     };
     useEffect(() => {
         setShowVideo([]);
-        setShowVideo(findCategory(realVideo));
+        setShowVideo(findCategory(videoList));
         // fetchData(param);
 
     }, [param]);
