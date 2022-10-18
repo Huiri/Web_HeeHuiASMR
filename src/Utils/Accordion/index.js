@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Container, Header, Button, ContentsWrapper, Contents, EventTitle} from './styled';
+import {Container, ContentText, Header, Button, ContentsWrapper, Contents, EventTitle} from './styled';
 
 const Accordion = ({props}) => {
 
@@ -17,7 +17,13 @@ const Accordion = ({props}) => {
             </Header>
             <ContentsWrapper>
                 {showInfo &&
-                  <Contents>{props.text}</Contents>
+                  <>
+                      <Contents>
+                          <ContentText>{props.text1}</ContentText>
+                          <ContentText>{props.text2}</ContentText>
+                          <ContentText>{props.text3}</ContentText>
+                      </Contents>
+                  </>
                 }
 
             </ContentsWrapper>
