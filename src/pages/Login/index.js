@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import googlebtn from "../../assets/img/GoogleBtn.png";
+import facebookbtn from "../../assets/img/FaceBookBtn.png";
+
 import {useNavigate} from 'react-router-dom';
 import {getAuth,
     signInWithEmailAndPassword,
@@ -14,8 +17,6 @@ import {getAuth,
 
 import { useRecoilState } from 'recoil';
 import {LoginState, UserNameState, UserEmailState} from "../../States/LoginStates";
-import {ReactComponent as NaverIcon} from '../../assets/icons/NaverIcon.svg';
-import {ReactComponent as FaceBookIcon} from '../../assets/icons/FaceBookIcon.svg';
 
 
 import {
@@ -34,7 +35,7 @@ import {
     LoginSocialTitle,
     InfoFindLink,
     LoginWarnSpan,
-    LoginSubWrapper, GoogleBtn,
+    LoginSubWrapper, GoogleBtn,FaceBookBtn
 } from './styled';
 
 const Login = () => {
@@ -166,52 +167,6 @@ const Login = () => {
     //네이버 로그인
     const {naver} = window;
 
-    /**
-     * @todo 쿠키 지워야 원활히 작동할 듯
-     * @see https://developers.naver.com/docs/login/devguide/devguide.md
-     */
-    const signInNaver = () => {
-        const naverLogin = new window.naver.LoginWithNaverId({
-            clientId : process.env.REACT_APP_NAVER_CLIENT_ID,
-            callbackUrl : process.env.REACT_APP_NAVER_CALLBACK_URL,
-            //팝업창으로 로그인 진행 여부
-            isPopup : false,
-            //버튼타입
-            loginButton : {color : 'green', type : 1, height : 33},
-            callbackHandle : true,
-        });
-        naverLogin.init();
-
-        //로그인한 유저 정보 추출
-        naverLogin.getLoginStatus(async function (status) {
-            if (status) {
-                // 아래처럼 선택하여 추출이 가능하고,
-                const useremail = naverLogin.user.getEmail();
-                const username = naverLogin.user.getName();
-                const usernick = naverLogin.user.getNickName();
-                // 정보 전체를 아래처럼 state 에 저장하여 추출하여 사용가능하다.
-                // setUserInfo(naverLogin.user)
-            };
-        });
-    };
-    //네이버 로그인 토큰 추출
-    const userAccessToken = () => {
-        window.location.href.includes('access_token') && getToken();
-    };
-
-    const getToken = () => {
-        const token = window.location.href.split('=')[1].split('&')[0];
-        console.log(token);
-        // 로컬 스토리지 || state에 저장하여 사용
-        // localStorage.setItem('access_token', token)
-        // setGetToken(token)
-    };
-
-    // 화면 첫 렌더링이후 바로 실행하기 위해 useEffect 를 사용하였다.
-    useEffect(() => {
-        signInNaver();
-        userAccessToken();
-    }, []);
 
     const loginAccount = (e) => {
         auth
@@ -322,10 +277,8 @@ const Login = () => {
 
                         <LoginSocialTitle>SNS로 간편하게 시작하기</LoginSocialTitle>
                         <ImgBtnContainer>
-                            <ImgBtn color={"lightgray"} onClick={ () => signInGoogle() }> <GoogleBtn/> </ImgBtn>
-                            <ImgBtn id="naverIdLogin"> <NaverIcon /> </ImgBtn>
-                            {/*<ImgBtn color={"#f2da3d"}> <KakaoIcon/> </ImgBtn>*/}
-                            <ImgBtn> <FaceBookIcon onClick={()=> signInFaceBook()}/> </ImgBtn>
+                            <GoogleBtn onClick={ () => signInGoogle()} src={googlebtn} alt={'구글 로그인 버튼'}/>
+                            <FaceBookBtn onClick={()=> signInFaceBook()} src={facebookbtn} alt={'페이스북 로그인'}/>
 
                         </ImgBtnContainer>
 

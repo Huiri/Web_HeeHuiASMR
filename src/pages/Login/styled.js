@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import {ReactComponent as GoogleIcon} from '../../assets/icons/GoogleIcon.svg';
 
 export const Button = styled.button`
     color : ${props => props.color || "white"};
@@ -26,9 +25,11 @@ export const Button = styled.button`
 
 `;
 
-export const GoogleBtn = styled(GoogleIcon)`
+export const GoogleBtn = styled.img`
     margin-top : 0.2rem;
   margin-left : -0.2rem;
+  width : 12rem;
+  cursor : pointer;
 `;
 export const LoginDiv = styled.div`
     background: #e3e3e3;
@@ -43,7 +44,7 @@ export const LoginContainer = styled.div`
     padding : 0;
     flex-direction: column;
     width : 22rem;
-    height : 25rem;
+    height : 27rem;
   margin-bottom : 3rem;
     border: none;
     border-radius: 1rem;
@@ -63,6 +64,12 @@ export const LoginTitle = styled.p`
   font-size : 2rem;
   font-weight: 600;
   font-family: cookieregular, sans-serif;
+`;
+export const FaceBookBtn = styled.img`
+  width : 12.5rem;
+  margin-top : 0.5rem;
+  cursor : pointer;
+
 `;
 export const LoginInput = styled.input`
     width : 15rem;
@@ -101,9 +108,9 @@ export const LoginWrapper = styled.div`
 `;
 export const ImgBtnContainer = styled.div`
     display : flex;
-    justify-content: space-evenly;
     align-items: center;
     margin : 1rem 0 0 0;
+  flex-direction: column;
 `;
 
 export const ImgBtn = styled.button`
