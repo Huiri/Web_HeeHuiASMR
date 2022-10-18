@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
     PromotionTitle,
     PromotionSubTitle,
@@ -24,7 +24,7 @@ const Category = () => {
     const [page, setPage] = useState(1);
     const [categorySearch, setCategorySearch] = useState('');
     const [param, setParam] = useState('');
-
+    /*
     const onSearch = e => {
         e.preventDefault();
         if(categorySearch === ''){
@@ -34,7 +34,7 @@ const Category = () => {
             navigate(`/category/${categorySearch}`);
         }
         setCategorySearch('');
-    };
+    };*/
     const onCategoryClick = (category) => {
         setParam(category);
         navigate(`/category/${category}`);
@@ -42,18 +42,20 @@ const Category = () => {
     const handleChange = e => {
         setCategorySearch(e.target.value);
     };
-    const categoryList = ["전체", "음식", "자연", "웃음", "수면", "팅글"];
+    const categoryList = ["전체", "요리", "자연", "웃음", "수면", "팅글"];
 
     return (
         <CategoryContainer>
             <PromotionTitle>카테고리별 맞춤 선택</PromotionTitle>
             <PromotionSubTitle>ASMR with US!</PromotionSubTitle>
+            {/*
             <SearchDiv>
                 <form onSubmit={onSearch}>
                     <SearchInput type={"text"} value={categorySearch} placeholder={"오늘의 키워드는?"} onChange={handleChange}/>
                     <SearchBtn type={"submit"} onClick={onSearch}/>
                 </form>
             </SearchDiv>
+            */}
             <CategoryWrapper>
 
                 {categoryList.map((category) => (
@@ -63,7 +65,7 @@ const Category = () => {
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                {/*<PostVideoCard page={page} param={param} orders={'rating'}/>*/}
+                <PostVideoCard page={page} param={param} orders={'rating'}/>
             </PromotionSection>
             <ViewMoreBtn>
                 <ViewMoreBtnText onClick={()=> setPage(page+1)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
