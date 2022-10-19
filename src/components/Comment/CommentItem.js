@@ -12,13 +12,21 @@ import {
     EditConfirmBtn
 } from "./styled";
 import {FilledHeartBtn, HeartBtn} from '../../pages/Detail/styled';
+import { UserNameState } from '../../States/LoginStates';
 
 const CommentItem = ({ data }) => {
     const setComments = useSetRecoilState(commentListState);
     const comments = useRecoilValue(commentListState);
     const [newText, setNewTest] = useState(data.text);
     const [isEdit, setIsEdit] = useState(false);
+    const displayName = useRecoilValue(UserNameState);
+    let userName;
+    if(displayName === ''){
+        userName = '누군가';
+    } else {
+        userName = displayName;
 
+    }
     const editInputRef = useRef(null);
 
     const handleChangeEditInput = e => {
@@ -64,7 +72,7 @@ const CommentItem = ({ data }) => {
         <CommentItemStyle>
             {isEdit ? (
                 <EditWrapper>
-                    <CommentUser>Chaz</CommentUser>
+                    <CommentUser>{userName}</CommentUser>
                     <EditInput
                         type="text"
                         value={newText}
@@ -74,7 +82,7 @@ const CommentItem = ({ data }) => {
                 </EditWrapper>
             ):(
                 <CommentWrapper>
-                    <CommentUser>Chaz</CommentUser>
+                    <CommentUser>{userName}</CommentUser>
                     <CommentText>{data.text}</CommentText>
                 </CommentWrapper>
             )}

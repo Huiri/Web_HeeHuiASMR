@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import { LoginState, UserNameState } from '../../States/LoginStates';
+import { LoginState, UserEmailState, UserNameState } from '../../States/LoginStates';
 import {auth} from "../../firebase";
 // import axios from 'axios';
 
@@ -20,7 +20,6 @@ import {
     StylePersonalLink,
     IconSection,
     HeartBtn,
-    PageBtn,
     UserBtn,
     //SearchForm
 
@@ -35,15 +34,14 @@ const Header = () => {
     const [displayName, setDisplayName] = useRecoilState(UserNameState);
 
     const [search, setSearch] =  useState("");
-
+    const [userEmail, setUserEmail] = useRecoilState(UserEmailState);
     const handleAuthentication= () => {
-        console.log("signout successfully");
-        console.log(isLoggedIn);
         if(isLoggedIn){
             setIsLoggedIn(false);
-            auth.signOut().then(() => setDisplayName(''));
+            auth.signOut().then(() => {setDisplayName(''); setUserEmail('');});
         }
     };
+
 
     //const navigate = useNavigate();
     const onSearch = e => {
@@ -87,7 +85,6 @@ const Header = () => {
                 {isLogged && (
                     <IconSection>
                         <Link to={"/favorite"}><HeartBtn/></Link>
-                        <PageBtn/>
                         <Link to={"/mypage"}><UserBtn/></Link>
                     </IconSection>
 
@@ -97,13 +94,13 @@ const Header = () => {
 
             <BottomSection>
                 <MenuWrapper>
-                    <StyledNavLink to="/category/:word">CATEGORY</StyledNavLink>
-                    <StyledNavLink to="/new">NEW</StyledNavLink>
-                    <StyledNavLink to="/inquiry">Inquiry</StyledNavLink>
-                    <StyledNavLink to="/event">EVENT</StyledNavLink>
+                    <StyledNavLink to="/category/:word">카테고리</StyledNavLink>
+                    <StyledNavLink to="/new">최근 업로드</StyledNavLink>
+                    <StyledNavLink to="/inquiry">문의사항</StyledNavLink>
+                    <StyledNavLink to="/event">이벤트</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>
-                    <StylePersonalLink to={!isLoggedIn && "/login"} onClick={handleAuthentication}>{ isLoggedIn ? "SIGN OUT" : 'SIGN IN | UP'}</StylePersonalLink>
+                    <StylePersonalLink to={!isLoggedIn && "/login"} onClick={handleAuthentication}>{ isLoggedIn ? "로그아웃" : '로그인 | 회원가입'}</StylePersonalLink>
                 </PersonalWrapper>
             </BottomSection>
 
