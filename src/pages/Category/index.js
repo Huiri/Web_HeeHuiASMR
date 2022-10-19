@@ -16,7 +16,8 @@ import {PromotionSection} from '../Main/styled';
 
 import {useNavigate} from "react-router-dom";
 import PostVideoCard from "../../components/common/PostVideoCard";
-
+import ScrollTop from '../../Utils/ScrollTop';
+import handleScroll from '../../Utils/ScrollTop/handleScroll';
 const Category = () => {
 
     const [isShowMore, setIsShowMore] = useState(false);
@@ -65,12 +66,13 @@ const Category = () => {
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                <PostVideoCard page={page} param={param} orders={'rating'}/>
+                <PostVideoCard page={page} param={param} orders={'rating'} count ={12}/>
             </PromotionSection>
             <ViewMoreBtn>
                 <ViewMoreBtnText onClick={()=> setPage(page+1)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>
             </ViewMoreBtn>
 
+            <ScrollTop handleClick={handleScroll}/>
         </CategoryContainer>
 
 
