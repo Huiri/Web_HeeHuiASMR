@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     LayoutContainer,
     NavBar,
@@ -23,8 +23,26 @@ import {
     PromotionSection
 } from './styled';
 import PostVideoCard from "../../components/common/PostVideoCard";
+import useFetch from '../../hooks/useYoutube';
+import PromotionCard from '../../components/common/PromotionCard';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const SearchResult = () => {
+    let { params } = useParams();
+    const navigate = useNavigate();
+
+    const [page, setPage] = useState(1);
+
+    const videoList = useFetch([]);
+
+    const searchList = ['고구마', '붕어빵', '강유미', '순대', '붕어싸만코'];
+
+    const [searchText, setSearchText] = useState(params);
+
+    const onSearchTextClick = (search)=>{
+        setSearchText(search);
+        navigate(`/search/${search}`);
+    };
 
     return (
         <LayoutContainer>
@@ -39,20 +57,18 @@ const SearchResult = () => {
                 <NavWrapper>
                     <RelatedSearchTitle>연관 검색어</RelatedSearchTitle>
                     <RelatedSearchWrapper>
-                        <RelatedSearchItem>고구마</RelatedSearchItem>
-                        <RelatedSearchItem>붕어빵</RelatedSearchItem>
-                        <RelatedSearchItem>순대</RelatedSearchItem>
-                        <RelatedSearchItem>염통</RelatedSearchItem>
-                        <RelatedSearchItem>붕어싸만코</RelatedSearchItem>
+                        {searchList.map((search, idx) => (
+                            <RelatedSearchItem key={idx} onClick={()=>{onSearchTextClick(search);}}>{search}</RelatedSearchItem>
+                        ))}
                     </RelatedSearchWrapper>
                 </NavWrapper>
             </NavBar>
             <Main>
                 <PromotionSection>
-                    <PostVideoCard/>
+                    <PromotionCard/>
                 </PromotionSection>
 
-                <ViewMoreBtn>더보기</ViewMoreBtn>
+                <ViewMoreBtn onClick={()=> setPage(page+1)}>더보기</ViewMoreBtn>
             </Main>
             <SideBar>
                 <SideBarWrapper>

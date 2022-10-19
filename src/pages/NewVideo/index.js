@@ -14,7 +14,7 @@ import { PromotionSection } from '../Main/styled';
 import PostVideoCard from '../../components/common/PostVideoCard';
 
 const NewVideo = () => {
-    const categoryList = ["전체", "음식", "자연", "웃음", "수면", "팅글"];
+    const categoryList = ["전체", "요리", "자연", "웃음", "수면", "팅글"];
     const navigate = useNavigate();
     const [page, setPage] = useState(1);
 
@@ -30,7 +30,7 @@ const NewVideo = () => {
         setNewSearch('');
     };
     const onCategoryClick = (param) => {
-        navigate(`/category/${param}`);
+        navigate(`/new/${param}`);
     };
     const handleChange = e => {
         setNewSearch(e.target.value);
@@ -39,12 +39,12 @@ const NewVideo = () => {
         <LayoutContainer>
             <PromotionTitle>최신 업로드 영상</PromotionTitle>
             <PromotionSubTitle>오늘 업로드 된 영상은?</PromotionSubTitle>
-            <SearchDiv>
+            {/*<SearchDiv>
                 <form onSubmit={onSearch}>
                     <SearchInput type={"text"} value={newsearch} placeholder={"요즘 뜨는 키워드는?"} onChange={handleChange}/>
                     <SearchBtn type={"submit"} onClick={onSearch}/>
                 </form>
-            </SearchDiv>
+            </SearchDiv>*/}
             <CategoryWrapper>
 
                 {categoryList.map((category) => (

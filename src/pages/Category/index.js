@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     PromotionTitle,
     PromotionSubTitle,
@@ -14,17 +14,20 @@ import {
 
 import {PromotionSection} from '../Main/styled';
 
-import {useNavigate} from "react-router-dom";
+import { useNavigate, useParams } from 'react-router-dom';
 import PostVideoCard from "../../components/common/PostVideoCard";
 import ScrollTop from '../../Utils/ScrollTop';
 import handleScroll from '../../Utils/ScrollTop/handleScroll';
+import { useRecoilValue } from 'recoil';
+import { VideoState } from '../../States/VideoStates';
 const Category = () => {
-
+    const videoData = useRecoilValue(VideoState);
+    let parameter = useParams().word;
     const [isShowMore, setIsShowMore] = useState(false);
     const navigate = useNavigate();
     const [page, setPage] = useState(1);
     const [categorySearch, setCategorySearch] = useState('');
-    const [param, setParam] = useState('');
+    const [param, setParam] = useState(parameter);
     /*
     const onSearch = e => {
         e.preventDefault();
@@ -40,6 +43,9 @@ const Category = () => {
         setParam(category);
         navigate(`/category/${category}`);
     };
+    useEffect(()=>{
+        setParam(parameter);
+    }, [parameter]);
     const handleChange = e => {
         setCategorySearch(e.target.value);
     };
@@ -66,7 +72,7 @@ const Category = () => {
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                <PostVideoCard page={page} param={param} orders={'rating'} count ={12}/>
+                <PostVideoCard page={page} param={param} orders={'rating'} count ={12} data={videoData}/>
             </PromotionSection>
             <ViewMoreBtn>
                 <ViewMoreBtnText onClick={()=> setPage(page+1)}>{ (isShowMore ? '닫기' : '더보기')}</ViewMoreBtnText>

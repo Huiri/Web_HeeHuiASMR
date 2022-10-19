@@ -84,8 +84,15 @@ const Main = () => {
 
     useEffect(()=>{
         FetchVideoData();
+        const videoList = [...videoData];
+        setVideoData(shuffle(videoList));
         // fetchVideoDataDB();
     }, []);
+
+    function shuffle(array) {
+        const real = [...array];
+        return real.sort(() => Math.random() - 0.5);
+    }
 
     const navigate = useNavigate();
     const categorylist = ["요리", "자연", "수면", "웃음", "팅글"];
@@ -134,7 +141,7 @@ const Main = () => {
             <VideoWrapper>
                 <PromotionTitle>최근 업로드</PromotionTitle>
                 <PromotionSection>
-                    <PostVideoCard page={page}/>
+                    <PostVideoCard page={page} count={12} data={videoData}/>
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setPage(page+1)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
@@ -163,7 +170,7 @@ const Main = () => {
 
                 </CategoryBtnContainer>
                 <PromotionSection>
-                    <PostVideoCard page={page} param={param} count={4}/>
+                    <PostVideoCard page={page} param={param} count={8} data={videoData}/>
                 </PromotionSection>
 
             </VideoWrapper>
