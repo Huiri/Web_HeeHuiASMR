@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     LayoutContainer,
     NavBar,
@@ -19,30 +19,31 @@ import {
     SideBarRecommendTitle,
     SideBarRecommendItem,
     BlankSpace,
-    ViewMoreBtn,
     PromotionSection
 } from './styled';
-import PostVideoCard from "../../components/common/PostVideoCard";
 import useFetch from '../../hooks/useYoutube';
-import PromotionCard from '../../components/common/PromotionCard';
 import { useNavigate, useParams } from 'react-router-dom';
+import ApiVideoCard from '../../components/common/ApiVideoCard';
 
 const SearchResult = () => {
-    let { params } = useParams();
+    let parameter = useParams().word;
     const navigate = useNavigate();
 
     const [page, setPage] = useState(1);
+    const [param, setParam] = useState(parameter);
 
-    const videoList = useFetch([]);
 
     const searchList = ['고구마', '붕어빵', '강유미', '순대', '붕어싸만코'];
 
-    const [searchText, setSearchText] = useState(params);
+    const [searchText, setSearchText] = useState(param);
 
     const onSearchTextClick = (search)=>{
         setSearchText(search);
         navigate(`/search/${search}`);
     };
+    useEffect(()=>{
+        setParam(parameter);
+    }, [parameter]);
 
     return (
         <LayoutContainer>
@@ -65,23 +66,21 @@ const SearchResult = () => {
             </NavBar>
             <Main>
                 <PromotionSection>
-                    <PromotionCard/>
+                    <ApiVideoCard param={param}/>
                 </PromotionSection>
 
-                <ViewMoreBtn onClick={()=> setPage(page+1)}>더보기</ViewMoreBtn>
             </Main>
             <SideBar>
                 <SideBarWrapper>
                     <SideBarSearchTitle>인기 검색어</SideBarSearchTitle>
-                    <SideBarSearchItem>인기 검색어</SideBarSearchItem>
-                    <SideBarSearchItem>인기</SideBarSearchItem>
-                    <SideBarSearchItem>인기 검색어</SideBarSearchItem>
-                    <SideBarSearchItem>검색어</SideBarSearchItem>
+                    <SideBarSearchItem>해리포터</SideBarSearchItem>
+                    <SideBarSearchItem>공부</SideBarSearchItem>
+                    <SideBarSearchItem>강유미</SideBarSearchItem>
                 </SideBarWrapper>
                 <SideBarRecommendWrapper>
                     <SideBarRecommendTitle>오늘의 키워드</SideBarRecommendTitle>
-                    <SideBarRecommendItem>군고구마</SideBarRecommendItem>
-                    <SideBarRecommendItem>공부</SideBarRecommendItem>
+                    <SideBarRecommendItem>졸업작품</SideBarRecommendItem>
+                    <SideBarRecommendItem>타이핑 소리</SideBarRecommendItem>
 
                 </SideBarRecommendWrapper>
             </SideBar>

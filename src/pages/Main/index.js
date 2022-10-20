@@ -53,6 +53,7 @@ import {useNavigate} from "react-router-dom";
 import CenterSlider from "../../Utils/CenterSlider";
 import { UserNameState } from '../../States/LoginStates';
 import axios from 'axios';
+import ApiVideoCard from '../../components/common/ApiVideoCard';
 
 const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
@@ -95,7 +96,7 @@ const Main = () => {
     }
 
     const navigate = useNavigate();
-    const categorylist = ["요리", "자연", "수면", "웃음", "팅글"];
+    const categoryList = ["요리", "자연", "수면", "웃음", "팅글"];
     const onCategoryClick = (param) => {
         navigate(`/category/${param}`);
     };
@@ -115,7 +116,7 @@ const Main = () => {
                 <CategoryTitle>Category</CategoryTitle>
 
                 <CategoryList>
-                    {categorylist.map((category) => (
+                    {categoryList.map((category) => (
                         <CategoryText key={category} onClick={()=>onCategoryClick(category)}>{category}</CategoryText>
 
                     ))}
@@ -141,7 +142,7 @@ const Main = () => {
             <VideoWrapper>
                 <PromotionTitle>최근 업로드</PromotionTitle>
                 <PromotionSection>
-                    <PostVideoCard page={page} count={12} data={videoData}/>
+                    {/*<ApiVideoCard page={page} count={2} order={"date"}/>*/}
                 </PromotionSection>
                 <ViewMoreBtn>
                     <ViewMoreBtnText onClick={()=> setPage(page+1)}>{isShowMore ? '닫기' : '더보기'}</ViewMoreBtnText>
@@ -164,7 +165,7 @@ const Main = () => {
             <VideoWrapper>
                 <PromotionTitle>카테고리별 영상</PromotionTitle>
                 <CategoryBtnContainer>
-                    {categorylist.map((category) => (
+                    {categoryList.map((category) => (
                         <CategoryBtn key={category} onClick={()=>setParam(category)}>#{category}</CategoryBtn>
                     ))}
 
@@ -186,7 +187,7 @@ const Main = () => {
                     <CollectionText>자연, 힐링</CollectionText>
                     <CollectionTitle>일주일 사이 구독자 수 증가</CollectionTitle>
                     <CollectionText>+10,218명</CollectionText>
-                    <CollectionTitle>최근 일주읠 사이 조회수 추이</CollectionTitle>
+                    <CollectionTitle>최근 일주일 사이 조회수 추이</CollectionTitle>
                     <CollectionText>+22,340뷰</CollectionText>
 
                 </CollectionTextWrapper>
