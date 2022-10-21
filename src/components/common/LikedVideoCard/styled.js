@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const LikedVideoCardContainer = styled.div`
-    background: aliceblue;
-    width : 63rem;
-    height : 9rem;
+  background: #a0b6c9;
+  width: 63rem;
+  height: 9rem;
   border-radius: 1rem;
-  margin : 0.4rem auto;
-  cursor : pointer;
-  
+  margin: 0.4rem auto;
+  cursor: pointer;
+  position : relative;
+  border: 2px solid grey;
+  &:hover {
+    background: lightgrey;
+  }
 `;
 export const LikedVideoImg = styled.p`
   display: inline-block;
@@ -23,7 +27,7 @@ export const LikedVideoTitle = styled.p`
   color : black;
   font-size : 1.6rem;
   position : absolute;
-  top : 7rem;
+  top : 1rem;
   margin-left : 1rem;
   font-family: cookieregular, sans-serif;
 
@@ -34,7 +38,7 @@ export const LikedVideoChannel = styled.p`
   color : black;
   font-size : 1.3rem;
   position : absolute;
-  top : 9rem;
+  top : 2.8rem;
   margin-left : 1.2rem;
   font-family: lee, sans-serif;
 
@@ -45,7 +49,7 @@ export const LikedVideoDescription = styled.p`
   color : black;
   font-size : 1rem;
   position : absolute;
-  top : 10.8rem;
+  top : 4.7rem;
   margin-left : 1.2rem;
   font-family: lee, sans-serif;
 

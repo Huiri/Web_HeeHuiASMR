@@ -16,6 +16,7 @@ export const CommentItemStyle = styled.div`
   background: antiquewhite;
   border-radius: 0.7rem;
   height : 100%;
+  min-height : 2.8rem;
   
 
 `;

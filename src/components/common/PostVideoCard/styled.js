@@ -55,8 +55,11 @@ export const PromotionChannel = styled.p`
   color: #5d5d5d;
 text-underline: none;
   font-size : 1rem;
-  margin : 0.7rem 0;
-
+  margin : 0.7rem auto;
+  overflow: hidden;
+  white-space: nowrap;
+  width : 15rem;
+  text-overflow: ellipsis;
 
 `;
 

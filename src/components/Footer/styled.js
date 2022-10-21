@@ -33,7 +33,8 @@ export const StyledLink = styled(Link)`
     transition : all 0.2s ease-in-out;
   }
   @media(max-width: 991px){
-    margin-left : -2rem;
+    margin-left : -1rem;
+    margin-right : 2rem;
 
   }
 `;

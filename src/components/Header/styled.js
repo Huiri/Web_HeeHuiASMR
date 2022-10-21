@@ -67,9 +67,6 @@ export  const StyledNavLink = styled(NavLink)`
     }
     &.active {
         color : #8f8f8f;
-        text-decoration-line: line-through;
-        text-decoration-style: solid;
-        text-decoration-color: #616161;
     }
     @media (max-width: 991px) {
       font-size : 0.8rem;
@@ -150,7 +147,7 @@ export const HeartBtn = styled(HeartIcon)`
     cursor : pointer;
     width : 1.6rem;
     height : 1.6rem;
-    margin-right : 2rem;
+    margin-right : 1.5rem;
   @media (max-width: 991px) {
     width : 1.4rem;
     height : 1.4rem;

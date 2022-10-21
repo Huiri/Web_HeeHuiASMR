@@ -114,6 +114,11 @@ export const ViewMoreBtn = styled.div`
     background: #e6e6e6;
     justify-content: center;
     align-items: center;
+  &:hover{
+    background: lightgrey;
+    border : 2px solid grey;
+    transition : all ease 0.2s 0s;
+  }
 
 `;
 export const ViewMoreBtnText = styled.p`

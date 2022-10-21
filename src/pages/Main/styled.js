@@ -296,6 +296,44 @@ export const CollectionImg = styled.img`
   height: 65vh;
   margin: 1rem 0 10rem 0;
   object-fit: cover;
-
+  
   background: #babed0;
+  @media(max-width: 991px){
+    width: 45vw;
+  }
+
+`;
+
+export const CollectionTextWrapper = styled.div`
+  width: 35vw;
+  height: 65vh;
+  margin: 1rem 0 10rem 0;
+  background: #babed0;
+  position: relative;
+  @media(max-width: 991px){
+    width: 45vw;
+  }
+
+`;
+export const CollectionTitle = styled.p`
+  font-size : 1.6rem;
+  font-family: geonggimedium, sans-serif;
+  margin-top : 2rem;
+  margin-left : 1rem;
+  @media(max-width: 991px){
+    font-size: 1.4rem;
+  }
+
+`;
+
+export const CollectionText = styled.p`
+  font-size : 1.3rem;
+  font-family: geonggilight, sans-serif;
+  margin-top : 0.5rem;
+  margin-left : 1.3rem;
+  @media(max-width: 991px){
+    font-size: 1rem;
+  }
+
+
 `;

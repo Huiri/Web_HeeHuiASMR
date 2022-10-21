@@ -118,7 +118,7 @@ export const CommentTitle = styled.h1`
   margin-top : 1.7rem;
   font-size : 2rem;
   font-family : lee, sans-serif;
-
+  font-weight: bold;
 `;
 
 //댓글 입력 부분
@@ -132,7 +132,9 @@ export const CommentInput = styled.input`
   height: 10vh;
   margin : 1rem 0;
   font-family: lee, sans-serif;
-  
+  @media(max-width: 991px){
+    width: 74vw;
+  }
   &:focus {
   }
 `;
@@ -142,7 +144,9 @@ export const CommentBtn = styled.button`
   cursor : pointer;
   font-size : 1.3rem;
   font-family: cookieregular, sans-serif;
-
+  @media(max-width: 991px){
+    width: 13vw;
+  }
 `;
 //실제 댓글창
 export const CommentSection = styled.div`
