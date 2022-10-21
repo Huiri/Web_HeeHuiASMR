@@ -1,4 +1,3 @@
-import Slider from "react-slick";
 import styled from "styled-components";
 import {ReactComponent as PlayIcon} from "../../assets/icons/PlayIcon.svg";
 
@@ -45,6 +44,9 @@ export const ImgContainer = styled.img`
     //height : 80vh;
     overflow: hidden;
     z-index: 1;
+  object-fit: cover;
+  height : 50vw;
+
 `;
 
 export const PlayBtn = styled(PlayIcon)`
