@@ -21,15 +21,18 @@ import {
     BlankSpace,
     PromotionSection
 } from './styled';
-import useFetch from '../../hooks/useYoutube';
 import { useNavigate, useParams } from 'react-router-dom';
 import ApiVideoCard from '../../components/common/ApiVideoCard';
+import { useRecoilValue } from 'recoil';
+import { VideoCountState } from '../../States/VideoStates';
 
 const SearchResult = () => {
+    const videoCount = useRecoilValue(VideoCountState);
+
     let parameter = useParams().word;
     const navigate = useNavigate();
 
-    const [page, setPage] = useState(1);
+    // const [page, setPage] = useState(1);
     const [param, setParam] = useState(parameter);
 
 
@@ -49,7 +52,7 @@ const SearchResult = () => {
         <LayoutContainer>
             <Result>
                 <SearchResultWrapper>
-                    <SearchResultCount>7</SearchResultCount>
+                    <SearchResultCount>{videoCount}</SearchResultCount>
                     <SearchResultText>개의 결과가 존재합니다.</SearchResultText>
                 </SearchResultWrapper>
             </Result>
@@ -66,7 +69,7 @@ const SearchResult = () => {
             </NavBar>
             <Main>
                 <PromotionSection>
-                    <ApiVideoCard param={param}/>
+                    <ApiVideoCard color={"white"} param={param}/>
                 </PromotionSection>
 
             </Main>

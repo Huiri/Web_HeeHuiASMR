@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { PromotionChannel, PromotionTitle, PromotionWrapper, StyledLink, VideoThumbnail, VideoWrapper } from '../PostVideoCard/styled';
 import Loading from '../../../Utils/Spinner';
 import axios from 'axios';
+import { useSetRecoilState } from 'recoil';
+import { VideoCountState } from '../../../States/VideoStates';
 
-const ApiVideoCard = ({page, order, param, count, data}) => {
+const ApiVideoCard = ({page, order, param, count, data, color}) => {
+    const setVideoCount = useSetRecoilState(VideoCountState);
 
     const [isLoading, setIsLoading] = useState(true);
     const [hasMore, setHasMore] = useState(true);
@@ -25,8 +28,8 @@ const ApiVideoCard = ({page, order, param, count, data}) => {
             .get(
 
                 // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=4&type=video&regionCode=KR&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
-                // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=AIzaSyD0DQJxkhFey38GgXaOAw6p8nZk7KIYf4E`
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
+                // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=3&type=video&regionCode=KR&key=AIzaSyD0DQJxkhFey38GgXaOAw6p8nZk7KIYf4E`
             )
             .then((res) => {
                 //console.log(res);
@@ -57,25 +60,16 @@ const ApiVideoCard = ({page, order, param, count, data}) => {
     }, [number]);
 
     const [showVideo, setShowVideo] = useState([]);
-
-    const findCategory = (array) => {
-        const real = [...array];
-        if(param === '전체') {
-            return real;
-        } else {
-            return real.filter(e => e.category === param);
-        }
-
-    };
+    
     useEffect(() => {
         setShowVideo([]);
         fetchData(param, order);
 
     }, [param]);
-    console.log(videoList);
 
     useEffect(()=>{
         setIsLoading(false);
+        setVideoCount(showVideo.length);
     }, [showVideo]);
 
     return (
@@ -88,7 +82,7 @@ const ApiVideoCard = ({page, order, param, count, data}) => {
                           <StyledLink to={`/detail/${i.id.videoId}`}  state={{ data: i.snippet }}>
                               <VideoWrapper>
                                   <VideoThumbnail className={i} src={i.snippet.thumbnails.medium["url"]} alt=""/>
-                                  <PromotionTitle>{i.snippet.title}</PromotionTitle>
+                                  <PromotionTitle color={color}>{i.snippet.title}</PromotionTitle>
                                   <PromotionChannel>{i.snippet.channelTitle}</PromotionChannel>
 
                               </VideoWrapper>
