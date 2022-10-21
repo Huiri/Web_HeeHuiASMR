@@ -26,13 +26,13 @@ const PostVideoCard = ({page, order, param, count, data}) => {
     //         order = 'viewCount';
     //     }
     //     axios
-    //     //  AIzaSyD0DQJxkhFey38GgXaOAw6p8nZk7KIYf4E
-    //     //AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA
+    //     //  Google_API_KEY
+    //     //Google_API_KEY
     //         .get(
     //
-    //             // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=4&type=video&regionCode=KR&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
-    //             // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA`
-    //             `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=AIzaSyD0DQJxkhFey38GgXaOAw6p8nZk7KIYf4E`
+    //             // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=4&type=video&regionCode=KR&key=Google_API_KEY`
+    //             // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=AIzaSyBmNXK-Google_API_KEY`
+    //             `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=8&type=video&regionCode=KR&key=Google_API_KEY`
     //         )
     //         .then((res) => {
     //             //console.log(res);
