@@ -74,8 +74,17 @@ export const ServiceContainer = styled.div`
     display : inline;
     float : right;
     margin-top : -3rem;
+  @media(max-width: 991px) {
+    margin-right : -3rem;
+
+  }
+
 `;
 
 export const ExplainContainer = styled.div`
+  @media(max-width: 991px) {
+    margin-left : -1rem;
+
+  }
 
 `;

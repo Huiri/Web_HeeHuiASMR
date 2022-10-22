@@ -34,11 +34,11 @@ export const SliderTitle=styled.p`
     font-weight: 500;
     justify-content:flex-start;
     align-items:center;
-    margin : -6.3rem 0 0 6rem;
+    margin : -6rem 0 0 6rem;
   z-index: 10;
   font-family: tway, sans-serif;
   @media(max-width: 991px){
-    margin : -7rem 0 0 4rem;
+    margin : -6rem 0 0 4rem;
     font-size: 1.8rem;
   }
 

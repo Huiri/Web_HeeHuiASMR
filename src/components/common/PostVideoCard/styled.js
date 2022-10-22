@@ -16,6 +16,12 @@ grid-gap : 10px 10px;
   &:hover {
     box-shadow: 3px 3px 3px #b2b2b2;
   }
+  @media(min-width: 1400px) {
+    width : 24vw;
+    height : 38vh;
+
+  }
+
 `;
 
 export const VideoThumbnail = styled.img`
@@ -29,6 +35,12 @@ export const VideoThumbnail = styled.img`
     width : 36vw;
 
   }
+  @media(min-width: 1400px) {
+    width : 23vw;
+    height : 27vh;
+
+  }
+
 
 `;
 export const PromotionTitle = styled.div`
@@ -43,9 +55,15 @@ export const PromotionTitle = styled.div`
   color : ${props => props.color || 'black'};
 
   @media(max-width: 991px) {
-  width : 33vw;
+  width : 34vw;
 
 }
+  @media(min-width: 1400px) {
+    width : 22vw;
+    font-size : 1.5rem;                                                   
+
+  }
+
 
 `;
 
@@ -60,6 +78,12 @@ text-underline: none;
   white-space: nowrap;
   width : 15rem;
   text-overflow: ellipsis;
+  @media(min-width: 1400px) {
+    width : 22vw;
+    font-size : 1.2rem;
+
+  }
+
 
 `;
 

@@ -8,7 +8,7 @@ export const PromotionImg = styled.img`
     background: #dbdbdb;    
   border-radius: 5px;
   @media(max-width: 991px){
-    width : 49.4vw;
+    width : 52vw;
 
   }
 
@@ -44,10 +44,11 @@ export const PromotionText = styled.p`
   white-space: nowrap;
   font-size : 1.2rem;
   margin-top : 1rem;
+  color : ${props => props.color || 'black'};
 
   font-family: lee, sans-serif;
   @media(max-width: 991px){
-    width : 85%;
+    width : 86%;
 
   }
 
@@ -56,6 +57,8 @@ export const PromotionText = styled.p`
 export const PromotionSub = styled.p`
     font-size : 1rem;
    margin : 0.7rem 0;
+  color: #5d5d5d;
+
   font-family: lee, sans-serif;
   @media(max-width: 991px){
     width : 100%;
