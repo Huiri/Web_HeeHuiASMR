@@ -7,3 +7,9 @@ export const VideoState = atom({
     default : [],
     effects_UNSTABLE : [persistAtom],
 });
+
+export const VideoCountState = atom({
+    key : 'VideoCountState',
+    default : 0,
+    effects_UNSTABLE : [persistAtom],
+});
