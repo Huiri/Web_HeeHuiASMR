@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom';
 const PostVideoCard = ({page, order, param, count, data}) => {
     // const video = useRecoilValue(VideoState);
 
-    const [showThing, setShowThing] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
     const [hasMore, setHasMore] = useState(true);
     const [videoList, setVideoList] = useState([]);
@@ -49,8 +48,6 @@ const PostVideoCard = ({page, order, param, count, data}) => {
 
     useEffect(()=>{
         setVideoList(data);
-
-
     },[]);
 
     const [number, setNumber] = useState(1);
@@ -81,13 +78,11 @@ const PostVideoCard = ({page, order, param, count, data}) => {
 
 
     }, [param]);
-    console.log(videoList);
 
     useEffect(()=>{
         setIsLoading(false);
     }, [showVideo]);
 
-    console.log(showThing);
     return (
         <>
             {isLoading ? <Loading /> : null}
@@ -97,7 +92,7 @@ const PostVideoCard = ({page, order, param, count, data}) => {
                         <PromotionWrapper key={show.video_idx}>
                             <StyledLink to={`/detail/${show.videoId}`}  state={{ data: show }}>
                                 <VideoWrapper>
-                                    <VideoThumbnail className={show.id} src={show.thumbnail} alt=""/>
+                                    <VideoThumbnail src={show.thumbnail} alt=""/>
                                     <PromotionTitle>{show.title}</PromotionTitle>
                                     <PromotionChannel>{show.creator}</PromotionChannel>
 

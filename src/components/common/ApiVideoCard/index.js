@@ -23,8 +23,9 @@ const ApiVideoCard = ({page, order, param, count, data, color}) => {
             order = 'viewCount';
         }
         axios
-        //  AIzaSyD0DQJxkhFey38GgXaOAw6p8nZk7KIYf4E
-        //AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA
+            //  AIzaSyD0DQJxkhFey38GgXaOAw6p8nZk7KIYf4E
+            //AIzaSyBmNXK-4gvjD7785WFaQVbuGCQwWErPKUA
+            //  AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98
             .get(
 
                 // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR${param}&order=${order}&maxResults=4&type=video&regionCode=KR&key=AIzaSyCHAdXUjuGX9fznEeA6Fz6EHpABipgxN98`
@@ -60,7 +61,7 @@ const ApiVideoCard = ({page, order, param, count, data, color}) => {
     }, [number]);
 
     const [showVideo, setShowVideo] = useState([]);
-    
+
     useEffect(() => {
         setShowVideo([]);
         fetchData(param, order);
