@@ -49,6 +49,8 @@ export const PrivateWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-top : 1rem;
+  margin-left : 3rem;
+
 `;
 export const ItemWrapper= styled.div`
   margin: auto 0;
@@ -59,6 +61,7 @@ export const PrivacyWrapper = styled.div`
 
 export const PrivacyTitle = styled.p`
     font-size : 1.5rem;
+  margin-left : 2rem;
   margin-bottom : 1rem;
   font-family: cookieregular, sans-serif;
 `;
@@ -67,6 +70,8 @@ export const PrivactSub = styled.p`
     font-size: 1.4rem;
   font-weight : 600;
   margin-top : 2rem;
+  margin-left : 3rem;
+
   font-family: lee, sans-serif;
 
 `;
@@ -76,6 +81,8 @@ export const PassWordChangeEmail = styled.p`
   margin:1rem;
   display: inline-block;
   font-family: diary, sans-serif;
+  margin-left : 3rem;
+
 
   &:hover {
     color: #7c7c7c;
@@ -91,6 +98,7 @@ export const PrivacyDelete = styled.p`
   margin-top : 2.5rem;
   font-size : 1.4rem;
   font-family: lee, sans-serif;
+  margin-left : 3rem;
 
   &:hover {
     color: #d54444;

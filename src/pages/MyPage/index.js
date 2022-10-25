@@ -131,7 +131,10 @@ const MyPage = () => {
                     :
                     null
                 }
-                <PrivacyDelete onClick={deleteAccount}>회원 탈퇴하기</PrivacyDelete>
+                <div>
+                    <PrivacyDelete onClick={deleteAccount}>회원 탈퇴하기</PrivacyDelete>
+
+                </div>
 
             </PrivacyWrapper>
 
@@ -150,10 +153,12 @@ const MyPage = () => {
 
     } else if(param === 'mycomment'){
         show = (
-            <>
+            <PrivacyWrapper>
+                <PrivacyTitle>작성한 댓글</PrivacyTitle>
+
                 <CommentList/>
 
-            </>
+            </PrivacyWrapper>
         );
     }
     return (
