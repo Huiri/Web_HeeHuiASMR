@@ -18,7 +18,7 @@ export const VideoTitle = styled.h2`
 `;
 export const VideoCreator = styled.p`
   font-size : 1.4rem;
-  margin : 0 0 0.3rem 0.4rem;
+  margin : 0 5rem 0.3rem 0.4rem;
   font-family: lee, sans-serif;
 `;
 

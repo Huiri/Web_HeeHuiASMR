@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ImgContainer = styled.img`
   width : 22rem;
   height : 30rem;
-  margin : 0 11rem 4rem 11rem;
   object-fit: cover;
 
 `;
@@ -20,6 +19,5 @@ export const PagingArrow = styled.p`
   }
 `;
 
-export const ImgWrapper = styled.span`
-  margin : 2rem 0;
+export const ImgWrapper = styled.div`
 `;

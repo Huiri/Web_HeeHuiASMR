@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LikedVideoCardContainer = styled.div`
   background: #a0b6c9;
-  width: 63rem;
+  width: 70vw;
   height: 9rem;
   border-radius: 1rem;
   margin: 0.4rem auto;
