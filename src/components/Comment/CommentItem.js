@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react';
 import { commentListState } from '../../recoil/comment';
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {
@@ -14,7 +14,7 @@ import {
 import {FilledHeartBtn, HeartBtn} from '../../pages/Detail/styled';
 
 const CommentItem = ({ data }) => {
-    const setComments = useSetRecoilState(commentListState)
+    const setComments = useSetRecoilState(commentListState);
     const comments = useRecoilValue(commentListState);
     const [newText, setNewTest] = useState(data.text);
     const [isEdit, setIsEdit] = useState(false);
@@ -36,7 +36,7 @@ const CommentItem = ({ data }) => {
     };
 
     const onRemove = () => {
-        setComments(comments => comments.filter(comment => comment.id !== data.id))
+        setComments(comments => comments.filter(comment => comment.id !== data.id));
     };
 
     const onUpdate = () => {
@@ -57,7 +57,7 @@ const CommentItem = ({ data }) => {
             comments.map(comment =>
                 comment.id === data.id ? { ...data, clicked: !data.clicked } : comment
             )
-        )
+        );
     };
 
     return (
@@ -65,11 +65,11 @@ const CommentItem = ({ data }) => {
             {isEdit ? (
                 <EditWrapper>
                     <CommentUser>Chaz</CommentUser>
-                        <EditInput
-                            type="text"
-                            value={newText}
-                            ref={editInputRef}
-                            onChange={handleChangeEditInput}/>
+                    <EditInput
+                        type="text"
+                        value={newText}
+                        ref={editInputRef}
+                        onChange={handleChangeEditInput}/>
 
                 </EditWrapper>
             ):(
@@ -88,7 +88,7 @@ const CommentItem = ({ data }) => {
             </CommentIconWrapper>
 
         </CommentItemStyle>
-    )
-}
+    );
+};
 
-export default CommentItem
+export default CommentItem;

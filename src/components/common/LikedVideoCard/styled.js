@@ -8,7 +8,7 @@ export const LikedVideoCardContainer = styled.div`
   margin : 0.4rem auto;
   cursor : pointer;
   
-`
+`;
 export const LikedVideoImg = styled.p`
   display: inline-block;
   width : 14rem;
@@ -16,7 +16,7 @@ export const LikedVideoImg = styled.p`
   background: antiquewhite;
   margin : 0.5rem 0 0.5rem 0.7rem;
   border-radius: 1rem;
-`
+`;
 
 export const LikedVideoTitle = styled.p`
     display: inline-block;
@@ -27,7 +27,7 @@ export const LikedVideoTitle = styled.p`
   margin-left : 1rem;
   font-family: cookieregular, sans-serif;
 
-`
+`;
 
 export const LikedVideoChannel = styled.p`
   display: inline-block;
@@ -39,7 +39,7 @@ export const LikedVideoChannel = styled.p`
   font-family: lee, sans-serif;
 
 
-`
+`;
 export const LikedVideoDescription = styled.p`
   display: inline-block;
   color : black;
@@ -50,4 +50,4 @@ export const LikedVideoDescription = styled.p`
   font-family: lee, sans-serif;
 
 
-`
+`;

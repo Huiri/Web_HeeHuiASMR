@@ -22,13 +22,13 @@ const FindAccount = () => {
 
     const findPassword = () => {
 
-    }
+    };
     const findEmail = () => {
 
-    }
+    };
     return(
-            <LayoutContainer>
-                <FindWrapper>
+        <LayoutContainer>
+            <FindWrapper>
                 <FindTitle>
                     <StyledLink onClick={()=>setFindSth(true)}>아이디</StyledLink> &nbsp;|&nbsp;
                     <StyledLink onClick={()=>setFindSth(false)}>비밀번호</StyledLink>&nbsp;찾기
@@ -46,7 +46,7 @@ const FindAccount = () => {
                             </RegisterForm>
 
                         </FindSthContainer>
-                     :
+                        :
                         <FindSthContainer>
                             <RegisterForm>
                                 <FindSubTitle>비밀번호 찾기</FindSubTitle>

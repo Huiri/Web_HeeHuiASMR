@@ -43,7 +43,7 @@ const SimpleSlider = () => {
                 arrow={false}
                 slidesToshow={1}
                 slidesToScroll={1}
-            ref={slickRef}>
+                ref={slickRef}>
                 {sliderList.map((image) => (
                     <ImgWrapper key={image.id}>
                         <ImgContainer src={image.src} alt={image.alt} />
@@ -65,5 +65,5 @@ const SimpleSlider = () => {
         </div>
     );
 
-}
+};
 export default SimpleSlider;

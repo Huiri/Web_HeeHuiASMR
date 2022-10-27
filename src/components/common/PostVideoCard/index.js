@@ -1,16 +1,57 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {PromotionChannel, PromotionTitle, PromotionWrapper, VideoThumbnail, VideoWrapper, StyledLink} from "./styled";
-import useFetch from "../../../hooks/useYoutube";
+import axios from "axios";
+import Loading from '../../../Utils/Spinner';
 
-const PostVideoCard = () => {
+const PostVideoCard = ({page, param, order}) => {
 
-    const videolist = useFetch("");
-    //.slice(offset, offset + limit)
+    const [pageNumber, setPageNumber] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+    const [hasMore, setHasMore] = useState(true);
+    const PAGE_LIMIT = 50;
+    const orders = order;
+
+    const [videoList, setVideoList] = useState([]);
+    const fetchData = () => {
+        setIsLoading(true);
+
+        axios
+            //Google_API_KEY
+            .get(
+
+                // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=4&type=video&regionCode=KR&key=Google_API_KEY`
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=먹방${param}&order=${orders}&maxResults=8&type=video&regionCode=KR&key=Google_API_KEY`
+            )
+            .then((res) => {
+                //console.log(res);
+                // setVideoList(res.data.items);
+                setIsLoading(false);
+                setVideoList(items => [...items, ...res.data.items]);
+                setHasMore(page !== PAGE_LIMIT);
+
+            })
+            .catch(() => {
+                console.warn("error");
+                setHasMore(false);
+            });
+    };
+
+    useEffect(() => {
+        setVideoList([]);
+        fetchData(param);
+    },[param, pageNumber]);
+
+    useEffect(() => {
+        console.log('pageNUm' + page);
+        setPageNumber(page);
+    }, [page]);
+
 
     return (
         <>
-            {videolist &&
-            videolist.map((i, idx) => {
+            {isLoading ? <Loading /> : null}
+            {videoList &&
+            videoList.map((i, idx) => {
                 return (
                     <PromotionWrapper key={idx}>
                         <StyledLink to={`/detail/${i.id.videoId}`}  state={{ data: i.snippet }}>
@@ -23,8 +64,8 @@ const PostVideoCard = () => {
                         </StyledLink>
                     </PromotionWrapper>
 
-                )
-            })}
+                );
+            })};
         </>
     );
 };

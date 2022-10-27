@@ -10,10 +10,13 @@ import {
     SearchInput
 } from "../Category/styled";
 import {useNavigate} from "react-router-dom";
+import { PromotionSection } from '../Main/styled';
+import PostVideoCard from '../../components/common/PostVideoCard';
 
 const NewVideo = () => {
     const categoryList = ["전체", "음식", "자연", "웃음", "수면", "팅글"];
     const navigate = useNavigate();
+    const [page, setPage] = useState(1);
 
     const [newsearch, setNewSearch] = useState('');
     const onSearch = e => {
@@ -25,13 +28,13 @@ const NewVideo = () => {
             navigate(`/new/${newsearch}`);
         }
         setNewSearch('');
-    }
+    };
     const onCategoryClick = (param) => {
         navigate(`/category/${param}`);
-    }
+    };
     const handleChange = e => {
         setNewSearch(e.target.value);
-    }
+    };
     return (
         <LayoutContainer>
             <PromotionTitle>최신 업로드 영상</PromotionTitle>
@@ -50,6 +53,9 @@ const NewVideo = () => {
                 ))}
             </CategoryWrapper>
             <hr/>
+            <PromotionSection>
+                <PostVideoCard page={page} orders={'date'}/>
+            </PromotionSection>
 
         </LayoutContainer>
     );

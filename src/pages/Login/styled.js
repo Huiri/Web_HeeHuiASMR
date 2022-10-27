@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import {ReactComponent as GoogleIcon} from '../../assets/icons/GoogleIcon.svg';
 
 export const Button = styled.button`
     color : ${props => props.color || "white"};
@@ -24,12 +23,14 @@ export const Button = styled.button`
 
     }
 
-`
+`;
 
-export const GoogleBtn = styled(GoogleIcon)`
+export const GoogleBtn = styled.img`
     margin-top : 0.2rem;
   margin-left : -0.2rem;
-`
+  width : 12rem;
+  cursor : pointer;
+`;
 export const LoginDiv = styled.div`
     background: #e3e3e3;
     justify-content: center;
@@ -37,13 +38,13 @@ export const LoginDiv = styled.div`
     display : flex;
     height: 100vh;
 
-`
+`;
 export const LoginContainer = styled.div`
     background : #f0f0f0;
     padding : 0;
     flex-direction: column;
     width : 22rem;
-    height : 25rem;
+    height : 27rem;
   margin-bottom : 3rem;
     border: none;
     border-radius: 1rem;
@@ -53,7 +54,7 @@ export const LoginContainer = styled.div`
   //@media (max-width: 991px) {
   //  height :rem;
   //}
-`
+`;
 export const LoginTitle = styled.p`
     color : #00415d;
     text-align : center;
@@ -63,7 +64,13 @@ export const LoginTitle = styled.p`
   font-size : 2rem;
   font-weight: 600;
   font-family: cookieregular, sans-serif;
-`
+`;
+export const FaceBookBtn = styled.img`
+  width : 12.5rem;
+  margin-top : 0.5rem;
+  cursor : pointer;
+
+`;
 export const LoginInput = styled.input`
     width : 15rem;
     font-size : 1.1rem;
@@ -87,24 +94,24 @@ export const LoginInput = styled.input`
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
 
-`
+`;
 
 export const LoginForm = styled.form`
-`
+`;
 
 export const StyledLink = styled(Link)`
     text-decoration : none;
-`
+`;
 
 export const LoginWrapper = styled.div`
 
-`
+`;
 export const ImgBtnContainer = styled.div`
     display : flex;
-    justify-content: space-evenly;
     align-items: center;
     margin : 1rem 0 0 0;
-`
+  flex-direction: column;
+`;
 
 export const ImgBtn = styled.button`
     border : none;
@@ -116,20 +123,20 @@ export const ImgBtn = styled.button`
   &:active {
     border : none;
   }
-`
+`;
 export const LoginCheckTitle = styled.div`
     display : inline;
     color : #454545;
     font-size : 0.7rem;
     margin-left : 0.4rem;
   font-family: geonggilight, sans-serif;
-`
+`;
 
 export const LoginCheck = styled.input`
     margin : 0.6rem 0 0 0;
     cursor : pointer;
 
-`
+`;
 
 export const LoginSocialTitle = styled.p`
     color : #454545;
@@ -137,10 +144,10 @@ export const LoginSocialTitle = styled.p`
     text-align: center;
   font-size : 1rem;
     margin : 1.8rem 0 0 0;
-`
+`;
 export const LoginSubWrapper = styled.div`
     display : inline;
-`
+`;
 
 export const InfoFindLink = styled(Link)`
     display : flex;
@@ -156,10 +163,10 @@ export const InfoFindLink = styled(Link)`
         color : #616161;
         font-weight : 600;
     }
-`
+`;
 
 export const LoginWarnSpan = styled.span`
     color : red;
     font-size : 0.8rem;
     display : ${props => props.visiblity ? "#000000":"none"};
-`
+`;

@@ -12,22 +12,22 @@ export const HeaderWrapper = styled.header`
     background : #b0d0eb;
     align-items: flex-start;
     flex-direction: column;
-`
+`;
 export const TopSection = styled.div`
     width : 100%;
     height : 9vh;
-`
+`;
 export const BottomSection = styled.div`
     margin-left : 10px;
   @media (max-width: 700px) {
     margin-top: 0;
   }
 
-`
+`;
 
 export const WebTitleWrapper = styled.div`
 
-`
+`;
 export const WebTitle = styled(Link)`
     font-size: 2.4rem;
     color : black;
@@ -45,13 +45,13 @@ export const WebTitle = styled(Link)`
   }
 
 
-`
+`;
 export const MenuWrapper = styled.div`
     display : flex;
     flex-direction : row;
     justify-content: flex-start;
     margin-top : 1rem;
-`
+`;
 
 export  const StyledNavLink = styled(NavLink)`
     display : flex;
@@ -76,14 +76,14 @@ export  const StyledNavLink = styled(NavLink)`
     }
 
 
-`
+`;
 
 export const SearchWrapper = styled.div`
     position : relative;
     bottom : 2rem;
     left : 10rem;
     width : 30%;
-`
+`;
 
 //styled.SearchInput.attrs({ placeholder: "오늘 가장 끌리는 소리는?", placeholerTextColor : "#737373"})`
 export const SearchInput = styled.input`
@@ -100,14 +100,14 @@ export const SearchInput = styled.input`
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
 
-`
+`;
 export const PersonalWrapper = styled.div`
     justify-content: flex-end;
     display : flex;
     width : 95vw;
     margin-top : -3rem;
     padding : 0.9rem 0;
-`
+`;
 
 export const StylePersonalLink = styled(NavLink)`
   float: right;
@@ -128,11 +128,11 @@ export const StylePersonalLink = styled(NavLink)`
     font-size: 0.8rem;
   }
 
-`
+`;
 export const IconSection = styled.div`
   float : right;
   margin : -3.8rem 1rem 0 0;
-`
+`;
 //Icon Style
 export const SearchBtn = styled(SearchIcon)`
     cursor: pointer;
@@ -144,7 +144,7 @@ export const SearchBtn = styled(SearchIcon)`
     height : 1.2rem;
 
 
-`
+`;
 
 export const HeartBtn = styled(HeartIcon)`
     cursor : pointer;
@@ -158,7 +158,7 @@ export const HeartBtn = styled(HeartIcon)`
 
   }
 
-`
+`;
 
 export const PageBtn = styled(PageIcon)`
     cursor : pointer;
@@ -173,7 +173,7 @@ export const PageBtn = styled(PageIcon)`
   }
 
 
-`
+`;
 
 export const UserBtn = styled(UserIcon)`
     cursor : pointer;
@@ -187,4 +187,4 @@ export const UserBtn = styled(UserIcon)`
   }
 
 
-`
+`;

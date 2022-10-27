@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {LoginState} from "../../States/LoginStates";
+import { LoginState, UserNameState } from '../../States/LoginStates';
 import {auth} from "../../firebase";
 // import axios from 'axios';
 
@@ -30,18 +30,20 @@ import {Link} from "react-router-dom";
 const Header = () => {
     const isLogged = useRecoilValue(LoginState);
 
+    const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+    const [displayName, setDisplayName] = useRecoilState(UserNameState);
 
     const [search, setSearch] =  useState("");
 
     const handleAuthentication= () => {
         console.log("signout successfully");
         console.log(isLoggedIn);
-       if(isLoggedIn)                                                {
-           setIsLoggedIn(false);
-           auth.signOut().then(() => console.log("successfully logout"));
-       }
-    }
+        if(isLoggedIn){
+            setIsLoggedIn(false);
+            auth.signOut().then(() => setDisplayName(''));
+        }
+    };
 
     //const navigate = useNavigate();
     const onSearch = e => {
@@ -59,16 +61,16 @@ const Header = () => {
             // setLists(filterData)
             // setCurrentPosts(filterData.slice(indeOfFirstPost, indexOfLastPost))
             // setCurrentPage(1)
-            window.location.href = `/search/${search}`;
-            // navigate(`/search/${search}`);
+            // window.location.href = `/search/${search}`;
+            navigate(`/search/${search}`);
         }
         setSearch('');
-    }
+    };
 
     const handleChange = e => {
         // e.preventDefault();
         setSearch(e.target.value);
-    }
+    };
 
     return (
         <HeaderWrapper>
@@ -82,14 +84,14 @@ const Header = () => {
                         <Link to ="/search"><SearchBtn type={"submit"} onClick={onSearch}/></Link>
                     </form>
                 </SearchWrapper>
-                    {isLogged && (
-                        <IconSection>
-                            <Link to={"/favorite"}><HeartBtn/></Link>
-                            <PageBtn/>
-                            <Link to={"/mypage"}><UserBtn/></Link>
-                        </IconSection>
+                {isLogged && (
+                    <IconSection>
+                        <Link to={"/favorite"}><HeartBtn/></Link>
+                        <PageBtn/>
+                        <Link to={"/mypage"}><UserBtn/></Link>
+                    </IconSection>
 
-                    )}
+                )}
 
             </TopSection>
 
@@ -97,7 +99,7 @@ const Header = () => {
                 <MenuWrapper>
                     <StyledNavLink to="/category/:word">CATEGORY</StyledNavLink>
                     <StyledNavLink to="/new">NEW</StyledNavLink>
-                    <StyledNavLink to="/madeby">MADE BY</StyledNavLink>
+                    <StyledNavLink to="/inquiry">Inquiry</StyledNavLink>
                     <StyledNavLink to="/event">EVENT</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>

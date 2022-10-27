@@ -7,3 +7,13 @@ export const LoginState = atom({
     default : false,
     effects_UNSTABLE : [persistAtom],
 });
+export const UserNameState = atom({
+    key : 'UserNameState',
+    default : '',
+    effects_UNSTABLE : [persistAtom],
+});
+export const UserEmailState = atom({
+    key : 'UserEmailState',
+    default : '',
+    effects_UNSTABLE : [persistAtom],
+});

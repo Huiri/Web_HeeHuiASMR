@@ -16,7 +16,7 @@ grid-gap : 10px 10px;
   &:hover {
     box-shadow: 3px 3px 3px #b2b2b2;
   }
-`
+`;
 
 export const VideoThumbnail = styled.img`
     width : 19vw;
@@ -25,7 +25,12 @@ export const VideoThumbnail = styled.img`
     margin : 0.6em 0.5rem;
     background: #dbdbdb;
     border-radius: 5px;
-`
+  @media(max-width: 991px) {
+    width : 36vw;
+
+  }
+
+`;
 export const PromotionTitle = styled.div`
   width : 16vw;
   margin-left : 1.7rem;
@@ -35,13 +40,17 @@ export const PromotionTitle = styled.div`
   white-space: nowrap;
   font-size : 1.2rem;
   margin-top : 1rem;
-  color : ${props => props.color || 'black'}
+  color : ${props => props.color || 'black'};
 
+  @media(max-width: 991px) {
+  width : 33vw;
 
-`
+}
+
+`;
 
 export const VideoWrapper = styled.div`
-`
+`;
 export const PromotionChannel = styled.p`
   color: #5d5d5d;
 text-underline: none;
@@ -49,9 +58,9 @@ text-underline: none;
   margin : 0.7rem 0;
 
 
-`
+`;
 
 export const StyledLink = styled(Link)`
     text-decoration : none;
   font-family: lee, sans-serif;
-`
+`;

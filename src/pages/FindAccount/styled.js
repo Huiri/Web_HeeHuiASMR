@@ -5,7 +5,7 @@ export const LayoutContainer = styled.div`
   display : flex;
   height: 80vh;  
   background: aliceblue;
-`
+`;
 
 export const FindTitle = styled.span`
   font-family: cookieregular, sans-serif;
@@ -15,17 +15,17 @@ export const FindTitle = styled.span`
   margin : 4rem 0 2rem 0;
 
 
-`
+`;
 
 export const FindSubTitle = styled.p`
   font-family: geonggimedium, sans-serif;
   font-size : 1.4rem;
   display: flex;
   justify-content: center;
-`
+`;
 export const FindWrapper = styled.div`
   
-`
+`;
 
 export const StyledLink = styled.div`
   color: gray;
@@ -37,7 +37,7 @@ export const StyledLink = styled.div`
   }
 
 
-`
+`;
 export const FindContainer = styled.div`
   background : #f0f0f0;
     padding : 0;
@@ -53,7 +53,7 @@ export const FindContainer = styled.div`
   //@media (max-width: 991px) {
   //  height :rem;
   //}
-`
+`;
 
 export const FindPwContainer = styled.div`
   background : #f0f0f0;
@@ -67,6 +67,6 @@ export const FindPwContainer = styled.div`
   border-radius: 1rem;
   justify-content: center;
   align-items: center;
-`
+`;
 export const FindSthContainer = styled.div`
-`
+`;
