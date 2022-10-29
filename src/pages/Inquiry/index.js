@@ -15,11 +15,13 @@ import {
 import { PromotionTitle} from "../Category/styled";
 import emailjs from '@emailjs/browser';
 import { init } from 'emailjs-com';
-import { useRecoilValue } from 'recoil';
-import { UserEmailState, UserNameState } from '../../States/LoginStates';
+import {  useRecoilValue } from 'recoil';
+import { LoginState, UserEmailState, UserNameState } from '../../States/LoginStates';
 
 
 const Inquiry = () => {
+    const isLogged = useRecoilValue(LoginState);
+
     const [emailText, setEmailText] = useState('');
     const displayName = useRecoilValue(UserNameState);
     const userEmail = useRecoilValue(UserEmailState);
@@ -33,7 +35,8 @@ const Inquiry = () => {
     useEffect(() => {
         init('sa5wx5sa7WVqn7itv');
     }, []);
-
+    const [user_name, setUser_Name] = useState(displayName);
+    const [message, setMessage] = useState('');
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -41,7 +44,11 @@ const Inquiry = () => {
 
         emailjs.sendForm('service_aq6ngyv', 'template_hu5qil3', form.current, 'sa5wx5sa7WVqn7itv')
             .then((result) => {
-                setEmailText('');
+                setMessage('');
+                if(isLogged !== true){
+                    setUser_Name('');
+                }
+                alert('개발자에게 전송되었습니다! 오늘도 행복한 하루 되세요!');
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
@@ -55,19 +62,21 @@ const Inquiry = () => {
                 <InquiryForm ref={form} onSubmit={sendEmail}>
                     <InputWrapper>
                         <Label>Name</Label>
-                        <Input type="text" name="user_name" value={displayName ? displayName : null}/>
+                        <Input type="text" name="user_name" onChange={e=> {setUser_Name(e.target.value);}} value={user_name}/>
                     </InputWrapper>
+                    {/*
                     <InputWrapper>
 
                         <Label>Email</Label>
-                        <Input type="email" name="user_email" value={userEmail ? userEmail : null} />
+                        <Input type="email" name="user_email" onChange={e=> {setSearch(e.target.value)}} value={isLogged ? userEmail : null} />
                     </InputWrapper>
+                    */}
                     <InputWrapper>
                         <Label>Message</Label>
-                        <InquiryInput onChange={handleResizeHeight} row={1} name="message" />
+                        <InquiryInput onChange={(e)=>{setMessage(e.target.value);}} row={1} name="message" value={message} />
 
                     </InputWrapper>
-                    <SubmitBtn type="submit" value="메일 보내기" />
+                    <SubmitBtn type="submit" value="메일 보내기"  />
                 </InquiryForm>
 
             </InquiryWrapper>

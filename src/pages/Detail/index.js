@@ -24,7 +24,7 @@ import CommentList from "../../components/Comment/CommentList";
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import {commentListState} from "../../recoil/comment";
 import axios from "axios";
-import {useLocation, useParams} from "react-router-dom";
+import { useLocation, useParams } from 'react-router-dom';
 import { LoginState} from '../../States/LoginStates';
 let id = 0;
 const getId = () => id++;
@@ -39,14 +39,12 @@ const Detail = () => {
     const isLoggedIn = useRecoilValue(LoginState);
 
     const [comment, setComment] = useState([]);
-
     const getCommentList = () => {
 
         axios.get("http://localhost:3002/getcomment", {})
             .then((res) => {
                 const { data } = res;
                 setComments(data);
-                console.log(data);
             })
             .catch((e) => {
                 console.error(e);

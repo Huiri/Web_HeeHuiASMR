@@ -99,35 +99,6 @@ const Login = () => {
             });
     };
 
-    //구글 로그인(리다이렉트)
-    /**
-     * @todo /redirect 된 이후 돌아올 페이지 지정해주어야 main으로 감
-     */
-    const signInGoogleRedirect = () => {
-        getRedirectResult(auth)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access Google APIs.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-
-                // The signed-in user info.
-                const user = result.user;
-
-                setIsLoggedIn(true);
-                history('/', {replace:true});
-
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
-    };
-    // signInWithRedirect(auth, googleprovider);
 
     //facebook 로그인
     const signInFaceBook = () => {
@@ -162,12 +133,6 @@ const Login = () => {
 
                 // ...
             });
-    };
-
-    const loginAccount = (e) => {
-        auth
-            .login(e.target.txtContent)
-            .then(console.log);
     };
 
     //로그인 유지하기 파트

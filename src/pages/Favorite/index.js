@@ -1,16 +1,16 @@
 import React,{useEffect} from 'react';
-import {LayoutContainer} from "../MyPage/styled";
+import {LayoutContainer, LikedTitle} from "./styled";
 
 import {Main,
     SideBar} from "../SearchResult/styled";
 import LikedVideoCard from "../../components/common/LikedVideoCard";
-import {useRecoilState} from "recoil";
+import {useRecoilValue} from "recoil";
 import {LoginState} from "../../States/LoginStates";
 import {useNavigate} from "react-router-dom";
 
 
 const Favorite = () => {
-    const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+    const isLoggedIn = useRecoilValue(LoginState);
     const navigate = useNavigate();
 
     useEffect(()=> {
@@ -21,16 +21,11 @@ const Favorite = () => {
 
     return (
         <LayoutContainer>
-            <Main>
+            <LikedTitle>좋아요 표시한 동영상</LikedTitle>
 
-                <LikedVideoCard/>
-                <LikedVideoCard/>
-                <LikedVideoCard/>
-            </Main>
-            <SideBar>
-
-            </SideBar>
-
+            <LikedVideoCard/>
+            <LikedVideoCard/>
+            <LikedVideoCard/>
         </LayoutContainer>
     );
 };

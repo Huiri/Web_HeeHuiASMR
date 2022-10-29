@@ -11,7 +11,7 @@ import {
 } from "../Category/styled";
 import {useNavigate} from "react-router-dom";
 import { PromotionSection } from '../Main/styled';
-import PostVideoCard from '../../components/common/PostVideoCard';
+import ApiVideoCard from '../../components/common/ApiVideoCard';
 
 const NewVideo = () => {
     const categoryList = ["전체", "요리", "자연", "웃음", "수면", "팅글"];
@@ -54,7 +54,7 @@ const NewVideo = () => {
             </CategoryWrapper>
             <hr/>
             <PromotionSection>
-                <PostVideoCard page={page} orders={'date'}/>
+                <ApiVideoCard page={page} count={30} orders={'date'}/>
             </PromotionSection>
 
         </LayoutContainer>

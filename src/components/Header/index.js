@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useRecoilState, useRecoilValue} from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { LoginState, UserEmailState, UserNameState } from '../../States/LoginStates';
 import {auth} from "../../firebase";
 // import axios from 'axios';
@@ -31,14 +31,17 @@ const Header = () => {
 
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
-    const [displayName, setDisplayName] = useRecoilState(UserNameState);
+    const setDisplayName = useSetRecoilState(UserNameState);
 
     const [search, setSearch] =  useState("");
-    const [userEmail, setUserEmail] = useRecoilState(UserEmailState);
+    const setUserEmail = useSetRecoilState(UserEmailState);
     const handleAuthentication= () => {
         if(isLoggedIn){
             setIsLoggedIn(false);
-            auth.signOut().then(() => {setDisplayName(''); setUserEmail('');});
+            auth.signOut().then(() => {
+                setDisplayName('');
+                setUserEmail('');
+            });
         }
     };
 
@@ -47,19 +50,8 @@ const Header = () => {
     const onSearch = e => {
         e.preventDefault();
         if(search === '') { //검색어가 없을 경우 전체 리스트 반환
-            // axios.get(common.baseURL + "search")
-            //     .then((res) => {
-            //         setLists(res.data.userList)
-            //         setCurrentPosts(res.data.userList.slice(indexOfFirstPost, indexOfLastPost))
-            //     });
-
             alert("검색어를 입력해주세요");
         } else { //검색 구현
-            // const filterData = lists.filter((res) => row.userId.includes(search))
-            // setLists(filterData)
-            // setCurrentPosts(filterData.slice(indeOfFirstPost, indexOfLastPost))
-            // setCurrentPage(1)
-            // window.location.href = `/search/${search}`;
             navigate(`/search/${search}`);
         }
         setSearch('');
@@ -95,7 +87,7 @@ const Header = () => {
             <BottomSection>
                 <MenuWrapper>
                     <StyledNavLink to="/category/:word">카테고리</StyledNavLink>
-                    <StyledNavLink to="/new">최근 업로드</StyledNavLink>
+                    <StyledNavLink to="/new/:word">최근 업로드</StyledNavLink>
                     <StyledNavLink to="/inquiry">문의사항</StyledNavLink>
                     <StyledNavLink to="/event">이벤트</StyledNavLink>
                 </MenuWrapper>
