@@ -38,6 +38,8 @@ const SignUp = () => {
                     alert("이메일 양식이 부합하지 않습니다.");
                 } else if(error.message === "Firebase: Password should be at least 6 characters (auth/weak-password)."){
                     alert("비밀번호를 6자리 이상으로 설정해주세요.");
+                } else if(error.message === "Firebase: Error (auth/email-already-in-use)."){
+                    alert("이미 존재하는 이메일 정보입니다.");
                 }
                 console.warn(error.message);
             });
@@ -72,10 +74,10 @@ const SignUp = () => {
 
                 <RegisterContainer className='login_container'>
                     <RegisterForm onSubmit={()=>addAccount}>
-                        <RegisterInput placeholder="이름" value={name} onChange={e=>setName(e.target.value)} type ="text"/>
-                        <RegisterInput placeholder="이메일" value={email} onChange={e=>setEmail(e.target.value)} type = "email" />
-                        <RegisterInput placeholder="비밀번호" autoComplete="off" value={password} onChange={e=>setPassword(e.target.value)} type ="password"/>
-                        <RegisterInput placeholder="번호 ex.01011111111" maxlength='11' value={number} onChange={e=>setNumber(e.target.value)} type = "tel" />
+                        <RegisterInput placeholder="이름(필수X)" value={name} onChange={e=>setName(e.target.value)} type ="text"/>
+                        <RegisterInput placeholder="이메일(필수)" value={email} onChange={e=>setEmail(e.target.value)} type = "email" />
+                        <RegisterInput placeholder="비밀번호(필수)" autoComplete="off" value={password} onChange={e=>setPassword(e.target.value)} type ="password"/>
+                        <RegisterInput placeholder="번호(필수X) ex.01011111111" maxlength='11' value={number} onChange={e=>setNumber(e.target.value)} type = "tel" />
 
                         <Button onClick={register} className="login_registerButton">Register</Button>
                         {/* <Button onClick={loginAccount}>Google</Button  > */}
