@@ -26,7 +26,7 @@ const CommentItem = ({ data, video_id }) => {
     if(displayName === ''){
         userName = '누군가';
     } else {
-        userName = displayName.split('@')[0];
+        userName = displayName;
 
     }
     const editInputRef = useRef(null);
