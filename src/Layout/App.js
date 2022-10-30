@@ -55,7 +55,7 @@ const App = ({auth}) => {
                     <Route path="/detail/:video_id" element={<Detail/>}/>
                     <Route path="/mypage" element={<MyPage auth={auth}/>} />
                     <Route path="/favorite" element={<Favorite/>} />
-                    <Route path="/new" element={<NewVideo/>} />
+                    <Route path="/new/:word" element={<NewVideo/>} />
                     <Route path="/inquiry" element={<Inquiry/>} />
                     <Route path="/service" element={<Service/>} />
                     <Route path="/student" element={<StudentPage/>} />
