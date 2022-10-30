@@ -54,6 +54,8 @@ import CenterSlider from "../../Utils/CenterSlider";
 import { UserNameState } from '../../States/LoginStates';
 import axios from 'axios';
 import ApiVideoCard from '../../components/common/ApiVideoCard';
+import ScrollTop from '../../Utils/ScrollTop';
+import handleScroll from '../../Utils/ScrollTop/handleScroll';
 
 const Main = () => {
     const [isViewMore, setIsViewMore] = useState(false);
@@ -135,7 +137,7 @@ const Main = () => {
             <PromotionContainer>
                 <PromotionTitle>인기 급상승</PromotionTitle>
                 <HotSection>
-                    {/*<PromotionCard/>*/}
+                    {/*<PromotionCard data={videoData} param={'먹방'}/>*/}
                 </HotSection>
 
             </PromotionContainer>
@@ -193,6 +195,7 @@ const Main = () => {
                 </CollectionTextWrapper>
 
             </CollectionSection>
+            <ScrollTop handleClick={handleScroll}/>
 
         </HomeWrapper>
     );
