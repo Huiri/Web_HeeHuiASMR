@@ -1,28 +1,34 @@
-import img2 from "../../assets/img/music.jpg";
-import img4 from "../../assets/img/puppy.jpg";
-import img6 from "../../assets/img/study.jpg";
-import img7 from "../../assets/img/deer.jpg";
+import img3 from "../../assets/img/Water.jpg";
+import img8 from "../../assets/img/desert.jpg";
+import img2 from "../../assets/img/food.jpg";
+import img1 from "../../assets/img/car.jpg";
+import img4 from "../../assets/img/autumn.jpg";
 
 export const sliderList = [
 
     {
-        "id": 2,
-        "src": img2,
+        "id": 1,
+        "src": img3,
         "alt": "두번째 슬라이드"
     },
     {
-        "id": 4,
-        "src": img4,
-        "alt": "4번째 슬라이드"
-    },
-    {
-        "id": 6,
-        "src": img6,
-        "alt": "6번째 슬라이드"
-    },
-    {
-        "id": 7,
-        "src": img7,
+        "id": 2,
+        "src": img8,
         "alt": "7번째 슬라이드"
-    }
+    },
+    {
+        "id": 3,
+        "src": img2,
+        "alt": "7번째 슬라이드"
+    },
+    {
+        "id": 4,
+        "src": img1,
+        "alt": "7번째 슬라이드"
+    },
+    {
+        "id": 5,
+        "src": img4,
+        "alt": "7번째 슬라이드"
+    },
 ];

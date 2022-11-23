@@ -43,8 +43,15 @@ export const Contents = styled.div`
   padding : 1rem 2rem 1.5rem 0.6rem;
   border: 0 solid rgba(225,228,230,.5);
   border-top-width: 1px;
+  font-family: geonggilight, sans-serif;
 `;
 
 export const EventTitle = styled.p`
   font-size : 1.4rem;
+  font-family: geonggimedium, sans-serif;
+`;
+export const ContentText = styled.p`
+  font-family: geonggilight, sans-serif;
+  margin-top : 0.3rem;
+
 `;

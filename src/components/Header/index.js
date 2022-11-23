@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import { LoginState, UserNameState } from '../../States/LoginStates';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { LoginState, UserEmailState, UserNameState } from '../../States/LoginStates';
 import {auth} from "../../firebase";
 // import axios from 'axios';
 
@@ -20,7 +20,6 @@ import {
     StylePersonalLink,
     IconSection,
     HeartBtn,
-    PageBtn,
     UserBtn,
     //SearchForm
 
@@ -32,36 +31,27 @@ const Header = () => {
 
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
-    const [displayName, setDisplayName] = useRecoilState(UserNameState);
+    const setDisplayName = useSetRecoilState(UserNameState);
 
     const [search, setSearch] =  useState("");
-
+    const setUserEmail = useSetRecoilState(UserEmailState);
     const handleAuthentication= () => {
-        console.log("signout successfully");
-        console.log(isLoggedIn);
         if(isLoggedIn){
             setIsLoggedIn(false);
-            auth.signOut().then(() => setDisplayName(''));
+            auth.signOut().then(() => {
+                setDisplayName('');
+                setUserEmail('');
+            });
         }
     };
+
 
     //const navigate = useNavigate();
     const onSearch = e => {
         e.preventDefault();
         if(search === '') { //검색어가 없을 경우 전체 리스트 반환
-            // axios.get(common.baseURL + "search")
-            //     .then((res) => {
-            //         setLists(res.data.userList)
-            //         setCurrentPosts(res.data.userList.slice(indexOfFirstPost, indexOfLastPost))
-            //     });
-
             alert("검색어를 입력해주세요");
         } else { //검색 구현
-            // const filterData = lists.filter((res) => row.userId.includes(search))
-            // setLists(filterData)
-            // setCurrentPosts(filterData.slice(indeOfFirstPost, indexOfLastPost))
-            // setCurrentPage(1)
-            // window.location.href = `/search/${search}`;
             navigate(`/search/${search}`);
         }
         setSearch('');
@@ -87,7 +77,6 @@ const Header = () => {
                 {isLogged && (
                     <IconSection>
                         <Link to={"/favorite"}><HeartBtn/></Link>
-                        <PageBtn/>
                         <Link to={"/mypage"}><UserBtn/></Link>
                     </IconSection>
 
@@ -97,13 +86,13 @@ const Header = () => {
 
             <BottomSection>
                 <MenuWrapper>
-                    <StyledNavLink to="/category/:word">CATEGORY</StyledNavLink>
-                    <StyledNavLink to="/new">NEW</StyledNavLink>
-                    <StyledNavLink to="/inquiry">Inquiry</StyledNavLink>
-                    <StyledNavLink to="/event">EVENT</StyledNavLink>
+                    <StyledNavLink to="/category/:word">카테고리</StyledNavLink>
+                    <StyledNavLink to="/new/:word">최근 업로드</StyledNavLink>
+                    <StyledNavLink to="/inquiry">문의사항</StyledNavLink>
+                    <StyledNavLink to="/event">이벤트</StyledNavLink>
                 </MenuWrapper>
                 <PersonalWrapper>
-                    <StylePersonalLink to={!isLoggedIn && "/login"} onClick={handleAuthentication}>{ isLoggedIn ? "SIGN OUT" : 'SIGN IN | UP'}</StylePersonalLink>
+                    <StylePersonalLink to={!isLoggedIn && "/login"} onClick={handleAuthentication}>{ isLoggedIn ? "로그아웃" : '로그인 | 회원가입'}</StylePersonalLink>
                 </PersonalWrapper>
             </BottomSection>
 

@@ -15,7 +15,7 @@ import {getAuth,
 
 } from "firebase/auth";
 
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import {LoginState, UserNameState, UserEmailState} from "../../States/LoginStates";
 
 
@@ -28,7 +28,6 @@ import {
     LoginContainer,
     StyledLink,
     LoginWrapper,
-    ImgBtn,
     ImgBtnContainer,
     LoginCheckTitle,
     LoginCheck,
@@ -41,11 +40,11 @@ import {
 const Login = () => {
     const history = useNavigate();
 
-    const [displayName, setDisplayName] = useRecoilState(UserNameState);
-    const [userEmail, setUserEmail] = useRecoilState(UserEmailState);
+    const setDisplayName = useSetRecoilState(UserNameState);
+    const setUserEmail = useSetRecoilState(UserEmailState);
 
     //로그인 상태 확인을 위한 변수
-    const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+    const setIsLoggedIn = useSetRecoilState(LoginState);
 
     //firebase 로그인을 위한 변수
     const auth = getAuth();
@@ -62,8 +61,8 @@ const Login = () => {
                     setIsLogin();
                 }
                 setUserEmail(formValues.email);
-                setDisplayName(formValues.email);
-                history('/', {replace:true});
+                setDisplayName(formValues.email.split('@')[0]);
+                history(-1);
             })
             .catch((error) => {
                 alert(error.message);
@@ -100,35 +99,6 @@ const Login = () => {
             });
     };
 
-    //구글 로그인(리다이렉트)
-    /**
-     * @todo /redirect 된 이후 돌아올 페이지 지정해주어야 main으로 감
-     */
-    const signInGoogleRedirect = () => {
-        getRedirectResult(auth)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access Google APIs.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-
-                // The signed-in user info.
-                const user = result.user;
-
-                setIsLoggedIn(true);
-                history('/', {replace:true});
-
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
-    };
-    // signInWithRedirect(auth, googleprovider);
 
     //facebook 로그인
     const signInFaceBook = () => {
@@ -163,15 +133,6 @@ const Login = () => {
 
                 // ...
             });
-    };
-    //네이버 로그인
-    const {naver} = window;
-
-
-    const loginAccount = (e) => {
-        auth
-            .login(e.target.txtContent)
-            .then(console.log);
     };
 
     //로그인 유지하기 파트

@@ -33,7 +33,8 @@ export const StyledLink = styled(Link)`
     transition : all 0.2s ease-in-out;
   }
   @media(max-width: 991px){
-    margin-left : -2rem;
+    margin-left : -1rem;
+    margin-right : 2rem;
 
   }
 `;
@@ -73,8 +74,17 @@ export const ServiceContainer = styled.div`
     display : inline;
     float : right;
     margin-top : -3rem;
+  @media(max-width: 991px) {
+    margin-right : -3rem;
+
+  }
+
 `;
 
 export const ExplainContainer = styled.div`
+  @media(max-width: 991px) {
+    margin-left : -1rem;
+
+  }
 
 `;

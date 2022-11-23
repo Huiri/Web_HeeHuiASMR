@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
+
 import {SideBarSearchItem, SideBarSearchTitle, SideBarWrapper, Main, SideBar} from "../SearchResult/styled";
 import { getAuth, sendPasswordResetEmail, deleteUser } from "firebase/auth";
 import {LayoutContainer,
@@ -8,14 +9,22 @@ import {LayoutContainer,
     PrivactSub,
     PrivacyDelete,
     PassWordChangeEmail,
+    PrivateImg,
+    UserImg,
+    PrivateWrapper,
+    ItemWrapper
 } from './styled';
-import {useRecoilState,useRecoilValue} from "recoil";
-import {LoginState, UserNameState} from "../../States/LoginStates";
-import {useNavigate} from "react-router-dom";
+import {useRecoilValue} from "recoil";
+import {LoginState, UserNameState, UserEmailState} from "../../States/LoginStates";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import LikedVideoCard from '../../components/common/LikedVideoCard';
+import CommentList from '../../components/Comment/CommentList';
 
 const MyPage = () => {
-    const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+    const isLoggedIn = useRecoilValue(LoginState);
     const displayName = useRecoilValue(UserNameState);
+    const userEmail = useRecoilValue(UserEmailState);
     const navigate = useNavigate();
 
     const auth = getAuth();
@@ -71,6 +80,7 @@ const MyPage = () => {
     //
     // }
 
+    const [param, setParam] = useState('info');
     //비밀번호 재설정 이메일 전송
 
     //회원 탈퇴
@@ -83,36 +93,86 @@ const MyPage = () => {
         });
 
     };
+    let isEmailLogined = displayName === userEmail.split('@')[0];
 
+    let photo = photoURL ? photoURL : null;
     useEffect(()=> {
         if(isLoggedIn === false){
             navigate('/', {replace:true});
         }
     },[isLoggedIn]);
+    let show;
+    if(param === 'info'){
+        show = (
+            <PrivacyWrapper>
+                <PrivacyTitle>개인정보 확인 및 변경</PrivacyTitle>
+                <PrivactSub>등록된 정보</PrivactSub>
+                <PrivateWrapper>
+                    {photo ? (
+                        <PrivateImg src={photo}/>
+                    ):(
+                        <UserImg/>
+                    )}
+                    <ItemWrapper>
+                        <PrivacyItem>이름 : {displayName ? displayName : "X"}</PrivacyItem>
+                        <PrivacyItem>이메일 : {email ? email : "X"}</PrivacyItem>
+
+                    </ItemWrapper>
+
+                </PrivateWrapper>
+                {isEmailLogined ?
+                    (
+                        <>
+                            <PrivactSub>비밀번호 변경</PrivactSub>
+                            <PassWordChangeEmail onClick={sendChangePasswordEmail}>비밀번호 재설정 이메일 전송</PassWordChangeEmail>
+                        </>
+
+                    )
+                    :
+                    null
+                }
+                <div>
+                    <PrivacyDelete onClick={deleteAccount}>회원 탈퇴하기</PrivacyDelete>
+
+                </div>
+
+            </PrivacyWrapper>
+
+        );
+    } else if(param === 'likedvideo'){
+        show = (
+            <PrivacyWrapper>
+
+                <PrivacyTitle>좋아요한 동영상</PrivacyTitle>
+                <LikedVideoCard/>
+                <LikedVideoCard/>
+                <LikedVideoCard/>
+
+            </PrivacyWrapper>
+        );
+
+    } else if(param === 'mycomment'){
+        show = (
+            <PrivacyWrapper>
+                <PrivacyTitle>작성한 댓글</PrivacyTitle>
+
+                <CommentList/>
+
+            </PrivacyWrapper>
+        );
+    }
     return (
 
         <LayoutContainer>
             <Main>
-                <PrivacyWrapper>
-                    <PrivacyTitle>개인정보 확인 및 변경</PrivacyTitle>
-                    <PrivactSub>등록된 정보</PrivactSub>
-                    <PrivacyItem>이름 : {displayName ? displayName : "X"}</PrivacyItem>
-                    <PrivacyItem>이메일 : {email ? email : "X"}</PrivacyItem>
-                    <PrivacyItem>사진 : {photoURL ? photoURL : "X"}</PrivacyItem>
-                    <PrivactSub>비밀번호 변경</PrivactSub>
-                    <PassWordChangeEmail onClick={sendChangePasswordEmail}>비밀번호 재설정 이메일 전송</PassWordChangeEmail>
-                    <PrivacyDelete onClick={deleteAccount}>회원 탈퇴하기</PrivacyDelete>
-
-                </PrivacyWrapper>
-
+                {show}
             </Main>
             <SideBar>
                 <SideBarWrapper>
                     <SideBarSearchTitle>마이 페이지</SideBarSearchTitle>
-                    <SideBarSearchItem>내 정보 관리</SideBarSearchItem>
-                    <SideBarSearchItem>내가 쓴 댓글</SideBarSearchItem>
-                    <SideBarSearchItem>좋아요 한 동영상</SideBarSearchItem>
-                    <SideBarSearchItem>내가 만든 영상</SideBarSearchItem>
+                    <SideBarSearchItem onClick={()=>setParam("info")}>내 정보 관리</SideBarSearchItem>
+                    <SideBarSearchItem onClick={()=>setParam("mycomment")}>내가 쓴 댓글</SideBarSearchItem>
+                    <SideBarSearchItem onClick={()=>setParam("likedvideo")}>좋아요 한 동영상</SideBarSearchItem>
 
                 </SideBarWrapper>
             </SideBar>

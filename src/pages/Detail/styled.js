@@ -8,14 +8,17 @@ export const TitleWrapper = styled.div`
     margin : 0 0 0 3.5rem;
 `;
 export const VideoTitle = styled.h2`
-    margin : 1rem 0;
+
+  margin-top : 2rem;
+  margin-bottom : 1rem;
+  margin-left : 5rem;
   width : 85%;
     font-size : 1.9rem; 
   font-family: lee, sans-serif;
 `;
 export const VideoCreator = styled.p`
   font-size : 1.4rem;
-  margin : 0 0 0.3rem 0.4rem;
+  margin : 0 5rem 0.3rem 0.4rem;
   font-family: lee, sans-serif;
 `;
 
@@ -29,7 +32,7 @@ export const HeartBtn = styled(HeartIcon)`
   height: ${props => props.size || "1.8rem"};
   fill: #383838;
   cursor : pointer;
-  margin-right : 1.3rem;
+  margin-right : 5rem;
   ${({ isLiked }) =>
         isLiked &&
           css`
@@ -39,6 +42,15 @@ export const HeartBtn = styled(HeartIcon)`
     fill : red;
   }
   
+`;
+export const LayoutContainer = styled.div`
+  height : 100%;
+  min-height : 175vh;
+
+  @media(max-width: 991px){
+    min-height : 160vh;
+
+  }
 `;
 
 export const PageBtn = styled(PageIcon)`
@@ -60,7 +72,7 @@ export const PageBtn = styled(PageIcon)`
 `;
 export const FilledHeartBtn = styled(FilledHeartIcon)`
   fill : red;
-  margin-right : 1.3rem;
+  margin-right : 5rem;
   cursor : pointer;
   width: ${props => props.size || "1.8rem"};
   height: ${props => props.size || "1.8rem"};
@@ -68,7 +80,7 @@ export const FilledHeartBtn = styled(FilledHeartIcon)`
 `;
 //비디오 부가 설명
 export const SubWrapper = styled.div`
-  margin : 1rem 0 0 5rem;
+  margin : 1rem 0 0 8rem;
   @media (max-width : 991px){
     margin-left : 3rem;
   }
@@ -114,17 +126,21 @@ export const CommentContainer = styled.div`
 `;
 
 export const CommentTitle = styled.h1`
-  margin-bottom : 0;
   margin-top : 1.7rem;
   font-size : 2rem;
   font-family : lee, sans-serif;
-
+  font-weight: bold;
+  margin-bottom : 1rem;
+  @media(max-width: 991px){
+    margin-left : -1rem;
+  }
 `;
 
 //댓글 입력 부분
 export const CommentInputWrapper = styled.div`
   display : flex;
   align-items: center;
+  justify-content: center;
 `;
 export const CommentInput = styled.input`
   font-size: 1.3rem;
@@ -132,7 +148,9 @@ export const CommentInput = styled.input`
   height: 10vh;
   margin : 1rem 0;
   font-family: lee, sans-serif;
-  
+  @media(max-width: 991px){
+    width: 74vw;
+  }
   &:focus {
   }
 `;
@@ -142,7 +160,9 @@ export const CommentBtn = styled.button`
   cursor : pointer;
   font-size : 1.3rem;
   font-family: cookieregular, sans-serif;
-
+  @media(max-width: 991px){
+    width: 13vw;
+  }
 `;
 //실제 댓글창
 export const CommentSection = styled.div`

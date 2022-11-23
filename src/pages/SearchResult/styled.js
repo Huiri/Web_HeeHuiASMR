@@ -157,17 +157,24 @@ export const SideBarRecommendItem = styled.div`
 `;
 
 export const ViewMoreBtn = styled.button`
-    border-radius: 1rem;
-    justify-content: center;
-    align-items: center;
-    border : none;
-    width : 8rem;
-    height : 2.5rem;
-    font-size : 1.2rem;
-    margin : 2rem auto;
-    cursor: pointer;
-    position : relative;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 8rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  cursor: pointer;
+  position: relative;
   font-family: lee, sans-serif;
-    left : 45%;
+  left: 45%;
+
+  &:hover {
+    background: #c2c2c2;
+    border: 2px solid grey;
+    transition: all 0.2s ease-in-out;
+
+  }
 `;
 

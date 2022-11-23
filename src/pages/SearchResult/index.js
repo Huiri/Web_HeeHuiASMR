@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     LayoutContainer,
     NavBar,
@@ -19,18 +19,40 @@ import {
     SideBarRecommendTitle,
     SideBarRecommendItem,
     BlankSpace,
-    ViewMoreBtn,
     PromotionSection
 } from './styled';
-import PostVideoCard from "../../components/common/PostVideoCard";
+import { useNavigate, useParams } from 'react-router-dom';
+import ApiVideoCard from '../../components/common/ApiVideoCard';
+import { useRecoilValue } from 'recoil';
+import { VideoCountState } from '../../States/VideoStates';
 
 const SearchResult = () => {
+    const videoCount = useRecoilValue(VideoCountState);
+
+    let parameter = useParams().word;
+    const navigate = useNavigate();
+
+    // const [page, setPage] = useState(1);
+    const [param, setParam] = useState(parameter);
+
+
+    const searchList = ['고구마', '붕어빵', '강유미', '순대', '붕어싸만코'];
+
+    const [searchText, setSearchText] = useState(param);
+
+    const onSearchTextClick = (search)=>{
+        setSearchText(search);
+        navigate(`/search/${search}`);
+    };
+    useEffect(()=>{
+        setParam(parameter);
+    }, [parameter]);
 
     return (
         <LayoutContainer>
             <Result>
                 <SearchResultWrapper>
-                    <SearchResultCount>7</SearchResultCount>
+                    <SearchResultCount>{videoCount}</SearchResultCount>
                     <SearchResultText>개의 결과가 존재합니다.</SearchResultText>
                 </SearchResultWrapper>
             </Result>
@@ -39,33 +61,29 @@ const SearchResult = () => {
                 <NavWrapper>
                     <RelatedSearchTitle>연관 검색어</RelatedSearchTitle>
                     <RelatedSearchWrapper>
-                        <RelatedSearchItem>고구마</RelatedSearchItem>
-                        <RelatedSearchItem>붕어빵</RelatedSearchItem>
-                        <RelatedSearchItem>순대</RelatedSearchItem>
-                        <RelatedSearchItem>염통</RelatedSearchItem>
-                        <RelatedSearchItem>붕어싸만코</RelatedSearchItem>
+                        {searchList.map((search, idx) => (
+                            <RelatedSearchItem key={idx} onClick={()=>{onSearchTextClick(search);}}>{search}</RelatedSearchItem>
+                        ))}
                     </RelatedSearchWrapper>
                 </NavWrapper>
             </NavBar>
             <Main>
                 <PromotionSection>
-                    <PostVideoCard/>
+                    <ApiVideoCard color={"white"} param={param}/>
                 </PromotionSection>
 
-                <ViewMoreBtn>더보기</ViewMoreBtn>
             </Main>
             <SideBar>
                 <SideBarWrapper>
                     <SideBarSearchTitle>인기 검색어</SideBarSearchTitle>
-                    <SideBarSearchItem>인기 검색어</SideBarSearchItem>
-                    <SideBarSearchItem>인기</SideBarSearchItem>
-                    <SideBarSearchItem>인기 검색어</SideBarSearchItem>
-                    <SideBarSearchItem>검색어</SideBarSearchItem>
+                    <SideBarSearchItem>해리포터</SideBarSearchItem>
+                    <SideBarSearchItem>공부</SideBarSearchItem>
+                    <SideBarSearchItem>강유미</SideBarSearchItem>
                 </SideBarWrapper>
                 <SideBarRecommendWrapper>
                     <SideBarRecommendTitle>오늘의 키워드</SideBarRecommendTitle>
-                    <SideBarRecommendItem>군고구마</SideBarRecommendItem>
-                    <SideBarRecommendItem>공부</SideBarRecommendItem>
+                    <SideBarRecommendItem>졸업작품</SideBarRecommendItem>
+                    <SideBarRecommendItem>타이핑 소리</SideBarRecommendItem>
 
                 </SideBarRecommendWrapper>
             </SideBar>

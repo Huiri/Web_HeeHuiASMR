@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const LayoutContainer = styled.div`
    background: aliceblue;
   width : 100vw;
-  height : 100vh;
+  min-height : 100vh;
+  height : 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -11,13 +12,14 @@ export const LayoutContainer = styled.div`
 export const ServiceTitle = styled.p`
   font-size: 2rem;
   font-family: cookieregular, sans-serif;
-  margin : 3rem 0 0 3rem;
+  margin : 3rem auto;
+  margin-bottom : 2rem;
 `;
 
 export const ServiceSubTitle = styled.p`
     font-size : 1.4rem;
   font-family: geonggimedium, sans-serif;
-  margin : 1rem 0 0 3.5rem;
+  margin : 1.3rem 0 0 2rem;
 
 `;
 export const IconWrapper = styled.div`
@@ -27,7 +29,7 @@ export const IconContainer = styled.div`
 
 `;
 export const TextContainer = styled.div`
-  margin : 1rem 0 0 4rem;
+  margin : 0.5rem 0 0 2.5rem;
 
 `;
 export const ServiceExplain = styled.p`
@@ -36,4 +38,18 @@ export const ServiceExplain = styled.p`
 `;
 export const Section = styled.div`
   display: flex;
+`;
+
+export const IntroWrapper = styled.div`
+  background: #c5dcbf;
+  border-radius: 1rem;
+  margin: 0.7rem auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 9rem;
+
+  &:hover {
+    border: 2px solid #a8a8a8;
+  }
 `;
