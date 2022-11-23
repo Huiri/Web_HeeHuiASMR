@@ -46,9 +46,32 @@ const PostVideoCard = ({page, order, param, count, data}) => {
     //         });
     // };
 
+
     useEffect(()=>{
         setVideoList(data);
     },[]);
+
+        axios
+            //Google_API_KEY
+            .get(
+
+                // `https://www.googleapis.com/youtube/v3/search?part=snippet&q=ASMR&maxResults=4&type=video&regionCode=KR&key=Google_API_KEY`
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=먹방${param}&order=${orders}&maxResults=8&type=video&regionCode=KR&key=Google_API_KEY`
+            )
+            .then((res) => {
+                //console.log(res);
+                // setVideoList(res.data.items);
+                setIsLoading(false);
+                setVideoList(items => [...items, ...res.data.items]);
+                setHasMore(page !== PAGE_LIMIT);
+
+            })
+            .catch(() => {
+                console.warn("error");
+                setHasMore(false);
+            });
+    };
+
 
     const [number, setNumber] = useState(1);
     useEffect(() => {
